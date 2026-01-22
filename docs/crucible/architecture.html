@@ -1,0 +1,447 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">ARCHITECTURE | crucible Documentation | Atari Foundry</title><meta name="description" content="crucible documentation: ARCHITECTURE" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">crucible<!-- --> Documentation</p><h1 class="page-title">ARCHITECTURE</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/api-reference">API REFERENCE</a></li><li><a class="doc-link active" style="padding-left:0rem" href="/docs/crucible/architecture">ARCHITECTURE</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/attributions">ATTRIBUTIONS</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/building">BUILDING</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/changelog">CHANGELOG</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/user-guide">USER GUIDE</a></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>Crucible Architecture Documentation</h1>
+<h2>Table of Contents</h2>
+<ol>
+<li><a node="[object Object]" href="/docs/crucible/architecture#overview">Overview</a></li>
+<li><a node="[object Object]" href="/docs/crucible/architecture#system-architecture">System Architecture</a></li>
+<li><a node="[object Object]" href="/docs/crucible/architecture#core-components">Core Components</a></li>
+<li><a node="[object Object]" href="/docs/crucible/architecture#memory-map">Memory Map</a></li>
+<li><a node="[object Object]" href="/docs/crucible/architecture#device-handlers">Device Handlers</a></li>
+<li><a node="[object Object]" href="/docs/crucible/architecture#filesystem-implementation">Filesystem Implementation</a></li>
+<li><a node="[object Object]" href="/docs/crucible/architecture#hardware-emulation">Hardware Emulation</a></li>
+<li><a node="[object Object]" href="/docs/crucible/architecture#callback-system">Callback System</a></li>
+<li><a node="[object Object]" href="/docs/crucible/architecture#build-system">Build System</a></li>
+</ol>
+<h2>Overview</h2>
+<p>Crucible is a 6502 simulator with Atari 8-bit BIOS emulation. It consists of several layers:</p>
+<ol>
+<li><strong>CPU Simulator</strong> (<code>sim65</code>) - 6502 instruction execution</li>
+<li><strong>BIOS Emulation</strong> (<code>atari</code>, <code>atcio</code>) - Atari OS calls</li>
+<li><strong>Device Handlers</strong> - CIO device implementations</li>
+<li><strong>Filesystem</strong> - ATR and host filesystem access</li>
+<li><strong>Hardware</strong> - POKEY, GTIA, ANTIC, PIA emulation</li>
+</ol>
+<h2>System Architecture</h2>
+<pre><code>┌─────────────────────────────────────────┐
+│         Application (XEX)               │
+└──────────────┬──────────────────────────┘
+               │
+┌──────────────▼──────────────────────────┐
+│      Atari BIOS Emulation               │
+│  ┌──────────┐  ┌──────────┐            │
+│  │   CIO    │  │   DOS    │            │
+│  └────┬─────┘  └────┬─────┘            │
+└───────┼─────────────┼──────────────────┘
+        │             │
+┌───────▼─────────────▼──────────────────┐
+│      Device Handlers                   │
+│  ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐       │
+│  │ E:│ │ D:│ │ H:│ │ K:│ │ R:│       │
+│  └───┘ └───┘ └───┘ └───┘ └───┘       │
+└───────┬─────────────┬──────────────────┘
+        │             │
+┌───────▼─────────────▼──────────────────┐
+│   Filesystem Layer                     │
+│  ┌──────────┐  ┌──────────┐           │
+│  │   ATR    │  │   Host   │           │
+│  └──────────┘  └──────────┘           │
+└────────────────────────────────────────┘
+        │
+┌───────▼────────────────────────────────┐
+│      6502 CPU Simulator (sim65)        │
+└────────────────────────────────────────┘
+</code></pre>
+<h2>Core Components</h2>
+<h3>sim65 - CPU Simulator</h3>
+<p><strong>Location</strong>: <code>src/sim65.c</code>, <code>src/sim65.h</code></p>
+<p><strong>Purpose</strong>: Core 6502 instruction execution engine</p>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>Full 6502 instruction set</li>
+<li>Memory management with callbacks</li>
+<li>Cycle counting</li>
+<li>Profiling support</li>
+<li>Debug tracing</li>
+</ul>
+<p><strong>Key Functions</strong>:</p>
+<ul>
+<li><code>sim65_new()</code> - Create simulator instance</li>
+<li><code>sim65_run()</code> - Execute instructions</li>
+<li><code>sim65_call()</code> - Call subroutine and return</li>
+<li><code>sim65_add_callback()</code> - Register memory/execution callbacks</li>
+</ul>
+<h3>atari - BIOS Emulation</h3>
+<p><strong>Location</strong>: <code>src/atari.c</code>, <code>src/atari.h</code></p>
+<p><strong>Purpose</strong>: Atari OS vector and BIOS emulation</p>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>OS vector handling</li>
+<li>XEX file loading</li>
+<li>ROM loading</li>
+<li>Boot from disk image</li>
+<li>Math pack integration</li>
+</ul>
+<p><strong>Key Functions</strong>:</p>
+<ul>
+<li><code>atari_init()</code> - Initialize BIOS</li>
+<li><code>atari_xex_load()</code> - Load XEX file</li>
+<li><code>atari_boot_image()</code> - Boot from ATR image</li>
+</ul>
+<h3>atcio - CIO System</h3>
+<p><strong>Location</strong>: <code>src/atcio.c</code>, <code>src/atcio.h</code></p>
+<p><strong>Purpose</strong>: Central I/O (CIO) system implementation</p>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>CIOV vector emulation</li>
+<li>IOCB management</li>
+<li>Device handler routing</li>
+<li>Error handling</li>
+</ul>
+<p><strong>Key Functions</strong>:</p>
+<ul>
+<li><code>atari_cio_init()</code> - Initialize CIO system</li>
+<li>Device handler registration</li>
+<li>IOCB parameter handling</li>
+</ul>
+<h2>Memory Map</h2>
+<h3>Standard Atari Memory Layout</h3>
+<pre><code>$0000 - $00FF   Zero Page
+$0100 - $01FF   Stack
+$0200 - $02FF   OS RAM
+$0300 - $03FF   IOCB and vectors
+$0400 - $07FF   Free RAM
+$0800 - $BFFF   User RAM (default)
+$C000 - $CFFF   Cartridge ROM (optional)
+$D000 - $D7FF   Hardware registers
+$E000 - $FFFF   OS ROM / BIOS
+</code></pre>
+<h3>Hardware Registers</h3>
+<pre><code>$D000 - $D01F   GTIA
+$D200 - $D20F   POKEY
+$D400 - $D40E   ANTIC
+$D300 - $D3FF   PIA
+</code></pre>
+<h3>OS Vectors</h3>
+<pre><code>$E456           CIOV (Central I/O Vector)
+$E459           SIOV (Serial I/O Vector)
+$E465           SETVBV (Set VBLANK Vector)
+$E468           SYSVBV (System VBLANK Vector)
+</code></pre>
+<h2>Device Handlers</h2>
+<h3>E: Device (Editor/Screen)</h3>
+<p><strong>Handler</strong>: <code>sim_SCREN()</code> in <code>src/atcio.c</code></p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Standard input/output</li>
+<li>ATASCII translation</li>
+<li>Screen positioning (PLOT, DRAWTO, FILLTO)</li>
+<li>Graphics mode support</li>
+</ul>
+<h3>D: Device (Disk - ATR)</h3>
+<p><strong>Handler</strong>: <code>sim_DISKD()</code> in <code>src/ataridos.c</code></p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>ATR filesystem access</li>
+<li>Directory reading</li>
+<li>File reading</li>
+<li>Subdirectory navigation</li>
+<li>File attributes</li>
+</ul>
+<p><strong>Implementation</strong>: Uses <code>atrfs</code> module for filesystem operations</p>
+<h3>H: Device (Host Filesystem)</h3>
+<p><strong>Handler</strong>: <code>sim_HOST()</code> in <code>src/athost.c</code></p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Host filesystem access</li>
+<li>File read/write</li>
+<li>Directory reading</li>
+<li>Full CIO compatibility</li>
+</ul>
+<p><strong>Root Path</strong>: Configurable via <code>-R</code> option</p>
+<h3>K: Device (Keyboard)</h3>
+<p><strong>Handler</strong>: <code>sim_KEYBD()</code> in <code>src/atcio.c</code></p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Character input</li>
+<li>ATASCII translation</li>
+<li>Key code mapping</li>
+</ul>
+<h3>R: Device (RS-232)</h3>
+<p><strong>Handler</strong>: <code>sim_RDEV()</code> in <code>src/atrdev.c</code></p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Serial I/O emulation</li>
+<li>Baud rate configuration</li>
+<li>Translation modes</li>
+</ul>
+<h2>Filesystem Implementation</h2>
+<h3>ATR Filesystem (atrfs)</h3>
+<p><strong>Location</strong>: <code>src/atrfs.c</code>, <code>src/atrfs.h</code></p>
+<p><strong>Purpose</strong>: Read files from ATR disk images</p>
+<p><strong>Key Structures</strong>:</p>
+<pre><pre class="language-c"><code class="language-c">struct atr_file_handle {
+    sim65 s;
+    uint16_t start_sector;
+    uint16_t current_sector;
+    uint32_t file_size;
+    uint32_t position;
+    uint8_t sector_buffer[256];
+    // ...
+};
+
+struct atr_dir_entry {
+    uint8_t flags;
+    uint16_t start_sector;
+    uint16_t sector_count;
+    uint32_t byte_count;
+    char filename[12];
+    char full_filename[13];
+};
+</code></pre></pre>
+<p><strong>Key Functions</strong>:</p>
+<ul>
+<li><code>atrfs_find_file()</code> - Find file in directory</li>
+<li><code>atrfs_open_file()</code> - Open file handle</li>
+<li><code>atrfs_read_byte()</code> - Read byte from file</li>
+<li><code>atrfs_read_directory()</code> - Read directory entries</li>
+</ul>
+<p><strong>Supported Formats</strong>:</p>
+<ul>
+<li>DOS 2.x</li>
+<li>SpartaDOS 3.x</li>
+<li>BW-DOS</li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>VTOC reading</li>
+<li>Sector chain following</li>
+<li>Subdirectory navigation</li>
+<li>File attribute parsing</li>
+</ul>
+<h3>Host Filesystem (athost)</h3>
+<p><strong>Location</strong>: <code>src/athost.c</code>, <code>src/athost.h</code></p>
+<p><strong>Purpose</strong>: Access host operating system filesystem</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Standard file operations</li>
+<li>Directory reading</li>
+<li>Path resolution</li>
+<li>Error handling</li>
+</ul>
+<h2>Hardware Emulation</h2>
+<h3>POKEY</h3>
+<p><strong>Location</strong>: <code>src/hw.c</code></p>
+<p><strong>Registers Emulated</strong>:</p>
+<ul>
+<li><code>$D200-$D209</code> - Audio and keyboard</li>
+<li><code>$D20A-$D20F</code> - Serial I/O and interrupts</li>
+<li><code>$D20D-$D20F</code> - Potentiometer inputs</li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Random number generator</li>
+<li>Serial I/O</li>
+<li>Interrupt handling</li>
+<li>Audio registers (stubs)</li>
+<li>Keyboard scanning</li>
+</ul>
+<h3>GTIA</h3>
+<p><strong>Location</strong>: <code>src/hw.c</code></p>
+<p><strong>Registers Emulated</strong>:</p>
+<ul>
+<li><code>$D000-$D01F</code> - All GTIA registers (stubs)</li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>CONSOL register (console keys)</li>
+<li>Player/Missile graphics (stubs)</li>
+<li>Color registers (stubs)</li>
+<li>Priority registers (stubs)</li>
+</ul>
+<h3>ANTIC</h3>
+<p><strong>Location</strong>: <code>src/hw.c</code></p>
+<p><strong>Registers Emulated</strong>:</p>
+<ul>
+<li><code>$D400-$D40E</code> - All ANTIC registers (stubs)</li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>VCOUNT (vertical line counter)</li>
+<li>DMA control (stubs)</li>
+<li>Display list (stubs)</li>
+<li>Scroll registers (stubs)</li>
+</ul>
+<h3>PIA</h3>
+<p><strong>Location</strong>: <code>src/hw.c</code></p>
+<p><strong>Registers Emulated</strong>:</p>
+<ul>
+<li><code>$D300</code> - PORTB (memory banking)</li>
+<li><code>$D302</code> - PORTA (joystick/paddle)</li>
+<li><code>$D303</code> - PACTL</li>
+<li><code>$D301</code> - PBCTL</li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Memory banking control</li>
+<li>Joystick/paddle inputs (stubs)</li>
+<li>Control register support</li>
+</ul>
+<h2>Callback System</h2>
+<h3>Execution Callbacks</h3>
+<p>Callbacks are registered at specific addresses and executed when the PC reaches that address.</p>
+<p><strong>Example</strong>:</p>
+<pre><pre class="language-c"><code class="language-c">add_rts_callback(s, CIOV, 1, sim_CIOV);
+</code></pre></pre>
+<p>This places an RTS instruction at <code>$E456</code> and registers <code>sim_CIOV</code> as a callback.</p>
+<h3>Memory Callbacks</h3>
+<ul>
+<li><strong>Read callbacks</strong>: Executed when memory is read</li>
+<li><strong>Write callbacks</strong>: Executed when memory is written</li>
+<li><strong>Execution callbacks</strong>: Executed when instruction is fetched</li>
+</ul>
+<h3>RTS Simulation</h3>
+<p>For callbacks that replace RTS instructions, the callback must simulate the RTS:</p>
+<pre><pre class="language-c"><code class="language-c">// Pop return address from stack
+regs-&gt;s = (regs-&gt;s + 1) &amp; 0xFF;
+val = peek(s, 0x100 + regs-&gt;s);
+regs-&gt;pc = val;
+regs-&gt;s = (regs-&gt;s + 1) &amp; 0xFF;
+val = peek(s, 0x100 + regs-&gt;s);
+regs-&gt;pc |= val &lt;&lt; 8;
+regs-&gt;pc = (regs-&gt;pc + 1) &amp; 0xFFFF;
+</code></pre></pre>
+<h2>Build System</h2>
+<h3>Makefile Structure</h3>
+<p><strong>Targets</strong>:</p>
+<ul>
+<li><code>all</code> - Build project (default)</li>
+<li><code>clean</code> - Remove build artifacts</li>
+<li><code>help</code> - Show help</li>
+<li><code>test</code> - Run tests</li>
+</ul>
+<p><strong>Variables</strong>:</p>
+<ul>
+<li><code>CC</code> - C compiler (gcc)</li>
+<li><code>CFLAGS</code> - Compiler flags</li>
+<li><code>LDLIBS</code> - Linker libraries</li>
+<li><code>BDIR</code> - Build directory</li>
+<li><code>ODIR</code> - Object directory</li>
+<li><code>TARGET</code> - Executable path</li>
+</ul>
+<h3>Source Files</h3>
+<p><strong>Core</strong>:</p>
+<ul>
+<li><code>sim65.c</code> - CPU simulator</li>
+<li><code>atari.c</code> - BIOS emulation</li>
+<li><code>atcio.c</code> - CIO system</li>
+<li><code>main.c</code> - Main program</li>
+</ul>
+<p><strong>Devices</strong>:</p>
+<ul>
+<li><code>ataridos.c</code> - D: device</li>
+<li><code>athost.c</code> - H: device</li>
+<li><code>atrdev.c</code> - R: device</li>
+<li><code>atsio.c</code> - SIO emulation</li>
+</ul>
+<p><strong>Filesystem</strong>:</p>
+<ul>
+<li><code>atrfs.c</code> - ATR filesystem</li>
+<li><code>dosfname.c</code> - DOS filename handling</li>
+</ul>
+<p><strong>Hardware</strong>:</p>
+<ul>
+<li><code>hw.c</code> - Hardware registers</li>
+</ul>
+<p><strong>Math</strong>:</p>
+<ul>
+<li><code>mathpack.c</code> - Math pack integration</li>
+</ul>
+<h3>Dependencies</h3>
+<ul>
+<li>Standard C library</li>
+<li>Math library (<code>-lm</code>)</li>
+<li>No external dependencies</li>
+</ul>
+<h3>Compilation</h3>
+<pre><pre class="language-bash"><code class="language-bash"># Debug build
+make CFLAGS=&quot;-g -O0&quot;
+
+# Release build
+make CFLAGS=&quot;-O3 -flto&quot;
+
+# Clean and rebuild
+make clean &amp;&amp; make
+</code></pre></pre>
+<h2>Data Flow</h2>
+<h3>Program Execution</h3>
+<ol>
+<li>Load XEX file → Parse segments → Load into memory</li>
+<li>Set RUNAD → Jump to entry point</li>
+<li>Execute instructions → Handle callbacks</li>
+<li>Return on RTS or error</li>
+</ol>
+<h3>CIO Call Flow</h3>
+<ol>
+<li>Program calls CIOV (<code>JSR $E456</code>)</li>
+<li>Callback <code>sim_CIOV</code> executes</li>
+<li>Parse IOCB parameters</li>
+<li>Route to device handler</li>
+<li>Device handler processes request</li>
+<li>Return to caller (RTS simulation)</li>
+</ol>
+<h3>File Access Flow</h3>
+<p><strong>ATR (D:)</strong>:</p>
+<ol>
+<li>Parse filename</li>
+<li>Search directory via <code>atrfs_find_file()</code></li>
+<li>Open file handle via <code>atrfs_open_file()</code></li>
+<li>Read sectors via <code>atrfs_read_byte()</code></li>
+<li>Follow sector chains</li>
+</ol>
+<p><strong>Host (H:)</strong>:</p>
+<ol>
+<li>Parse filename</li>
+<li>Resolve path (root + filename)</li>
+<li>Open file via <code>fopen()</code></li>
+<li>Read/write via standard I/O</li>
+</ol>
+<h2>Error Handling</h2>
+<h3>Error Levels</h3>
+<ul>
+<li><code>none</code> - No error reporting</li>
+<li><code>mem</code> - Memory errors only</li>
+<li><code>full</code> - All errors (default)</li>
+</ul>
+<h3>Error Types</h3>
+<ul>
+<li><code>sim65_err_exec_undef</code> - Undefined instruction</li>
+<li><code>sim65_err_exec_uninit</code> - Uninitialized memory execution</li>
+<li><code>sim65_err_read_uninit</code> - Uninitialized memory read</li>
+<li><code>sim65_err_write_rom</code> - Write to ROM</li>
+<li><code>sim65_err_break</code> - BRK instruction</li>
+<li><code>sim65_err_invalid_ins</code> - Invalid instruction</li>
+</ul>
+<h2>Performance Considerations</h2>
+<h3>Cycle Counting</h3>
+<ul>
+<li>Accurate cycle counting for timing</li>
+<li>Supports real-time and cycle-based timing</li>
+<li>Profiling for performance analysis</li>
+</ul>
+<h3>Memory Management</h3>
+<ul>
+<li>Static memory allocation</li>
+<li>No dynamic allocation during execution</li>
+<li>Efficient callback lookup</li>
+</ul>
+<h3>Optimization</h3>
+<ul>
+<li>Link-time optimization (LTO) enabled</li>
+<li>Aggressive compiler optimizations</li>
+<li>Inline functions for hot paths</li>
+</ul>
+<h2>See Also</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/crucible/user-guide">User Guide</a> - Usage instructions</li>
+<li><a node="[object Object]" href="/docs/crucible/api-reference">API Reference</a> - Developer API</li>
+<li><a node="[object Object]" href="/docs/crucible/building">Building Guide</a> - Build details</li>
+</ul></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"crucible","productDocs":{"product":"crucible","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/API_REFERENCE.md","relativePath":"API_REFERENCE.md","relativeDir":"","filename":"API_REFERENCE","slug":"api-reference","name":"API REFERENCE"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ARCHITECTURE.md","relativePath":"ARCHITECTURE.md","relativeDir":"","filename":"ARCHITECTURE","slug":"architecture","name":"ARCHITECTURE"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ATTRIBUTIONS.md","relativePath":"ATTRIBUTIONS.md","relativeDir":"","filename":"ATTRIBUTIONS","slug":"attributions","name":"ATTRIBUTIONS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/BUILDING.md","relativePath":"BUILDING.md","relativeDir":"","filename":"BUILDING","slug":"building","name":"BUILDING"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/CHANGELOG.md","relativePath":"CHANGELOG.md","relativeDir":"","filename":"CHANGELOG","slug":"changelog","name":"CHANGELOG"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/USER_GUIDE.md","relativePath":"USER_GUIDE.md","relativeDir":"","filename":"USER_GUIDE","slug":"user-guide","name":"USER GUIDE"}],"navTree":{"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/README.md","isIndex":true},{"name":"API REFERENCE","slug":"api-reference","path":"API_REFERENCE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/API_REFERENCE.md","isIndex":false},{"name":"ARCHITECTURE","slug":"architecture","path":"ARCHITECTURE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ARCHITECTURE.md","isIndex":false},{"name":"ATTRIBUTIONS","slug":"attributions","path":"ATTRIBUTIONS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ATTRIBUTIONS.md","isIndex":false},{"name":"BUILDING","slug":"building","path":"BUILDING.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/BUILDING.md","isIndex":false},{"name":"CHANGELOG","slug":"changelog","path":"CHANGELOG.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/CHANGELOG.md","isIndex":false},{"name":"USER GUIDE","slug":"user-guide","path":"USER_GUIDE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/USER_GUIDE.md","isIndex":false}]}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ARCHITECTURE.md","relativePath":"ARCHITECTURE.md","relativeDir":"","filename":"ARCHITECTURE","slug":"architecture","name":"ARCHITECTURE","content":"# Crucible Architecture Documentation\n\n## Table of Contents\n\n1. [Overview](#overview)\n2. [System Architecture](#system-architecture)\n3. [Core Components](#core-components)\n4. [Memory Map](#memory-map)\n5. [Device Handlers](#device-handlers)\n6. [Filesystem Implementation](#filesystem-implementation)\n7. [Hardware Emulation](#hardware-emulation)\n8. [Callback System](#callback-system)\n9. [Build System](#build-system)\n\n## Overview\n\nCrucible is a 6502 simulator with Atari 8-bit BIOS emulation. It consists of several layers:\n\n1. **CPU Simulator** (`sim65`) - 6502 instruction execution\n2. **BIOS Emulation** (`atari`, `atcio`) - Atari OS calls\n3. **Device Handlers** - CIO device implementations\n4. **Filesystem** - ATR and host filesystem access\n5. **Hardware** - POKEY, GTIA, ANTIC, PIA emulation\n\n## System Architecture\n\n```\n┌─────────────────────────────────────────┐\n│         Application (XEX)               │\n└──────────────┬──────────────────────────┘\n               │\n┌──────────────▼──────────────────────────┐\n│      Atari BIOS Emulation               │\n│  ┌──────────┐  ┌──────────┐            │\n│  │   CIO    │  │   DOS    │            │\n│  └────┬─────┘  └────┬─────┘            │\n└───────┼─────────────┼──────────────────┘\n        │             │\n┌───────▼─────────────▼──────────────────┐\n│      Device Handlers                   │\n│  ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐       │\n│  │ E:│ │ D:│ │ H:│ │ K:│ │ R:│       │\n│  └───┘ └───┘ └───┘ └───┘ └───┘       │\n└───────┬─────────────┬──────────────────┘\n        │             │\n┌───────▼─────────────▼──────────────────┐\n│   Filesystem Layer                     │\n│  ┌──────────┐  ┌──────────┐           │\n│  │   ATR    │  │   Host   │           │\n│  └──────────┘  └──────────┘           │\n└────────────────────────────────────────┘\n        │\n┌───────▼────────────────────────────────┐\n│      6502 CPU Simulator (sim65)        │\n└────────────────────────────────────────┘\n```\n\n## Core Components\n\n### sim65 - CPU Simulator\n\n**Location**: `src/sim65.c`, `src/sim65.h`\n\n**Purpose**: Core 6502 instruction execution engine\n\n**Key Features**:\n- Full 6502 instruction set\n- Memory management with callbacks\n- Cycle counting\n- Profiling support\n- Debug tracing\n\n**Key Functions**:\n- `sim65_new()` - Create simulator instance\n- `sim65_run()` - Execute instructions\n- `sim65_call()` - Call subroutine and return\n- `sim65_add_callback()` - Register memory/execution callbacks\n\n### atari - BIOS Emulation\n\n**Location**: `src/atari.c`, `src/atari.h`\n\n**Purpose**: Atari OS vector and BIOS emulation\n\n**Key Features**:\n- OS vector handling\n- XEX file loading\n- ROM loading\n- Boot from disk image\n- Math pack integration\n\n**Key Functions**:\n- `atari_init()` - Initialize BIOS\n- `atari_xex_load()` - Load XEX file\n- `atari_boot_image()` - Boot from ATR image\n\n### atcio - CIO System\n\n**Location**: `src/atcio.c`, `src/atcio.h`\n\n**Purpose**: Central I/O (CIO) system implementation\n\n**Key Features**:\n- CIOV vector emulation\n- IOCB management\n- Device handler routing\n- Error handling\n\n**Key Functions**:\n- `atari_cio_init()` - Initialize CIO system\n- Device handler registration\n- IOCB parameter handling\n\n## Memory Map\n\n### Standard Atari Memory Layout\n\n```\n$0000 - $00FF   Zero Page\n$0100 - $01FF   Stack\n$0200 - $02FF   OS RAM\n$0300 - $03FF   IOCB and vectors\n$0400 - $07FF   Free RAM\n$0800 - $BFFF   User RAM (default)\n$C000 - $CFFF   Cartridge ROM (optional)\n$D000 - $D7FF   Hardware registers\n$E000 - $FFFF   OS ROM / BIOS\n```\n\n### Hardware Registers\n\n```\n$D000 - $D01F   GTIA\n$D200 - $D20F   POKEY\n$D400 - $D40E   ANTIC\n$D300 - $D3FF   PIA\n```\n\n### OS Vectors\n\n```\n$E456           CIOV (Central I/O Vector)\n$E459           SIOV (Serial I/O Vector)\n$E465           SETVBV (Set VBLANK Vector)\n$E468           SYSVBV (System VBLANK Vector)\n```\n\n## Device Handlers\n\n### E: Device (Editor/Screen)\n\n**Handler**: `sim_SCREN()` in `src/atcio.c`\n\n**Features**:\n- Standard input/output\n- ATASCII translation\n- Screen positioning (PLOT, DRAWTO, FILLTO)\n- Graphics mode support\n\n### D: Device (Disk - ATR)\n\n**Handler**: `sim_DISKD()` in `src/ataridos.c`\n\n**Features**:\n- ATR filesystem access\n- Directory reading\n- File reading\n- Subdirectory navigation\n- File attributes\n\n**Implementation**: Uses `atrfs` module for filesystem operations\n\n### H: Device (Host Filesystem)\n\n**Handler**: `sim_HOST()` in `src/athost.c`\n\n**Features**:\n- Host filesystem access\n- File read/write\n- Directory reading\n- Full CIO compatibility\n\n**Root Path**: Configurable via `-R` option\n\n### K: Device (Keyboard)\n\n**Handler**: `sim_KEYBD()` in `src/atcio.c`\n\n**Features**:\n- Character input\n- ATASCII translation\n- Key code mapping\n\n### R: Device (RS-232)\n\n**Handler**: `sim_RDEV()` in `src/atrdev.c`\n\n**Features**:\n- Serial I/O emulation\n- Baud rate configuration\n- Translation modes\n\n## Filesystem Implementation\n\n### ATR Filesystem (atrfs)\n\n**Location**: `src/atrfs.c`, `src/atrfs.h`\n\n**Purpose**: Read files from ATR disk images\n\n**Key Structures**:\n```c\nstruct atr_file_handle {\n    sim65 s;\n    uint16_t start_sector;\n    uint16_t current_sector;\n    uint32_t file_size;\n    uint32_t position;\n    uint8_t sector_buffer[256];\n    // ...\n};\n\nstruct atr_dir_entry {\n    uint8_t flags;\n    uint16_t start_sector;\n    uint16_t sector_count;\n    uint32_t byte_count;\n    char filename[12];\n    char full_filename[13];\n};\n```\n\n**Key Functions**:\n- `atrfs_find_file()` - Find file in directory\n- `atrfs_open_file()` - Open file handle\n- `atrfs_read_byte()` - Read byte from file\n- `atrfs_read_directory()` - Read directory entries\n\n**Supported Formats**:\n- DOS 2.x\n- SpartaDOS 3.x\n- BW-DOS\n\n**Features**:\n- VTOC reading\n- Sector chain following\n- Subdirectory navigation\n- File attribute parsing\n\n### Host Filesystem (athost)\n\n**Location**: `src/athost.c`, `src/athost.h`\n\n**Purpose**: Access host operating system filesystem\n\n**Features**:\n- Standard file operations\n- Directory reading\n- Path resolution\n- Error handling\n\n## Hardware Emulation\n\n### POKEY\n\n**Location**: `src/hw.c`\n\n**Registers Emulated**:\n- `$D200-$D209` - Audio and keyboard\n- `$D20A-$D20F` - Serial I/O and interrupts\n- `$D20D-$D20F` - Potentiometer inputs\n\n**Features**:\n- Random number generator\n- Serial I/O\n- Interrupt handling\n- Audio registers (stubs)\n- Keyboard scanning\n\n### GTIA\n\n**Location**: `src/hw.c`\n\n**Registers Emulated**:\n- `$D000-$D01F` - All GTIA registers (stubs)\n\n**Features**:\n- CONSOL register (console keys)\n- Player/Missile graphics (stubs)\n- Color registers (stubs)\n- Priority registers (stubs)\n\n### ANTIC\n\n**Location**: `src/hw.c`\n\n**Registers Emulated**:\n- `$D400-$D40E` - All ANTIC registers (stubs)\n\n**Features**:\n- VCOUNT (vertical line counter)\n- DMA control (stubs)\n- Display list (stubs)\n- Scroll registers (stubs)\n\n### PIA\n\n**Location**: `src/hw.c`\n\n**Registers Emulated**:\n- `$D300` - PORTB (memory banking)\n- `$D302` - PORTA (joystick/paddle)\n- `$D303` - PACTL\n- `$D301` - PBCTL\n\n**Features**:\n- Memory banking control\n- Joystick/paddle inputs (stubs)\n- Control register support\n\n## Callback System\n\n### Execution Callbacks\n\nCallbacks are registered at specific addresses and executed when the PC reaches that address.\n\n**Example**:\n```c\nadd_rts_callback(s, CIOV, 1, sim_CIOV);\n```\n\nThis places an RTS instruction at `$E456` and registers `sim_CIOV` as a callback.\n\n### Memory Callbacks\n\n- **Read callbacks**: Executed when memory is read\n- **Write callbacks**: Executed when memory is written\n- **Execution callbacks**: Executed when instruction is fetched\n\n### RTS Simulation\n\nFor callbacks that replace RTS instructions, the callback must simulate the RTS:\n\n```c\n// Pop return address from stack\nregs-\u003es = (regs-\u003es + 1) \u0026 0xFF;\nval = peek(s, 0x100 + regs-\u003es);\nregs-\u003epc = val;\nregs-\u003es = (regs-\u003es + 1) \u0026 0xFF;\nval = peek(s, 0x100 + regs-\u003es);\nregs-\u003epc |= val \u003c\u003c 8;\nregs-\u003epc = (regs-\u003epc + 1) \u0026 0xFFFF;\n```\n\n## Build System\n\n### Makefile Structure\n\n**Targets**:\n- `all` - Build project (default)\n- `clean` - Remove build artifacts\n- `help` - Show help\n- `test` - Run tests\n\n**Variables**:\n- `CC` - C compiler (gcc)\n- `CFLAGS` - Compiler flags\n- `LDLIBS` - Linker libraries\n- `BDIR` - Build directory\n- `ODIR` - Object directory\n- `TARGET` - Executable path\n\n### Source Files\n\n**Core**:\n- `sim65.c` - CPU simulator\n- `atari.c` - BIOS emulation\n- `atcio.c` - CIO system\n- `main.c` - Main program\n\n**Devices**:\n- `ataridos.c` - D: device\n- `athost.c` - H: device\n- `atrdev.c` - R: device\n- `atsio.c` - SIO emulation\n\n**Filesystem**:\n- `atrfs.c` - ATR filesystem\n- `dosfname.c` - DOS filename handling\n\n**Hardware**:\n- `hw.c` - Hardware registers\n\n**Math**:\n- `mathpack.c` - Math pack integration\n\n### Dependencies\n\n- Standard C library\n- Math library (`-lm`)\n- No external dependencies\n\n### Compilation\n\n```bash\n# Debug build\nmake CFLAGS=\"-g -O0\"\n\n# Release build\nmake CFLAGS=\"-O3 -flto\"\n\n# Clean and rebuild\nmake clean \u0026\u0026 make\n```\n\n## Data Flow\n\n### Program Execution\n\n1. Load XEX file → Parse segments → Load into memory\n2. Set RUNAD → Jump to entry point\n3. Execute instructions → Handle callbacks\n4. Return on RTS or error\n\n### CIO Call Flow\n\n1. Program calls CIOV (`JSR $E456`)\n2. Callback `sim_CIOV` executes\n3. Parse IOCB parameters\n4. Route to device handler\n5. Device handler processes request\n6. Return to caller (RTS simulation)\n\n### File Access Flow\n\n**ATR (D:)**:\n1. Parse filename\n2. Search directory via `atrfs_find_file()`\n3. Open file handle via `atrfs_open_file()`\n4. Read sectors via `atrfs_read_byte()`\n5. Follow sector chains\n\n**Host (H:)**:\n1. Parse filename\n2. Resolve path (root + filename)\n3. Open file via `fopen()`\n4. Read/write via standard I/O\n\n## Error Handling\n\n### Error Levels\n\n- `none` - No error reporting\n- `mem` - Memory errors only\n- `full` - All errors (default)\n\n### Error Types\n\n- `sim65_err_exec_undef` - Undefined instruction\n- `sim65_err_exec_uninit` - Uninitialized memory execution\n- `sim65_err_read_uninit` - Uninitialized memory read\n- `sim65_err_write_rom` - Write to ROM\n- `sim65_err_break` - BRK instruction\n- `sim65_err_invalid_ins` - Invalid instruction\n\n## Performance Considerations\n\n### Cycle Counting\n\n- Accurate cycle counting for timing\n- Supports real-time and cycle-based timing\n- Profiling for performance analysis\n\n### Memory Management\n\n- Static memory allocation\n- No dynamic allocation during execution\n- Efficient callback lookup\n\n### Optimization\n\n- Link-time optimization (LTO) enabled\n- Aggressive compiler optimizations\n- Inline functions for hot paths\n\n## See Also\n\n- [User Guide](USER_GUIDE.md) - Usage instructions\n- [API Reference](API_REFERENCE.md) - Developer API\n- [Building Guide](BUILDING.md) - Build details\n"},"currentPath":"architecture"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["crucible","architecture"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

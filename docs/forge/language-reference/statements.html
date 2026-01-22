@@ -1,0 +1,807 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">statements | forge Documentation | Atari Foundry</title><meta name="description" content="forge documentation: statements" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">forge<!-- --> Documentation</p><h1 class="page-title">statements</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/forge/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/forge/index">index</a></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">cc65</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/cc65">README</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">about</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/about/attributions">attributions</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/about/why-forge">why-forge</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">advanced topics</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/cio-reference">cio-reference</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/display-list-interrupts">display-list-interrupts</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/fujinet">fujinet</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/low-level-programming">low-level-programming</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/note-point">note-point</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/sio-operations">sio-operations</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/xio-reference">xio-reference</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">getting started</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/compiling">compiling</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/differences">differences</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/first-steps">first-steps</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/introduction">introduction</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">editor</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/editor/editor-guide">editor-guide</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/editor/editor-optimization">editor-optimization</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">language reference</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/expressions">expressions</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/functions">functions</a></li><li><a class="doc-link active" style="padding-left:1.2rem" href="/docs/forge/language-reference/statements">statements</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/syntax">syntax</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">reference</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/hardware-registers">hardware-registers</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/interrupts">interrupts</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/iocb-structure">iocb-structure</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/memory-map">memory-map</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/memory-usage">memory-usage</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/os-equates">os-equates</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/r-handler">r-handler</a></li></ul></div></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>Statements</h1>
+<p>Complete reference for all FORGE statements, organized by category.</p>
+<p>In the following descriptions, statement usage is presented and the abbreviation is given after a <code>/</code>.</p>
+<h2>Console Print and Input Statements</h2>
+<h3>GET <em>var</em> / GE.</h3>
+<p><strong>Reads Key From Keyboard</strong></p>
+<p>Waits for a key press and writes the key value to <em>var</em>, which can be a variable name or an array position (like &quot;array(123)&quot;).</p>
+<p><strong>Note:</strong> Some keys on the Atari -- the console keys <code>START</code>, <code>SELECT</code>, and <code>OPTION</code>; modifiers <code>SHIFT</code> and <code>CONTROL</code>; and the <code>HELP</code>, <code>BREAK</code>, and <code>RESET</code> keys -- are not handled in the same way as the main keyboard, and cannot be read by <code>GET</code>.</p>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>The status of all three console keys may be read via the GTIA <code>CONSOL</code> register, <code>PEEK(53279)</code>.</li>
+<li>Whether the <code>HELP</code> key is pressed can be detected via the POKEY <code>KBCODE</code> register, <code>PEEK(53769)</code>.</li>
+<li>Whether either <code>SHIFT</code> key is pressed can be detected via the POKEY <code>SKCTL</code> register, <code>PEEK(53775)</code>.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">GET K
+? &quot;You pressed: &quot;; K
+</code></pre></pre>
+<h3>INPUT <em>var</em> / I.</h3>
+<h3>INPUT &quot;prompt&quot;; <em>var</em></h3>
+<h3>INPUT &quot;prompt&quot;, <em>var</em></h3>
+<h3>INPUT ; <em>var</em></h3>
+<p><strong>Input Variable Or String</strong></p>
+<p>Reads from keyboard/screen and stores the value in <em>var</em>.</p>
+<p>A &quot;?&quot; sign is printed to the screen before input, or the &quot;prompt&quot; if given. Also, if there is a comma after the prompt, spaces are printed to align to a column multiple of 10 (similar to how a comma works in <code>PRINT</code>). In the case you don&#x27;t want any prompt, you can use a semicolon alone.</p>
+<p>If the value can&#x27;t be read because input errors, the error is stored in <code>ERR()</code>. Valid errors are 128 if BREAK key is pressed and 136 if CONTROL-3 is pressed.</p>
+<p>In case of a numeric variable, if the value can&#x27;t be converted to a number, the value 18 is stored in <code>ERR()</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">INPUT &quot;Enter your name: &quot;; NAME$
+INPUT &quot;Enter age: &quot;, AGE
+</code></pre></pre>
+<p>See the <a node="[object Object]" href="/docs/forge/language-reference/statements#device-input-and-output-statements">Device Input and Output Statements</a> section for the <code>INPUT #</code> usage.</p>
+<h3>POSITION <em>column</em>, <em>row</em> / POS.</h3>
+<p><strong>Moves The Screen Cursor</strong></p>
+<p>Moves the screen cursor position to the given <em>column</em> and <em>row</em>, so the next <code>PRINT</code> statement outputs at that position.</p>
+<p>Rows and columns are numerated from 0.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">POSITION 10, 5
+PRINT &quot;At position 10,5&quot;
+</code></pre></pre>
+<h3>PRINT <em>expr</em>, ... / ?</h3>
+<h3>PRINT <em>expr</em> TAB(<em>expr</em>) ...</h3>
+<h3>PRINT RTAB(<em>expr</em>) ...</h3>
+<h3>PRINT COLOR(<em>expr</em>) ...</h3>
+<h3>PRINT <em>expr</em> ; ...</h3>
+<p><strong>Print Strings And Numbers</strong></p>
+<p>Outputs strings and numbers to the screen or other output device.</p>
+<p>Each <em>expr</em> can be a constant string, a string variable or any complex expression, with commas or semicolons between each expression.</p>
+<p>If the first expression is a device I/O channel (e.g., <code>PRINT #1,&quot;HELLO&quot;</code>) the output will be sent to that device. In <code>GRAPHICS</code> modes other than 0 (e.g., large text <code>GRAPHICS 2</code>, multicolor text <code>GRAPHICS 12</code>, or even bitmapped graphics modes), use <code>#6</code> to write to that part of the screen.</p>
+<p>After writing the last expression, the cursor advanced to a new line, except if the statement ends in a comma, semicolon or <code>TAB</code>, where the cursor stays in the last position.</p>
+<p>If there is a comma before any expression, spaces are printed to advance the printing column to the next multiple of 10, allowing easy printing of tabulated data.</p>
+<p>The <code>COLOR</code> function alters the color the text that follows, until the end of the statement, depending on the graphics mode. This is abbreviated <code>C.</code>. Use 0 or 128 in graphics 0, for normal or inverse video. Use 0, 32, 128 or 160 in graphics mode 1 and 2 for the four available text colors.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">&#x27; In GRAPHICS 0:
+? &quot;NORMAL&quot;; COLOR(128) &quot;INVERSE&quot;
+
+&#x27; In GRAPHICS 2:
+S = 1234
+? #6, &quot;SCORE: &quot;; COLOR(32) S
+</code></pre></pre>
+<p>The <code>TAB</code> function advances the position to a column multiple of the argument, so that <code>TAB(10)</code> is the same as using a comma to separate arguments. This is abbreviated <code>T.</code>.</p>
+<p>The <code>RTAB</code> function, abbreviated <code>RT.</code>, advances the position so that the next argument to print ends just before a column multiple of the argument, right aligning the printing of the data. This function must be immediately followed by a variable or a string to align.</p>
+<p>Note that <code>,</code>, <code>TAB</code> and <code>RTAB</code> always print at least one space, and that to separate <code>TAB</code> or <code>RTAB</code> and the previous and next arguments you can use a <code>;</code> or simply a space.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">FOR i=0 TO 10
+  n = i*(9-2*i)*134
+  ? TAB(8) &quot;Val:&quot; RTAB(20) n
+NEXT
+</code></pre></pre>
+<p><strong>Advanced Notes:</strong></p>
+<ul>
+<li>To implement the spacing on <code>,</code>, <code>TAB</code> and <code>RTAB</code>, FORGE uses the current column in the OS, so that <code>POSITION</code> and printing to a graphics screen will work ok, unlike Atari BASIC; but when printing to a file or other devices the number of spaces will not be correct. Avoid using the functions to print to any device except the screen.</li>
+<li>The <code>COLOR</code> function does an <em>exclusive or</em> of the given value with the value of each character in the original string before printing.</li>
+<li>When writing abbreviated code, you can omit the semicolon in almost all places, and just join the values together. Avoid doing this in common code for better readability.</li>
+</ul>
+<h3>PUT <em>num</em> / PU.</h3>
+<p><strong>Writes A Character To Screen</strong></p>
+<p>Outputs one character to the screen, given by it&#x27;s ATASCII code.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PUT 65  &#x27; Prints &quot;A&quot;
+</code></pre></pre>
+<h3>CLS</h3>
+<p><strong>Clears The Screen</strong></p>
+<p>Clears the text screen. This is the same as <code>PUT 125</code>. For clearing the graphics screen, you can use <code>CLS #6</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">CLS      &#x27; Clear text screen
+CLS #6   &#x27; Clear graphics screen
+</code></pre></pre>
+<h2>Control Statements</h2>
+<h3>DO ... LOOP / L.</h3>
+<p><strong>Endless Loops</strong></p>
+<p>Starts and ends an endless repetition. When reaching the <code>LOOP</code> statement the program begins again, executing from the DO statement.</p>
+<p>The only way to terminate the loop is via an <code>EXIT</code> statement.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DO
+  ? &quot;Looping...&quot;
+  IF KEY() THEN EXIT
+LOOP
+</code></pre></pre>
+<h3>EXEC <em>name</em> <em>num1</em>, ... / EXE. / @</h3>
+<p><strong>Calls A Subroutine</strong></p>
+<p>Calls the subroutine <em>name</em>, with the optional parameters <em>num1</em> and so on, separated by commas.</p>
+<p>Note that you must use the same number of parameters in the <code>FUNC</code> definition, before or after the call.</p>
+<p>Instead of <code>EXEC</code> you can simply use a <code>@</code> in front of the function name. (i.e., these are equivalent: <code>EXEC greet</code> and <code>@greet</code>.)</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">FUNC greet name
+  ? &quot;Hello, &quot;; name
+ENDFUNC
+
+EXEC greet &quot;World&quot;
+@greet &quot;FORGE&quot;
+</code></pre></pre>
+<h3>EXIT / EX.</h3>
+<p><strong>Exits From Loop Or Procedure</strong></p>
+<p>Exits current loop or subroutine by jumping to the end.</p>
+<p>In case of loops, the program continues after the last statement of the loop. In case of <code>FUNC</code>, the program returns to the calling <code>EXEC</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DO
+  IF condition THEN EXIT
+LOOP
+</code></pre></pre>
+<h3>FOR <em>var</em>=<em>value</em> TO <em>end</em> [STEP <em>step</em>] / F. T. S.</h3>
+<h3>NEXT <em>var</em> / N.</h3>
+<p><strong>Loop Over Values Of A Variable</strong></p>
+<p><code>FOR</code> loop allows performing a loop a specified number of times while keeping a counting variable.</p>
+<p>First assigns the <em>value</em> to <em>var</em>, and starts iterations. <em>var</em> can be any variable name or a word array position (like &quot;array(2)&quot;).</p>
+<p>In each iteration, the command first compares the value of <em>var</em> with <em>end</em>, if the value is past the end it terminates the loop.</p>
+<p>At the end of the loop, <em>var</em> is incremented by <em>step</em> (or 1 if <code>STEP</code> is omitted) and the loops repeats.</p>
+<p>An <code>EXIT</code> statement also terminates the loop and skips to the end.</p>
+<p>Note that if <em>step</em> is positive, the iteration ends when the value of <em>var</em> is bigger than <em>end</em>, but if <em>step</em> is negative, the iteration ends if value of <em>var</em> is less than <em>end</em>.</p>
+<p>Also, <em>end</em> and <em>step</em> are evaluated only once at beginning of the loop; that value is stored and used for all loop iterations.</p>
+<p>If at the start of the loop <em>value</em> is already past <em>end</em>, the loop is completely skipped.</p>
+<p>A slightly modified usage of the <code>FOR</code> / <code>NEXT</code> loop allows for excluding the variable name from <code>NEXT</code>; this is required if <em>var</em> is an array.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">FOR i=0 TO 1000 STEP 100
+  ? i
+NEXT
+</code></pre></pre>
+<h3>IF <em>condition</em> THEN <em>statement</em> / I. T.</h3>
+<h3>IF <em>condition</em> ... ELIF <em>condition</em> / ELI. ... ELSE / EL. ... ENDIF / E.</h3>
+<p><strong>Conditional Execution</strong></p>
+<p>The first form (with <code>THEN</code>) executes one <em>statement</em> if the condition is true.</p>
+<p>This differs from Atari BASIC, TurboBASIC XL, and others, which will execute all statements after <code>THEN</code> until the end of the line.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">A=1
+IF A=0 THEN ? &quot;ZERO&quot;:? &quot;THE END&quot;
+</code></pre></pre>
+<p>Results in <code>THE END</code> being printed in FORGE, whereas nothing would be printed in Atari BASIC.</p>
+<p>The second form executes all statements following the <code>IF</code> (up until an <code>ELIF</code>, <code>ELSE</code>, or <code>ENDIF</code>) only if the condition is true.</p>
+<p>If the condition is false, optional statements following the <code>ELSE</code> (until an <code>ENDIF</code>) are executed.</p>
+<p>In case of an <code>ELIF</code>, the new condition is tested and acts like a nested <code>IF</code> until an <code>ELSE</code> or <code>ENDIF</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">IF condition-1
+  &#x27; Statements executed if condition-1 is true
+ELIF condition-2
+  &#x27; Statements executed if condition-1 is false but condition-2 is true
+ELIF condition-3
+  &#x27; Also, if condition-1 and condition-2 are false but condition-3 is true
+ELSE
+  &#x27; Executed if all of the above conditions are false
+ENDIF
+</code></pre></pre>
+<h3>FUNC <em>name</em> <em>var1</em> ... / FU. ... ENDFUNC / ENDF.</h3>
+<p><strong>Define A Function Or Procedure</strong></p>
+<p><code>FUNC</code> statement starts the definition of a function or procedure that can be called via <code>EXEC</code>, <code>@</code>, or in expressions.</p>
+<p>You can pass a list of integer variables separated by spaces after the <code>FUNC</code> name to specify a number of parameters, the variables will be set to the values passed by the <code>EXEC</code> call. Those variable names are always global, so the values set are seen outside the <code>FUNC</code>.</p>
+<p>The number of parameters in the <code>FUNC</code> definition and in all the <code>EXEC</code> calls must be the same.</p>
+<p><strong>Procedures (no return value):</strong></p>
+<p>If a <code>FUNC</code> does not have a return type (no <code>$</code> suffix for strings), it behaves like a procedure. Use <code>ENDFUNC</code> to end the function, which automatically emits a return.</p>
+<p>Procedures can modify their parameters, which are passed by reference. This allows procedures to return multiple values through parameters.</p>
+<p><strong>Example - Simple procedure:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">FUNC greet name
+  ? &quot;Hello, &quot;; name
+ENDFUNC
+
+@greet &quot;World&quot;
+EXEC greet &quot;FORGE&quot;
+</code></pre></pre>
+<p><strong>Example - Procedure with output parameter:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">FUNC factorial n result
+  IF n &lt;= 1
+    result = 1
+  ELSE
+    @factorial n-1, result
+    result = result * n
+  ENDIF
+ENDFUNC
+
+FACT_RESULT = 0
+@factorial 5, FACT_RESULT
+? &quot;5! = &quot;; FACT_RESULT  &#x27; Prints 120
+</code></pre></pre>
+<p><strong>Functions (with return value):</strong></p>
+<p>To return a value from the function, use the <code>RETURN</code> statement followed by an expression. The function will return that value to the caller. Functions can be called in expressions.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">FUNC add x y
+  RETURN x + y
+ENDFUNC
+
+result = add(10, 20)
+? result  &#x27; Prints 30
+</code></pre></pre>
+<p><strong>String functions:</strong></p>
+<p>For string-returning functions, add a <code>$</code> suffix to the function name:</p>
+<pre><pre class="language-basic"><code class="language-basic">FUNC greet$ name
+  RETURN &quot;Hello, &quot; + name
+ENDFUNC
+
+message$ = greet$(&quot;World&quot;)
+? message$  &#x27; Prints &quot;Hello, World&quot;
+</code></pre></pre>
+<p>Note that if the <code>FUNC</code> statement is encountered while executing surrounding code, the full function definition is skipped, so <code>FUNC</code> / <code>ENDFUNC</code> can appear any place in the program.</p>
+<h3>RETURN <em>expr</em> / RE.</h3>
+<p><strong>Return From Function</strong></p>
+<p>Returns a value from a function. The expression <em>expr</em> is evaluated and returned to the caller.</p>
+<p><code>RETURN</code> can only be used inside a <code>FUNC</code> definition. When <code>RETURN</code> is executed, the function immediately exits and returns the value.</p>
+<p>If a function does not contain a <code>RETURN</code> statement, it behaves as a procedure (no return value). The <code>ENDFUNC</code> statement automatically handles the return based on whether the function has a return type.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">FUNC add x y
+  RETURN x + y
+ENDFUNC
+
+result = add(10, 20)  &#x27; result = 30
+</code></pre></pre>
+<p><strong>Note:</strong> For string-returning functions, use <code>RETURN</code> with a string expression:</p>
+<pre><pre class="language-basic"><code class="language-basic">FUNC greet$ name
+  RETURN &quot;Hello, &quot; + name
+ENDFUNC
+
+message$ = greet$(&quot;World&quot;)
+</code></pre></pre>
+<h3>INCLUDE &quot;<em>filename</em>&quot; / IN.</h3>
+<h3>INCLUDE ONCE &quot;<em>filename</em>&quot; / IN. ON.</h3>
+<h3>#include &quot;<em>filename</em>&quot;</h3>
+<h3>#INCLUDE &quot;<em>filename</em>&quot;</h3>
+<p><strong>Include Another Source File</strong></p>
+<p>The <code>INCLUDE</code> directive inserts the contents of another source file into the current file at compile time, as if the included file&#x27;s contents were typed directly at that location.</p>
+<p>This allows you to organize your code into multiple files and build libraries of reusable procedures and functions.</p>
+<p>The filename must be enclosed in double quotes. If the filename doesn&#x27;t have an extension, <code>.bas</code> is automatically appended.</p>
+<p><strong>Path resolution order:</strong></p>
+<ol>
+<li>Directory of the current file</li>
+<li>Include search paths (specified with <code>-I</code> option on command line)</li>
+<li>Current working directory</li>
+</ol>
+<p>Both forward slashes (<code>/</code>) and backslashes (<code>\</code>) are accepted as path separators for cross-platform compatibility.</p>
+<p>The <code>INCLUDE ONCE</code> variant ensures that a file is included only once, even if multiple <code>INCLUDE</code> statements reference it. This is useful for library files that might be included from multiple places.</p>
+<p>You can also use C-style syntax with <code>#include</code> or <code>#INCLUDE</code> (case insensitive), which behaves exactly like <code>INCLUDE</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">&#x27; main.bas
+INCLUDE &quot;lib/math.bas&quot;
+INCLUDE &quot;lib/graphics.bas&quot;
+
+FUNC main
+  ? add(5, 3)
+ENDFUNC
+
+@main
+</code></pre></pre>
+<p>The compiler detects circular includes and will report an error if a file includes itself (directly or indirectly). The maximum include depth is 32 levels.</p>
+<p><strong>Note:</strong> <code>INCLUDE</code> is a compile-time directive. It only works when compiling with the command-line compiler, not in the IDE interpreter.</p>
+<h3>REPEAT / R. ... UNTIL <em>condition</em> / U.</h3>
+<p><strong>Loop Until Condition Is True</strong></p>
+<p>The <code>REPEAT</code> loop allows looping with a condition evaluated at the end of each iteration.</p>
+<p>Executes statements between <code>REPEAT</code> and <code>UNTIL</code> once, then evaluates the <em>condition</em>. If false, the loop is executed again, if true the loop ends.</p>
+<p>An <code>EXIT</code> statement also terminates the loop and skips to the end.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">REPEAT
+  ? &quot;Enter password:&quot;
+  INPUT PASSWORD$
+UNTIL PASSWORD$ = &quot;secret&quot;
+</code></pre></pre>
+<h3>WHILE <em>condition</em> / W. ... WEND / WE.</h3>
+<p><strong>Loop While Condition Is True</strong></p>
+<p>The <code>WHILE</code> loop allows looping with a condition evaluated at the beginning of each iteration.</p>
+<p>Firstly it evaluates the condition. If false, it skips the whole loop to the end. If true, it executes the statements between <code>WHILE</code> and <code>WEND</code> and returns to the top to test the condition again.</p>
+<p>An <code>EXIT</code> statement also terminates the loop and skips to the end.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">I = 0
+WHILE I &lt; 10
+  ? I
+  INC I
+WEND
+</code></pre></pre>
+<h2>Graphic and Sound Statements</h2>
+<h3>COLOR <em>num</em> / C.</h3>
+<p><strong>Set Color Number</strong></p>
+<p>Changes the color of <code>PLOT</code>, <code>DRAWTO</code> and the line color on <code>FILLTO</code> to <em>num</em>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">COLOR 1
+PLOT 10, 10
+</code></pre></pre>
+<h3>DRAWTO <em>x</em>, <em>y</em> / DR.</h3>
+<p><strong>Draws A Line</strong></p>
+<p>Draws a line from the last position to the given <em>x</em> and <em>y</em> positions.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PLOT 0, 0
+DRAWTO 100, 100
+</code></pre></pre>
+<h3>FCOLOR <em>num</em> / FC.</h3>
+<p><strong>Sets Fill Color Number</strong></p>
+<p>Changes the filling color of <code>FILLTO</code> operation to <em>num</em>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">FCOLOR 2
+FILLTO 50, 50
+</code></pre></pre>
+<h3>FILLTO <em>x</em>, <em>y</em> / FI.</h3>
+<p><strong>Fill From Line To The Right</strong></p>
+<p>Draws a line from the last position to the given <em>x</em> and <em>y</em> position using <code>COLOR</code> number. For each plotted point it also paints all points to the right with the <code>FCOLOR</code> number, until a point with different color than the first is reached.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">COLOR 1
+FCOLOR 2
+PLOT 10, 10
+FILLTO 50, 10
+</code></pre></pre>
+<h3>GRAPHICS <em>num</em> / G.</h3>
+<p><strong>Sets Graphic Mode</strong></p>
+<p>Sets the graphics mode for graphics operations. Below is a basic chart of GRAPHICS modes, their full screen resolution and number of available colors.</p>
+<p><strong>Text modes:</strong></p>
+<table><thead><tr><th>Mode</th><th>Resolution</th><th># Of Colors</th></tr></thead><tbody><tr><td>GR. 0</td><td>40x24</td><td>2</td></tr><tr><td>GR. 1</td><td>20x24</td><td>5</td></tr><tr><td>GR. 2</td><td>20x12</td><td>5</td></tr><tr><td>GR. 12</td><td>40x24</td><td>5</td></tr><tr><td>GR. 13</td><td>40x12</td><td>5</td></tr></tbody></table>
+<p><strong>Bitmapped graphics modes:</strong></p>
+<table><thead><tr><th>Mode</th><th>Resolution</th><th># Of Colors</th></tr></thead><tbody><tr><td>GR. 3</td><td>40x24</td><td>4</td></tr><tr><td>GR. 4</td><td>80x48</td><td>2</td></tr><tr><td>GR. 5</td><td>80x48</td><td>4</td></tr><tr><td>GR. 6</td><td>160x96</td><td>2</td></tr><tr><td>GR. 7</td><td>160x96</td><td>4</td></tr><tr><td>GR. 8</td><td>320x192</td><td>2</td></tr><tr><td>GR. 9</td><td>80x192</td><td>16 shades</td></tr><tr><td>GR. 10</td><td>80x192</td><td>9</td></tr><tr><td>GR. 11</td><td>80x192</td><td>16 hues</td></tr><tr><td>GR. 14</td><td>160x192</td><td>2</td></tr><tr><td>GR. 15</td><td>160x192</td><td>4</td></tr></tbody></table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><code>GRAPHICS 0</code> and <code>GRAPHICS 8</code> offer two colors, where the &quot;on&quot; pixels may be a different shade (luminance) of the background color&#x27;s hue, but cannot have its own hue. (Television color artifacting effects can be utilized to simulate two additional colors.)</li>
+<li>Mode 0 (and the text window found at the bottom of most other modes) can render 128 different characters (from a character set, aka font) in both normal video, and inverse video, based on whether the high bit of the character is set. See <code>PRINT COLOR()</code>.</li>
+<li>Modes 1 and 2 are text modes that offer multiple colors, but only a single color (plus the background) may be used by any given character cell. The colors are chosen by the two high bits of the character.</li>
+<li>Modes 12 and 13 are multicolor text modes, where every pair of two bits in a character&#x27;s bitmap data are used to represent one of four colors.</li>
+<li>The so-called &quot;GTIA modes&quot; -- 9, 10, and 11 -- offer 16 shades of the given background color, all nine color registers, or 15 hues of a particular brightness, respectively.</li>
+</ul>
+<p>For graphics modes which include a 4-line <code>GRAPHICS 0</code> style text window at the bottom (all but 0, 9, 10, and 11), add 16 to the mode number to disable the text window. (e.g., <code>GRAPHICS 2+16</code>)</p>
+<p>Add 32 to the mode number to prevent the graphics data from being cleared. (Note: Some graphics data may be replaced when changing modes.)</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">GRAPHICS 8
+GRAPHICS 2+16  &#x27; Disable text window
+</code></pre></pre>
+<h3>LOCATE <em>x</em>, <em>y</em>, <em>var</em> / LOC.</h3>
+<p><strong>Get Color Of Pixel</strong></p>
+<p>Reads the color of pixel in the specified <em>x</em> and <em>y</em> coordinates and store into variable <em>var</em>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">LOCATE 10, 10, C
+? &quot;Color at 10,10 is &quot;; C
+</code></pre></pre>
+<h3>PLOT <em>x</em>, <em>y</em> / PL.</h3>
+<p><strong>Plots A Single Point</strong></p>
+<p>Plots a point in the specified <em>x</em> and <em>y</em> coordinates, with the current <code>COLOR</code> number.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">COLOR 1
+PLOT 10, 10
+</code></pre></pre>
+<h3>PMGRAPHICS <em>num</em> / PMG.</h3>
+<p><strong>Player/Missile Graphics Mode</strong></p>
+<p>Set up Atari Player / Missile graphics. A value of 0 disables all player and missiles; a value of 1 sets up single line resolution; a value of 2 sets up double line resolution.</p>
+<p>Single line mode uses 256 bytes per player, while double line uses 128 bytes per player. (Note that all four missiles share the same data.)</p>
+<p>For retrieving the memory address of the player or missile data use the <code>PMADR()</code> function.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PMGRAPHICS 2  &#x27; Double line resolution
+ADDR = PMADR(0)  &#x27; Address of Player 0
+</code></pre></pre>
+<h3>PMHPOS <em>num</em>,<em>pos</em> / PM.</h3>
+<p><strong>Player/Missile Horizontal Move</strong></p>
+<p>Set the horizontal position register for the player or missile <em>num</em> to <em>pos</em>.</p>
+<p>Players 0 to 3 correspond to values 0 to 3 of <em>num</em>; missiles 0 to 3 correspond to the values 4 to 7, respectively.</p>
+<p>This is the same as writing: <code>POKE $D000 + num , pos</code></p>
+<p><strong>Note:</strong> Player/Missile graphics on the Atari are strips that are as tall as the screen, and therefore to move a shape vertically its data must be moved within their 128- or 256-byte buffer (using the <code>MOVE</code> statement, for example).</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PMHPOS 0, 80  &#x27; Move Player 0 to horizontal position 80
+</code></pre></pre>
+<h3>SETCOLOR <em>num</em>, <em>hue</em>, <em>lum</em> / SE.</h3>
+<p><strong>Sets Displayed Color</strong></p>
+<p>Alters the color registers so that color number <em>num</em> has the given <em>hue</em> and <em>luminance</em>.</p>
+<p>To set Player/Missile colors use negative values of <em>num</em>, -4 for player 0, -3 for player 1, -2 for player 2, and -1 for player 3.</p>
+<p>Missiles share the same color as their player, unless you combine them into a &quot;5th Player&quot; by setting bit number 4 of the <code>GPRIOR</code> register, e.g.: <code>POKE 623,16</code>. (You must also move them horizontally in unison if you wish to use them as a true 5th Player.)</p>
+<p>It is possible to cause pixels of certain overlapping players to produce a third color (or black) by setting bit number 5 of the <code>GPRIOR</code> register, e.g. <code>POKE 623,32</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">SETCOLOR 0, 4, 8  &#x27; Set color 0 to hue 4, luminance 8
+SETCOLOR -4, 2, 10  &#x27; Set Player 0 color
+</code></pre></pre>
+<h3>SOUND <em>voice</em>, <em>pitch</em>, <em>dist</em>, <em>vol</em> / S.</h3>
+<h3>SOUND <em>voice</em></h3>
+<h3>SOUND</h3>
+<p><strong>Adjust Voice Sound Parameters</strong></p>
+<p>Adjusts sound parameters for <em>voice</em> (from 0 to 3) of the given <em>pitch</em>, <em>distortion</em> and <em>volume</em>.</p>
+<p>If only the <em>voice</em> parameter is present, that voice is cleared so no sound is produced by that voice.</p>
+<p>If no parameters are given, it clears all voices so that no sounds are produced.</p>
+<p><strong>Note:</strong> TurboBASIC XL offers a <code>DSOUND</code> statement to pair sound channels for increased (16-bit) frequency range. This is not available in FORGE.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">SOUND 0, 121, 10, 8  &#x27; Voice 0, pitch 121, distortion 10, volume 8
+SOUND 0  &#x27; Clear voice 0
+SOUND    &#x27; Clear all voices
+</code></pre></pre>
+<h2>Device Input and Output Statements</h2>
+<h3>BGET #<em>iochn</em>,<em>address</em>,<em>len</em> / BG.</h3>
+<p><strong>Binary Read From File</strong></p>
+<p>Reads <em>length</em> bytes from the channel <em>iochn</em> and writes the bytes to <em>address</em>.</p>
+<p>For example, to read to a byte array, use <code>ADR(array)</code> to specify the address.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DIM buffer(256) BYTE
+BGET #1, ADR(buffer), 256
+</code></pre></pre>
+<h3>BPUT #<em>iochn</em>,<em>address</em>,<em>len</em> / BP.</h3>
+<p><strong>Binary Write To File</strong></p>
+<p>Similar to <code>BGET</code>, but writes <em>length</em> bytes from memory at <em>address</em> to the channel <em>iochn</em>.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DIM buffer(256) BYTE
+BPUT #1, ADR(buffer), 256
+</code></pre></pre>
+<h3>CLOSE #<em>iochn</em> / CL.</h3>
+<p><strong>Close Channel</strong></p>
+<p>Closes the input output channel <em>iochn</em>, finalizing all read/write operations.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p>Note that it is important to read the value of <code>ERR()</code> after close to ensure that written data is really on disk.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">CLOSE #1
+IF ERR() &lt;&gt; 1 THEN ? &quot;Error closing file&quot;
+</code></pre></pre>
+<h3>GET #<em>iochn</em>, <em>var</em>, ...</h3>
+<p><strong>Reads Bytes From File</strong></p>
+<p>Reads one byte from channel <em>iochn</em> and writes the value to <em>var</em>.</p>
+<p><em>var</em> can be a variable name or an array position (like <code>array(123)</code>)</p>
+<p>In case of any error, <code>ERR()</code> returns the error value.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">GET #1, BYTE_VAL
+</code></pre></pre>
+<h3>INPUT #<em>iochn</em>, <em>var</em> / IN.</h3>
+<p><strong>Input Variable Or String From File</strong></p>
+<p>Reads a line from channel <em>iochn</em> and stores to <em>var</em>.</p>
+<p>If <em>var</em> is a string variable, the full line is stored.</p>
+<p>If <em>var</em> is a numeric variable, the line is converted to a number first.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">INPUT #1, LINE$
+INPUT #1, NUMBER
+</code></pre></pre>
+<h3>OPEN #<em>ioc</em>,<em>mode</em>,<em>ax</em>,<em>dev</em> / O.</h3>
+<p><strong>Opens I/O Channel</strong></p>
+<p>Opens I/O channel <em>ioc</em> with <em>mode</em>, <em>aux</em>, over device <em>dev</em>.</p>
+<p>To open a disk file for writing, <em>mode</em> should be 8, <em>aux</em> 0 and <em>dev</em> the file name as &quot;D:name.ext&quot;.</p>
+<p>To open a disk file for reading, <em>mode</em> should be 4, <em>aux</em> 0 and <em>dev</em> the file name as &quot;D:name.ext&quot;.</p>
+<p>See Atari BASIC manual for more documentation in the open modes, aux values, and device names.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">OPEN #1, 4, 0, &quot;D:FILE.TXT&quot;  &#x27; Open for reading
+OPEN #2, 8, 0, &quot;D:OUTPUT.TXT&quot;  &#x27; Open for writing
+</code></pre></pre>
+<h3>PRINT #<em>iochn</em>, ... / ?</h3>
+<p><strong>Print Strings And Numbers To A File</strong></p>
+<p>Uses the same rules as the normal print, but all the output is to the channel <em>iochn</em>. Note that you must put a comma after the channel number, not a semicolon.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p>Note that you can only read the error for the last element printed.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PRINT #1, &quot;Hello, World&quot;
+PRINT #1, &quot;Number: &quot;, 42
+</code></pre></pre>
+<h3>PUT #<em>iochn</em>, <em>num</em> / PU.</h3>
+<p><strong>Outputs One Byte To The File</strong></p>
+<p>Outputs one byte <em>num</em> to the channel <em>iochn</em>.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PUT #1, 65  &#x27; Write byte value 65
+</code></pre></pre>
+<h3>NOTE #<em>iochn</em>, <em>sectVar</em>, <em>byteVar</em> / NO.</h3>
+<p><strong>Get Current File Position</strong></p>
+<p>Gets the current file position for channel <em>iochn</em> and stores the sector number (16-bit) into <em>sectVar</em> and the byte offset within the sector (8-bit) into <em>byteVar</em>.</p>
+<p>This is used for building indexes for random-access file operations. The position returned represents where the next read or write operation will occur.</p>
+<p><em>sectVar</em> and <em>byteVar</em> must be word variables. The sector value ranges from 0 to 65535, and the byte value ranges from 0 to 255.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">NOTE #1, SEC, BYT
+PRINT #1, &quot;Record data&quot;
+</code></pre></pre>
+<p>See <a node="[object Object]" href="/docs/forge/language-reference/advanced-topics/note-point">NOTE/POINT</a> for detailed documentation.</p>
+<h3>POINT #<em>iochn</em>, <em>sectExpr</em>, <em>byteExpr</em> / PO.</h3>
+<p><strong>Set File Position</strong></p>
+<p>Sets the file position for channel <em>iochn</em> to the specified sector <em>sectExpr</em> (16-bit) and byte offset <em>byteExpr</em> (8-bit) within that sector.</p>
+<p>This enables random-access file operations by jumping to a previously saved position (obtained with <code>NOTE</code>).</p>
+<p>The sector value ranges from 0 to 65535, and the byte value ranges from 0 to 255.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">POINT #1, SEC, BYT
+INPUT #1, A$
+</code></pre></pre>
+<p><strong>Note:</strong> <code>NOTE</code> and <code>POINT</code> automatically preserve the AUX1 mode that was set when the file was opened with <code>OPEN</code>, ensuring compatibility with DOS file operations.</p>
+<p>These commands work with disk files (<code>D:</code>) and other devices that support random access. They are undefined or may cause errors on devices that don&#x27;t support positioning, such as the screen editor (<code>E:</code>) or keyboard (<code>K:</code>).</p>
+<p>See <a node="[object Object]" href="/docs/forge/language-reference/advanced-topics/note-point">NOTE/POINT</a> for detailed documentation.</p>
+<h3>STATUS #<em>iochn</em>, <em>statusVar</em> / ST.</h3>
+<p><strong>Get Device Status</strong></p>
+<p>Gets the status of the device on channel <em>iochn</em> and stores the CIO status code into <em>statusVar</em>.</p>
+<p>This command calls the CIO STATUS operation (command 13) on the specified channel. The status code indicates whether the STATUS operation itself succeeded (1 = success, &gt;127 = error).</p>
+<p>After a successful STATUS call, the device handler places device-specific status information into the DVSTAT buffer (memory locations 746-749). Use the <code>DVSTAT()</code> function or helper functions to read this information.</p>
+<p><em>statusVar</em> must be a word variable.</p>
+<p>On any error, <code>ERR()</code> will hold an error code, on success <code>ERR()</code> reads 1.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">STATUS #1, ST
+IF ST = 1 THEN
+  ERR_BITS = DVSTAT(0)
+  SENSE = DVSTAT(1)
+ENDIF
+</code></pre></pre>
+<p>This command is particularly useful with R: devices (Atari 850, R:Verter, BOB-Verter) for checking carrier status, error bits, and buffer counts.</p>
+<h3>XIO #<em>iochn</em>, <em>cmd</em>, <em>aux1</em>, <em>aux2</em>, <em>dev</em> / X.</h3>
+<p><strong>Generic I/O Operation</strong></p>
+<p>Performs a general input/output operation on device <em>dev</em>, over channel <em>ioc</em>, with the command <em>cmd</em> and auxiliary bytes <em>aux1</em> and <em>aux2</em>.</p>
+<p>Note that the arguments of <code>XIO</code> statements are in different order than Atari BASIC, for consistency with other statements the <em>iochn</em> is the first argument.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">XIO #1, 33, 0, 0, &quot;D:FILE.TXT&quot;  &#x27; Delete file
+</code></pre></pre>
+<p>See <a node="[object Object]" href="/docs/forge/language-reference/advanced-topics/xio-reference">XIO Reference</a> for complete XIO command codes.</p>
+<h2>General Statements</h2>
+<h3>&#x27; / .</h3>
+<p><strong>Line Comments</strong></p>
+<p>Any line starting with a dot or an apostrophe will be ignored. This is analogous to <code>REM</code> in Atari BASIC.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">&#x27; This is a comment
+. This is also a comment
+PRINT &quot;Hello&quot;  &#x27; Inline comment
+</code></pre></pre>
+<h3>CLR</h3>
+<p><strong>Clears Variables And Free Memory</strong></p>
+<p>Clears all integer and floating-point variables to 0, all strings to empty strings and frees all memory associated with arrays.</p>
+<p>After <code>CLR</code> you can&#x27;t access arrays without allocating again with <code>DIM</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">CLR  &#x27; Clear all variables and arrays
+</code></pre></pre>
+<h3>DATA <em>arr()</em> [type] = n1,n2, ... / DA.</h3>
+<p><strong>Defines Array With Initial Values</strong></p>
+<p>This statement defines an array of fixed length with the values given.</p>
+<p>The array name should not be used before, and type can be <code>BYTE</code> (abbreviated <code>B.</code>) or <code>WORD</code> (abbreviated <code>W.</code>). If no type is given, a word data is assumed.</p>
+<p>If the name <em>arr</em> ends with a <code>%</code> symbol, this defines a floating point array, in this case you can&#x27;t specify a type. It is important that at least the first element of each line in the data has a decimal point to force storing the data as floating point.</p>
+<p>If you end the <code>DATA</code> statement with a comma, the following line must be another <code>DATA</code> statement without the array name, and so on until the last line.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DATA big() byte = $12,$23,$45,
+DATA       byte = $08,$09,$15
+</code></pre></pre>
+<p>Note that the array can be modified afterwards like a normal array.</p>
+<p><strong>Advanced Usage:</strong></p>
+<p>Byte <code>DATA</code> arrays can be used to include assembler routines (to call via <code>USR</code>), display lists and any other type of binary data.</p>
+<p>To facilitate this, you can include constant strings and the address of other byte <code>DATA</code> array by name.</p>
+<p>All the bytes of the string, including the initial length byte are included into the <code>DATA</code> array.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DATA str() B. = &quot;Hello&quot;, &quot;World&quot;
+X = ADR(str)
+? $(X), $(X+6)
+DATA ad() B. = $AD,str,$A2,0,$60
+? USR(ADR(ad)), str(0)
+</code></pre></pre>
+<p><strong>Loading Data From A File:</strong></p>
+<p>The cross-compiler also supports loading data from a file directly into the program, using the <code>BYTEFILE</code> (abbreviated <code>BYTEF.</code>) and <code>WORDFILE</code> (abbreviated <code>WORDF.</code> or simply <code>F.</code>) types and a file name enclosed in double quotes.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DATA img() bytefile &quot;img.raw&quot;
+DATA pos() wordfile &quot;pos.bin&quot;
+</code></pre></pre>
+<p>The compiler will search the file in the same folder than the current basic source.</p>
+<p><strong>Storing Data Into ROM:</strong></p>
+<p>In addition to the above, the cross compiler allows to specify that the data should be stored in ROM, instead of the default in RAM. This means that the data can&#x27;t be modified in targets that use ROM (cartridges), but will lower RAM usage.</p>
+<p>To specify this, simply add the <code>ROM</code> word after the type:</p>
+<pre><pre class="language-basic"><code class="language-basic">DATA img() ROM 1234,5678
+DATA pos() BYTE ROM 1,2,3,4
+</code></pre></pre>
+<h3>DEC <em>var</em> / DE.</h3>
+<p><strong>Decrements Variable By 1</strong></p>
+<p>Decrements the variable by 1; this is equivalent to &quot;<em>var</em> = <em>var</em> - 1&quot;, but faster.</p>
+<p><em>var</em> can be any integer variable or integer array element.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DEC COUNTER
+</code></pre></pre>
+<h3>DIM <em>arr</em>(<em>size</em>) [type], ... / DI.</h3>
+<h3>DIM <em>var</em>, <em>var$</em>, <em>var%</em> ...</h3>
+<p><strong>Allocate An Array / Define Var</strong></p>
+<p>The <code>DIM</code> statement allows defining arrays of specified length, and declaring variables explicitly, without assigning a value.</p>
+<p>The type must be <code>BYTE</code> (abbreviated <code>B.</code>) to define a byte array, with numbers from 0 to 255, or <code>WORD</code> (can be left out) to define an array with integers from -32768 to 32767.</p>
+<p>If the name <em>arr</em> ends with a <code>$</code> or a <code>%</code> symbol, this defines a string array or floating point array respectively, in this case you can&#x27;t specify a type.</p>
+<p>The size of the array is the number of elements plus one, the elements are numerated from 0, so that an array dimensioned to 10 holds 11 values, from 0 to 10.</p>
+<p>The array is cleared after the <code>DIM</code>, so all elements are 0 or an empty string.</p>
+<p>In the second form, the variables given in the list are defined with the correct type, without giving a default value. The variables can be defined multiple times without an error if the types are always the same.</p>
+<p>You can <code>DIM</code> more than one array or variable by separating the names with commas.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DIM A(10), X, T$
+? A(5), X
+</code></pre></pre>
+<h3>END</h3>
+<p><strong>Ends Program</strong></p>
+<p>Terminates current program. <code>END</code> is only valid at end of input.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">IF DONE THEN END
+</code></pre></pre>
+<h3>INC <em>var</em></h3>
+<p><strong>Increments Variable By 1</strong></p>
+<p>Increments the variable by 1, this is equivalent to &quot;<em>var</em> = <em>var</em> + 1&quot;, but faster.</p>
+<p><em>var</em> can be any integer variable or integer array element.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">INC COUNTER
+</code></pre></pre>
+<h3>PAUSE <em>num</em> / PA.</h3>
+<h3>PAUSE</h3>
+<p><strong>Pauses Execution</strong></p>
+<p>Stops the current execution for the specified amount of time.</p>
+<p><em>num</em> is the time to pause in &quot;jiffies&quot;, this is the number of TV scans in the system; 60 per second in NTSC or 50 per second in PAL.</p>
+<p>Omitting <em>num</em> is the same as giving a value of 0, and pauses until the vertical retrace. This is useful for synchronization to the TV refresh and for fluid animation.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PAUSE 60  &#x27; Pause for 1 second (NTSC)
+PAUSE    &#x27; Wait for vertical retrace
+</code></pre></pre>
+<h3>TIMER / T.</h3>
+<p><strong>Resets Internal Timer</strong></p>
+<p>Resets value returned by <code>TIME</code> function to 0.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">TIMER
+? TIME  &#x27; Will show 0
+</code></pre></pre>
+<h2>Floating Point Statements</h2>
+<p>Those statements are only available in the floating point version.</p>
+<h3>DEG</h3>
+<p><strong>Sets &quot;Degrees&quot; Mode</strong></p>
+<p>Makes all trigonometric functions operate in degrees, so that 360 is the full circle.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DEG
+? SIN(90)  &#x27; Returns 1.0 (sine of 90 degrees)
+</code></pre></pre>
+<h3>RAD</h3>
+<p><strong>Sets &quot;Radians&quot; Mode</strong></p>
+<p>Makes all trigonometric functions operate in radians, so that 2pi is the full circle.</p>
+<p>This mode is the default on startup.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">RAD
+? SIN(3.14159/2)  &#x27; Returns approximately 1.0
+</code></pre></pre>
+<h2>Low Level Statements</h2>
+<p>These are statements that directly modify memory. <strong>Use with care!</strong></p>
+<h3>DPOKE <em>address</em>, <em>value</em> / D.</h3>
+<p><strong>Writes A 16-Bit Number To Memory</strong></p>
+<p>Writes the <em>value</em> to the memory location at <em>address</em> and <em>address+1</em>, using standard CPU order (low byte first).</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DPOKE 560, $4000  &#x27; Write 16-bit value at address 560
+</code></pre></pre>
+<h3>MOVE <em>from</em>, <em>to</em>, <em>length</em> / M.</h3>
+<h3>-MOVE <em>from</em>, <em>to</em>, <em>length</em> / -.</h3>
+<p><strong>Copies Bytes In Memory</strong></p>
+<p>Copies <em>length</em> bytes in memory at address <em>from</em> to address <em>to</em>.</p>
+<p>The <code>MOVE</code> version copies from the lower address to the upper address; the <code>-MOVE</code> version copies from upper address to lower address.</p>
+<p>The difference between the two MOVE statements is in case the memory ranges overlap; if <em>from</em> is lower in memory than <em>to</em>, you need to use <code>-MOVE</code>, else you need to use <code>MOVE</code>, otherwise the result will not be a copy.</p>
+<p><code>MOVE a, b, c</code> is equivalent to:</p>
+<pre><pre class="language-basic"><code class="language-basic">FOR I=0 to c-1
+  POKE b+I, PEEK(a+I)
+NEXT I
+</code></pre></pre>
+<p>On the other hand, <code>-MOVE a, b, c</code> is instead:</p>
+<pre><pre class="language-basic"><code class="language-basic">FOR I=c-1 to 0 STEP -1
+  POKE b+I, PEEK(a+I)
+NEXT I
+</code></pre></pre>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">MOVE $4000, $5000, 256  &#x27; Copy 256 bytes forward
+-MOVE $5000, $4000, 256  &#x27; Copy 256 bytes backward (overlapping)
+</code></pre></pre>
+<h3>MSET <em>address</em>, <em>length</em>, <em>value</em> / MS.</h3>
+<p><strong>Sets Memory To A Value</strong></p>
+<p>Writes <em>length</em> bytes in memory at given <em>address</em> with <em>value</em>.</p>
+<p>This is useful to clear graphics or P/M data, or simply to set a string to a repeated value.</p>
+<p><code>MSET a, b, c</code> is equivalent to:</p>
+<pre><pre class="language-basic"><code class="language-basic">FOR I=0 to b-1
+  POKE a+I, c
+NEXT I
+</code></pre></pre>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">MSET $4000, 1024, 0  &#x27; Clear 1KB of memory
+</code></pre></pre>
+<h3>POKE <em>address</em>, <em>value</em> / P.</h3>
+<p><strong>Writes A Byte To Memory</strong></p>
+<p>Writes the <em>value</em> (modulo 256) to the memory location at <em>address</em>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">POKE 710, 0  &#x27; Set color register 2
+</code></pre></pre>
+<h2>Display List Interrupts</h2>
+<p><em>Note: This is an advanced topic. See <a node="[object Object]" href="/docs/forge/language-reference/advanced-topics/display-list-interrupts">Display List Interrupts</a> for complete documentation.</em></p>
+<h3>DLI SET <em>name</em> = <em>op1</em>, <em>op2</em>, ... / DLIS.</h3>
+<p><strong>Define A New DLI</strong></p>
+<p>Setups a new DLI with the given name and performing the <em>op</em> operations.</p>
+<p>Each operation is of the form: <em>data</em> <code>INTO</code> <em>address</em> or <em>data</em> <code>WSYNC</code> <code>INTO</code> <em>address</em>.</p>
+<p><em>data</em> is one constant byte or the name of a <code>DATA BYTE</code> array, and <em>address</em> is a memory location to modify.</p>
+<p>If <em>data</em> is a <code>DATA</code> array, the first element (at index 0) will be used at the first line with DLI active in the screen, the second element at the second active line, etc.</p>
+<p>The <code>WSYNC</code> word advances one line in the display area (this is done by writing to the <code>WSYNC</code> ANTIC register), so the value is set in the next screen line. You can put the <code>WSYNC</code> word multiple times to advance more than one line. This allows one DLI to modify multiple lines at the screen.</p>
+<p>Multiple <code>INTO</code> words can be used to write more than one register with the same value.</p>
+<p><code>INTO</code> can be abbreviated to <code>I.</code> and <code>WSYNC</code> to <code>W.</code>.</p>
+<p>You can specify any number of operations, but as each one takes some time you could see display artifacts if you use too many.</p>
+<p>Note that by defining a DLI you are simply giving it a name, you need to activate the DLI afterwards.</p>
+<p>You can split a DLI definition over multiple lines, just like <code>DATA</code> by ending a line with a comma and starting the next line with <code>DLI =</code></p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DLI SET d1 = $24 INTO $D01A
+GRAPHICS 0
+POKE DPEEK(560) + 16, 130
+DLI d1
+</code></pre></pre>
+<h3>DLI <em>name</em> / DL.</h3>
+<h3>DLI / DL.</h3>
+<p><strong>Enable/Disable A DLI</strong></p>
+<p>This statement enables the DLI with the given name, the DLI must be defined before in the program.</p>
+<p>This setups the OS DLI pointer to the named DLI and activates the interrupt bit in the display processor (the ANTIC chip), but does not activates on which lines the DLI must be called.</p>
+<p>To define on which lines the DLI is active you must modify the Display List, see the examples in the <a node="[object Object]" href="/docs/forge/language-reference/advanced-topics/display-list-interrupts">Display List Interrupts</a> section.</p>
+<p>You can also pass the name of a <code>DATA BYTE</code> array with a custom machine language routine to the <code>DLI</code> statement, the routine must begin with a <em>PHA</em> and end with <em>PLA</em> and <em>RTI</em>.</p>
+<p>When called without a name, this statement simply disables the DLI, returning the display to the original state.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DLI d1  &#x27; Enable DLI named d1
+DLI     &#x27; Disable DLI
+</code></pre></pre>
+<h2>Atari SIO Statements</h2>
+<p>The Atari Serial Input Output interface is the low-level interface between the Atari 8-bit computers and the serial peripherals, like disk-drives and modems.</p>
+<h3>SIO <em>ddevic</em>, <em>dunit</em>, <em>dcomnd</em>, <em>dstats</em>, <em>dbuf</em>, <em>dtimlo</em>, <em>dbyt</em>, <em>daux1</em>, <em>daux2</em></h3>
+<p><strong>Send Any Command Over SIO</strong></p>
+<p>This function can be used to send any SIO command to any SIO device. For example, this command is used to read or write one sector in a floppy disk, or send special commands to a FujiNet network device.</p>
+<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>DDEVIC</td><td>Device # (e.g. $71)</td></tr><tr><td>DUNIT</td><td>Unit #</td></tr><tr><td>DCOMND</td><td>Command # ($00-$FF)</td></tr><tr><td>DSTATS</td><td>Read($40) / Write($80)</td></tr><tr><td>DBUF</td><td>Target buffer address</td></tr><tr><td>DTIMLO</td><td>Timeout value</td></tr><tr><td>DBYT</td><td># of bytes in payload</td></tr><tr><td>DAUX1</td><td>First Aux parameter</td></tr><tr><td>DAUX2</td><td>Second Aux parameter</td></tr></tbody></table>
+<p>The meanings of each of these is highly dependent on the target device.</p>
+<p>See <a node="[object Object]" href="/docs/forge/language-reference/advanced-topics/sio-operations">SIO Operations</a> for more details.</p>
+<h3>SERR() / SE.</h3>
+<p><strong>Get Last SIO Error Function</strong></p>
+<p>This function returns the value in <code>DSTATS</code>, which contains the error of the last SIO operation from the device.</p>
+<p>In the context of the FujiNet device, can be used, along with <code>DVSTAT+4</code> to determine any error from a network operation.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">SIO $71, 1, $FF, $40, ADR(buffer), 64, 0, 0, 0
+IF SERR() &lt;&gt; 1 THEN ? &quot;SIO error: &quot;; SERR()
+</code></pre></pre>
+<h2>FujiNet Statements</h2>
+<p><em>NOTE:</em> The FujiNet Statements are not available in the integer-only version.</p>
+<p>These are statements that talk to the FujiNet network adapter, and can be used to open network connections, using any protocol supported.</p>
+<p>Each of these statements require a <em>unit</em> number, of which 8 are available, numbered 1-8.</p>
+<p>The general flow of use is:</p>
+<ul>
+<li><code>NOPEN</code> a connection</li>
+<li>In a loop<!-- -->
+<ul>
+<li>Check for any traffic with <code>NSTATUS</code></li>
+<li><code>NGET</code> if needed</li>
+<li>Send any traffic with <code>NPUT</code></li>
+</ul>
+</li>
+<li>When done, <code>NCLOSE</code>.</li>
+</ul>
+<h3>NOPEN <em>unit</em>, <em>mode</em>, <em>trans</em>, <em>url</em> / NO.</h3>
+<p><strong>Open A Network Connection</strong></p>
+<p>Uses <code>N:</code> <em>unit</em> to open a connection to <em>url</em> using the desired <em>mode</em> and <em>trans</em> settings.</p>
+<p><strong>Example URLs:</strong></p>
+<ul>
+<li><code>N:HTTPS://www.gnu.org/licenses/gpl-3.0.txt</code></li>
+</ul>
+<p><strong>Common <em>modes</em>:</strong></p>
+<ul>
+<li>4: READ, mapped e.g. to GET in HTTP</li>
+<li>6: DIRECTORY, e.g. PROPFIND in HTTP</li>
+<li>8: WRITE, mapped e.g. to PUT in HTTP</li>
+<li>12: READ/WRITE, e.g. for TCP</li>
+<li>13: Mapped to POST in HTTP</li>
+</ul>
+<p><strong>Common <em>trans</em>:</strong></p>
+<ul>
+<li>0: No translation of characters.</li>
+<li>1: Change CR to ATASCII EOL.</li>
+<li>2: Change LF to ATASCII EOL.</li>
+<li>3: Change CR and LF to EOL.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">NOPEN 1, 4, 0, &quot;N:HTTPS://example.com/file.txt&quot;
+</code></pre></pre>
+<h3>NCLOSE <em>unit</em> / NC.</h3>
+<p><strong>Close A Network Connection</strong></p>
+<p>Closes a network connection <em>unit</em> previously opened by <code>NOPEN</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">NCLOSE 1
+</code></pre></pre>
+<h3>NSTATUS <em>unit</em> / NS.</h3>
+<p><strong>Get Network Connection Status</strong></p>
+<p>Queries the status of specified network <em>unit</em>. The result is stored in <code>DVSTAT</code> starting at <code>$02EA</code>, and has the format:</p>
+<table><thead><tr><th>Address</th><th>Description</th></tr></thead><tbody><tr><td>$02EA</td><td># of bytes waiting (LO)</td></tr><tr><td>$02EB</td><td># of bytes waiting (HI)</td></tr><tr><td>$02EC</td><td>Connected? (0 or 1)</td></tr><tr><td>$02ED</td><td>Most recent error #</td></tr></tbody></table>
+<p>You can easily get the # of bytes waiting by doing the following:</p>
+<pre><pre class="language-basic"><code class="language-basic">NSTATUS 1
+BW = DPEEK($02EA)
+</code></pre></pre>
+<h3>NGET <em>unit</em>, <em>addr</em>, <em>len</em> / NG.</h3>
+<p><strong>Read Bytes From Network To <em>addr</em></strong></p>
+<p>Reads <em>len</em> bytes from the network connection and stores them at memory address <em>addr</em>.</p>
+<p>When reading, <em>len</em> must be less than, or equal to the number of bytes waiting to be received, or an SIO error will result. Therefore, it is a good idea to figure out how many bytes are waiting using the <code>NSTATUS</code> command.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DIM buffer(1024) BYTE
+NSTATUS 1
+BYTES = DPEEK($02EA)
+IF BYTES &gt; 0 THEN
+  NGET 1, ADR(buffer), BYTES
+ENDIF
+</code></pre></pre>
+<h3>NPUT <em>unit</em>, <em>addr</em>, <em>len</em> / NP.</h3>
+<p><strong>Write Bytes To Network From <em>addr</em></strong></p>
+<p>Writes <em>len</em> bytes to the network connection from memory address <em>addr</em>.</p>
+<p>When writing, <em>len</em> must be less than, or equal to the number of bytes in the source buffer.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">DIM data(100) BYTE
+NPUT 1, ADR(data), 100
+</code></pre></pre>
+<p>For complete documentation, see <a node="[object Object]" href="/docs/forge/language-reference/advanced-topics/fujinet">FujiNet</a>.</p>
+<p>For example all of the available SIO commands for FujiNet Network at this link:
+<a href="https://github.com/FujiNetWIFI/fujinet-platformio/wiki/SIO-Commands-for-Device-IDs-%2471-to-%2478" target="_blank" rel="noopener noreferrer" node="[object Object]">SIO Commands for FujiNet Devices</a></p>
+<h2>Next Steps</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/forge/functions">Functions</a> - Complete function reference</li>
+<li><a node="[object Object]" href="/docs/forge/expressions">Expressions</a> - Expression operators and types</li>
+<li><a node="[object Object]" href="/advanced-topics">Advanced Topics</a> - Advanced programming techniques</li>
+</ul></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"forge","productDocs":{"product":"forge","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/cc65/README.md","relativePath":"cc65/README.md","relativeDir":"cc65","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/attributions.md","relativePath":"about/attributions.md","relativeDir":"about","filename":"attributions","slug":"attributions","name":"attributions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/cio-reference.md","relativePath":"advanced-topics/cio-reference.md","relativeDir":"advanced-topics","filename":"cio-reference","slug":"cio-reference","name":"cio-reference"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/compiling.md","relativePath":"getting-started/compiling.md","relativeDir":"getting-started","filename":"compiling","slug":"compiling","name":"compiling"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/differences.md","relativePath":"getting-started/differences.md","relativeDir":"getting-started","filename":"differences","slug":"differences","name":"differences"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/display-list-interrupts.md","relativePath":"advanced-topics/display-list-interrupts.md","relativeDir":"advanced-topics","filename":"display-list-interrupts","slug":"display-list-interrupts","name":"display-list-interrupts"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-guide.md","relativePath":"editor/editor-guide.md","relativeDir":"editor","filename":"editor-guide","slug":"editor-guide","name":"editor-guide"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-optimization.md","relativePath":"editor/editor-optimization.md","relativeDir":"editor","filename":"editor-optimization","slug":"editor-optimization","name":"editor-optimization"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/expressions.md","relativePath":"language-reference/expressions.md","relativeDir":"language-reference","filename":"expressions","slug":"expressions","name":"expressions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/first-steps.md","relativePath":"getting-started/first-steps.md","relativeDir":"getting-started","filename":"first-steps","slug":"first-steps","name":"first-steps"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/fujinet.md","relativePath":"advanced-topics/fujinet.md","relativeDir":"advanced-topics","filename":"fujinet","slug":"fujinet","name":"fujinet"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/functions.md","relativePath":"language-reference/functions.md","relativeDir":"language-reference","filename":"functions","slug":"functions","name":"functions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/hardware-registers.md","relativePath":"reference/hardware-registers.md","relativeDir":"reference","filename":"hardware-registers","slug":"hardware-registers","name":"hardware-registers"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/index.md","relativePath":"index.md","relativeDir":"","filename":"index","slug":"index","name":"index"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/interrupts.md","relativePath":"reference/interrupts.md","relativeDir":"reference","filename":"interrupts","slug":"interrupts","name":"interrupts"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/introduction.md","relativePath":"getting-started/introduction.md","relativeDir":"getting-started","filename":"introduction","slug":"introduction","name":"introduction"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/iocb-structure.md","relativePath":"reference/iocb-structure.md","relativeDir":"reference","filename":"iocb-structure","slug":"iocb-structure","name":"iocb-structure"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/low-level-programming.md","relativePath":"advanced-topics/low-level-programming.md","relativeDir":"advanced-topics","filename":"low-level-programming","slug":"low-level-programming","name":"low-level-programming"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-map.md","relativePath":"reference/memory-map.md","relativeDir":"reference","filename":"memory-map","slug":"memory-map","name":"memory-map"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-usage.md","relativePath":"reference/memory-usage.md","relativeDir":"reference","filename":"memory-usage","slug":"memory-usage","name":"memory-usage"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/note-point.md","relativePath":"advanced-topics/note-point.md","relativeDir":"advanced-topics","filename":"note-point","slug":"note-point","name":"note-point"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/os-equates.md","relativePath":"reference/os-equates.md","relativeDir":"reference","filename":"os-equates","slug":"os-equates","name":"os-equates"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/r-handler.md","relativePath":"reference/r-handler.md","relativeDir":"reference","filename":"r-handler","slug":"r-handler","name":"r-handler"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/sio-operations.md","relativePath":"advanced-topics/sio-operations.md","relativeDir":"advanced-topics","filename":"sio-operations","slug":"sio-operations","name":"sio-operations"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/statements.md","relativePath":"language-reference/statements.md","relativeDir":"language-reference","filename":"statements","slug":"statements","name":"statements"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/syntax.md","relativePath":"language-reference/syntax.md","relativeDir":"language-reference","filename":"syntax","slug":"syntax","name":"syntax"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/why-forge.md","relativePath":"about/why-forge.md","relativeDir":"about","filename":"why-forge","slug":"why-forge","name":"why-forge"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/xio-reference.md","relativePath":"advanced-topics/xio-reference.md","relativeDir":"advanced-topics","filename":"xio-reference","slug":"xio-reference","name":"xio-reference"}],"navTree":{"cc65":{"_files":[{"name":"README","slug":"readme","path":"cc65/README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/cc65/README.md","isIndex":true}]},"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/README.md","isIndex":true},{"name":"index","slug":"index","path":"index.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/index.md","isIndex":false}],"about":{"_files":[{"name":"attributions","slug":"attributions","path":"about/attributions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/attributions.md","isIndex":false},{"name":"why-forge","slug":"why-forge","path":"about/why-forge.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/why-forge.md","isIndex":false}]},"advanced-topics":{"_files":[{"name":"cio-reference","slug":"cio-reference","path":"advanced-topics/cio-reference.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/cio-reference.md","isIndex":false},{"name":"display-list-interrupts","slug":"display-list-interrupts","path":"advanced-topics/display-list-interrupts.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/display-list-interrupts.md","isIndex":false},{"name":"fujinet","slug":"fujinet","path":"advanced-topics/fujinet.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/fujinet.md","isIndex":false},{"name":"low-level-programming","slug":"low-level-programming","path":"advanced-topics/low-level-programming.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/low-level-programming.md","isIndex":false},{"name":"note-point","slug":"note-point","path":"advanced-topics/note-point.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/note-point.md","isIndex":false},{"name":"sio-operations","slug":"sio-operations","path":"advanced-topics/sio-operations.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/sio-operations.md","isIndex":false},{"name":"xio-reference","slug":"xio-reference","path":"advanced-topics/xio-reference.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/xio-reference.md","isIndex":false}]},"getting-started":{"_files":[{"name":"compiling","slug":"compiling","path":"getting-started/compiling.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/compiling.md","isIndex":false},{"name":"differences","slug":"differences","path":"getting-started/differences.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/differences.md","isIndex":false},{"name":"first-steps","slug":"first-steps","path":"getting-started/first-steps.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/first-steps.md","isIndex":false},{"name":"introduction","slug":"introduction","path":"getting-started/introduction.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/introduction.md","isIndex":false}]},"editor":{"_files":[{"name":"editor-guide","slug":"editor-guide","path":"editor/editor-guide.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-guide.md","isIndex":false},{"name":"editor-optimization","slug":"editor-optimization","path":"editor/editor-optimization.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-optimization.md","isIndex":false}]},"language-reference":{"_files":[{"name":"expressions","slug":"expressions","path":"language-reference/expressions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/expressions.md","isIndex":false},{"name":"functions","slug":"functions","path":"language-reference/functions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/functions.md","isIndex":false},{"name":"statements","slug":"statements","path":"language-reference/statements.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/statements.md","isIndex":false},{"name":"syntax","slug":"syntax","path":"language-reference/syntax.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/syntax.md","isIndex":false}]},"reference":{"_files":[{"name":"hardware-registers","slug":"hardware-registers","path":"reference/hardware-registers.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/hardware-registers.md","isIndex":false},{"name":"interrupts","slug":"interrupts","path":"reference/interrupts.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/interrupts.md","isIndex":false},{"name":"iocb-structure","slug":"iocb-structure","path":"reference/iocb-structure.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/iocb-structure.md","isIndex":false},{"name":"memory-map","slug":"memory-map","path":"reference/memory-map.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-map.md","isIndex":false},{"name":"memory-usage","slug":"memory-usage","path":"reference/memory-usage.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-usage.md","isIndex":false},{"name":"os-equates","slug":"os-equates","path":"reference/os-equates.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/os-equates.md","isIndex":false},{"name":"r-handler","slug":"r-handler","path":"reference/r-handler.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/r-handler.md","isIndex":false}]}}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/statements.md","relativePath":"language-reference/statements.md","relativeDir":"language-reference","filename":"statements","slug":"statements","name":"statements","content":"# Statements\n\nComplete reference for all FORGE statements, organized by category.\n\nIn the following descriptions, statement usage is presented and the abbreviation is given after a `/`.\n\n## Console Print and Input Statements\n\n### GET _var_ / GE.\n\n**Reads Key From Keyboard**\n\nWaits for a key press and writes the key value to _var_, which can be a variable name or an array position (like \"array(123)\").\n\n**Note:** Some keys on the Atari -- the console keys `START`, `SELECT`, and `OPTION`; modifiers `SHIFT` and `CONTROL`; and the `HELP`, `BREAK`, and `RESET` keys -- are not handled in the same way as the main keyboard, and cannot be read by `GET`.\n\n**Hints:**\n- The status of all three console keys may be read via the GTIA `CONSOL` register, `PEEK(53279)`.\n- Whether the `HELP` key is pressed can be detected via the POKEY `KBCODE` register, `PEEK(53769)`.\n- Whether either `SHIFT` key is pressed can be detected via the POKEY `SKCTL` register, `PEEK(53775)`.\n\n**Example:**\n```basic\nGET K\n? \"You pressed: \"; K\n```\n\n### INPUT _var_ / I.\n### INPUT \"prompt\"; _var_\n### INPUT \"prompt\", _var_\n### INPUT ; _var_\n\n**Input Variable Or String**\n\nReads from keyboard/screen and stores the value in _var_.\n\nA \"?\" sign is printed to the screen before input, or the \"prompt\" if given. Also, if there is a comma after the prompt, spaces are printed to align to a column multiple of 10 (similar to how a comma works in `PRINT`). In the case you don't want any prompt, you can use a semicolon alone.\n\nIf the value can't be read because input errors, the error is stored in `ERR()`. Valid errors are 128 if BREAK key is pressed and 136 if CONTROL-3 is pressed.\n\nIn case of a numeric variable, if the value can't be converted to a number, the value 18 is stored in `ERR()`.\n\n**Example:**\n```basic\nINPUT \"Enter your name: \"; NAME$\nINPUT \"Enter age: \", AGE\n```\n\nSee the [Device Input and Output Statements](#device-input-and-output-statements) section for the `INPUT #` usage.\n\n### POSITION _column_, _row_ / POS.\n\n**Moves The Screen Cursor**\n\nMoves the screen cursor position to the given _column_ and _row_, so the next `PRINT` statement outputs at that position.\n\nRows and columns are numerated from 0.\n\n**Example:**\n```basic\nPOSITION 10, 5\nPRINT \"At position 10,5\"\n```\n\n### PRINT _expr_, ... / ?\n### PRINT _expr_ TAB(_expr_) ...\n### PRINT RTAB(_expr_) ...\n### PRINT COLOR(_expr_) ...\n### PRINT _expr_ ; ...\n\n**Print Strings And Numbers**\n\nOutputs strings and numbers to the screen or other output device.\n\nEach _expr_ can be a constant string, a string variable or any complex expression, with commas or semicolons between each expression.\n\nIf the first expression is a device I/O channel (e.g., `PRINT #1,\"HELLO\"`) the output will be sent to that device. In `GRAPHICS` modes other than 0 (e.g., large text `GRAPHICS 2`, multicolor text `GRAPHICS 12`, or even bitmapped graphics modes), use `#6` to write to that part of the screen.\n\nAfter writing the last expression, the cursor advanced to a new line, except if the statement ends in a comma, semicolon or `TAB`, where the cursor stays in the last position.\n\nIf there is a comma before any expression, spaces are printed to advance the printing column to the next multiple of 10, allowing easy printing of tabulated data.\n\nThe `COLOR` function alters the color the text that follows, until the end of the statement, depending on the graphics mode. This is abbreviated `C.`. Use 0 or 128 in graphics 0, for normal or inverse video. Use 0, 32, 128 or 160 in graphics mode 1 and 2 for the four available text colors.\n\n**Example:**\n```basic\n' In GRAPHICS 0:\n? \"NORMAL\"; COLOR(128) \"INVERSE\"\n\n' In GRAPHICS 2:\nS = 1234\n? #6, \"SCORE: \"; COLOR(32) S\n```\n\nThe `TAB` function advances the position to a column multiple of the argument, so that `TAB(10)` is the same as using a comma to separate arguments. This is abbreviated `T.`.\n\nThe `RTAB` function, abbreviated `RT.`, advances the position so that the next argument to print ends just before a column multiple of the argument, right aligning the printing of the data. This function must be immediately followed by a variable or a string to align.\n\nNote that `,`, `TAB` and `RTAB` always print at least one space, and that to separate `TAB` or `RTAB` and the previous and next arguments you can use a `;` or simply a space.\n\n**Example:**\n```basic\nFOR i=0 TO 10\n  n = i*(9-2*i)*134\n  ? TAB(8) \"Val:\" RTAB(20) n\nNEXT\n```\n\n**Advanced Notes:**\n- To implement the spacing on `,`, `TAB` and `RTAB`, FORGE uses the current column in the OS, so that `POSITION` and printing to a graphics screen will work ok, unlike Atari BASIC; but when printing to a file or other devices the number of spaces will not be correct. Avoid using the functions to print to any device except the screen.\n- The `COLOR` function does an *exclusive or* of the given value with the value of each character in the original string before printing.\n- When writing abbreviated code, you can omit the semicolon in almost all places, and just join the values together. Avoid doing this in common code for better readability.\n\n### PUT _num_ / PU.\n\n**Writes A Character To Screen**\n\nOutputs one character to the screen, given by it's ATASCII code.\n\n**Example:**\n```basic\nPUT 65  ' Prints \"A\"\n```\n\n### CLS\n\n**Clears The Screen**\n\nClears the text screen. This is the same as `PUT 125`. For clearing the graphics screen, you can use `CLS #6`.\n\n**Example:**\n```basic\nCLS      ' Clear text screen\nCLS #6   ' Clear graphics screen\n```\n\n## Control Statements\n\n### DO ... LOOP / L.\n\n**Endless Loops**\n\nStarts and ends an endless repetition. When reaching the `LOOP` statement the program begins again, executing from the DO statement.\n\nThe only way to terminate the loop is via an `EXIT` statement.\n\n**Example:**\n```basic\nDO\n  ? \"Looping...\"\n  IF KEY() THEN EXIT\nLOOP\n```\n\n### EXEC _name_ _num1_, ... / EXE. / @\n\n**Calls A Subroutine**\n\nCalls the subroutine _name_, with the optional parameters _num1_ and so on, separated by commas.\n\nNote that you must use the same number of parameters in the `FUNC` definition, before or after the call.\n\nInstead of `EXEC` you can simply use a `@` in front of the function name. (i.e., these are equivalent: `EXEC greet` and `@greet`.)\n\n**Example:**\n```basic\nFUNC greet name\n  ? \"Hello, \"; name\nENDFUNC\n\nEXEC greet \"World\"\n@greet \"FORGE\"\n```\n\n### EXIT / EX.\n\n**Exits From Loop Or Procedure**\n\nExits current loop or subroutine by jumping to the end.\n\nIn case of loops, the program continues after the last statement of the loop. In case of `FUNC`, the program returns to the calling `EXEC`.\n\n**Example:**\n```basic\nDO\n  IF condition THEN EXIT\nLOOP\n```\n\n### FOR _var_=_value_ TO _end_ [STEP _step_] / F. T. S.\n### NEXT _var_ / N.\n\n**Loop Over Values Of A Variable**\n\n`FOR` loop allows performing a loop a specified number of times while keeping a counting variable.\n\nFirst assigns the _value_ to _var_, and starts iterations. _var_ can be any variable name or a word array position (like \"array(2)\").\n\nIn each iteration, the command first compares the value of _var_ with _end_, if the value is past the end it terminates the loop.\n\nAt the end of the loop, _var_ is incremented by _step_ (or 1 if `STEP` is omitted) and the loops repeats.\n\nAn `EXIT` statement also terminates the loop and skips to the end.\n\nNote that if _step_ is positive, the iteration ends when the value of _var_ is bigger than _end_, but if _step_ is negative, the iteration ends if value of _var_ is less than _end_.\n\nAlso, _end_ and _step_ are evaluated only once at beginning of the loop; that value is stored and used for all loop iterations.\n\nIf at the start of the loop _value_ is already past _end_, the loop is completely skipped.\n\nA slightly modified usage of the `FOR` / `NEXT` loop allows for excluding the variable name from `NEXT`; this is required if _var_ is an array.\n\n**Example:**\n```basic\nFOR i=0 TO 1000 STEP 100\n  ? i\nNEXT\n```\n\n### IF _condition_ THEN _statement_ / I. T.\n### IF _condition_ ... ELIF _condition_ / ELI. ... ELSE / EL. ... ENDIF / E.\n\n**Conditional Execution**\n\nThe first form (with `THEN`) executes one _statement_ if the condition is true.\n\nThis differs from Atari BASIC, TurboBASIC XL, and others, which will execute all statements after `THEN` until the end of the line.\n\n**Example:**\n```basic\nA=1\nIF A=0 THEN ? \"ZERO\":? \"THE END\"\n```\n\nResults in `THE END` being printed in FORGE, whereas nothing would be printed in Atari BASIC.\n\nThe second form executes all statements following the `IF` (up until an `ELIF`, `ELSE`, or `ENDIF`) only if the condition is true.\n\nIf the condition is false, optional statements following the `ELSE` (until an `ENDIF`) are executed.\n\nIn case of an `ELIF`, the new condition is tested and acts like a nested `IF` until an `ELSE` or `ENDIF`.\n\n**Example:**\n```basic\nIF condition-1\n  ' Statements executed if condition-1 is true\nELIF condition-2\n  ' Statements executed if condition-1 is false but condition-2 is true\nELIF condition-3\n  ' Also, if condition-1 and condition-2 are false but condition-3 is true\nELSE\n  ' Executed if all of the above conditions are false\nENDIF\n```\n\n### FUNC _name_ _var1_ ... / FU. ... ENDFUNC / ENDF.\n\n**Define A Function Or Procedure**\n\n`FUNC` statement starts the definition of a function or procedure that can be called via `EXEC`, `@`, or in expressions.\n\nYou can pass a list of integer variables separated by spaces after the `FUNC` name to specify a number of parameters, the variables will be set to the values passed by the `EXEC` call. Those variable names are always global, so the values set are seen outside the `FUNC`.\n\nThe number of parameters in the `FUNC` definition and in all the `EXEC` calls must be the same.\n\n**Procedures (no return value):**\n\nIf a `FUNC` does not have a return type (no `$` suffix for strings), it behaves like a procedure. Use `ENDFUNC` to end the function, which automatically emits a return.\n\nProcedures can modify their parameters, which are passed by reference. This allows procedures to return multiple values through parameters.\n\n**Example - Simple procedure:**\n```basic\nFUNC greet name\n  ? \"Hello, \"; name\nENDFUNC\n\n@greet \"World\"\nEXEC greet \"FORGE\"\n```\n\n**Example - Procedure with output parameter:**\n```basic\nFUNC factorial n result\n  IF n \u003c= 1\n    result = 1\n  ELSE\n    @factorial n-1, result\n    result = result * n\n  ENDIF\nENDFUNC\n\nFACT_RESULT = 0\n@factorial 5, FACT_RESULT\n? \"5! = \"; FACT_RESULT  ' Prints 120\n```\n\n**Functions (with return value):**\n\nTo return a value from the function, use the `RETURN` statement followed by an expression. The function will return that value to the caller. Functions can be called in expressions.\n\n**Example:**\n```basic\nFUNC add x y\n  RETURN x + y\nENDFUNC\n\nresult = add(10, 20)\n? result  ' Prints 30\n```\n\n**String functions:**\n\nFor string-returning functions, add a `$` suffix to the function name:\n\n```basic\nFUNC greet$ name\n  RETURN \"Hello, \" + name\nENDFUNC\n\nmessage$ = greet$(\"World\")\n? message$  ' Prints \"Hello, World\"\n```\n\nNote that if the `FUNC` statement is encountered while executing surrounding code, the full function definition is skipped, so `FUNC` / `ENDFUNC` can appear any place in the program.\n\n### RETURN _expr_ / RE.\n\n**Return From Function**\n\nReturns a value from a function. The expression _expr_ is evaluated and returned to the caller.\n\n`RETURN` can only be used inside a `FUNC` definition. When `RETURN` is executed, the function immediately exits and returns the value.\n\nIf a function does not contain a `RETURN` statement, it behaves as a procedure (no return value). The `ENDFUNC` statement automatically handles the return based on whether the function has a return type.\n\n**Example:**\n```basic\nFUNC add x y\n  RETURN x + y\nENDFUNC\n\nresult = add(10, 20)  ' result = 30\n```\n\n**Note:** For string-returning functions, use `RETURN` with a string expression:\n\n```basic\nFUNC greet$ name\n  RETURN \"Hello, \" + name\nENDFUNC\n\nmessage$ = greet$(\"World\")\n```\n\n### INCLUDE \"_filename_\" / IN.\n### INCLUDE ONCE \"_filename_\" / IN. ON.\n### #include \"_filename_\"\n### #INCLUDE \"_filename_\"\n\n**Include Another Source File**\n\nThe `INCLUDE` directive inserts the contents of another source file into the current file at compile time, as if the included file's contents were typed directly at that location.\n\nThis allows you to organize your code into multiple files and build libraries of reusable procedures and functions.\n\nThe filename must be enclosed in double quotes. If the filename doesn't have an extension, `.bas` is automatically appended.\n\n**Path resolution order:**\n1. Directory of the current file\n2. Include search paths (specified with `-I` option on command line)\n3. Current working directory\n\nBoth forward slashes (`/`) and backslashes (`\\`) are accepted as path separators for cross-platform compatibility.\n\nThe `INCLUDE ONCE` variant ensures that a file is included only once, even if multiple `INCLUDE` statements reference it. This is useful for library files that might be included from multiple places.\n\nYou can also use C-style syntax with `#include` or `#INCLUDE` (case insensitive), which behaves exactly like `INCLUDE`.\n\n**Example:**\n```basic\n' main.bas\nINCLUDE \"lib/math.bas\"\nINCLUDE \"lib/graphics.bas\"\n\nFUNC main\n  ? add(5, 3)\nENDFUNC\n\n@main\n```\n\nThe compiler detects circular includes and will report an error if a file includes itself (directly or indirectly). The maximum include depth is 32 levels.\n\n**Note:** `INCLUDE` is a compile-time directive. It only works when compiling with the command-line compiler, not in the IDE interpreter.\n\n### REPEAT / R. ... UNTIL _condition_ / U.\n\n**Loop Until Condition Is True**\n\nThe `REPEAT` loop allows looping with a condition evaluated at the end of each iteration.\n\nExecutes statements between `REPEAT` and `UNTIL` once, then evaluates the _condition_. If false, the loop is executed again, if true the loop ends.\n\nAn `EXIT` statement also terminates the loop and skips to the end.\n\n**Example:**\n```basic\nREPEAT\n  ? \"Enter password:\"\n  INPUT PASSWORD$\nUNTIL PASSWORD$ = \"secret\"\n```\n\n### WHILE _condition_ / W. ... WEND / WE.\n\n**Loop While Condition Is True**\n\nThe `WHILE` loop allows looping with a condition evaluated at the beginning of each iteration.\n\nFirstly it evaluates the condition. If false, it skips the whole loop to the end. If true, it executes the statements between `WHILE` and `WEND` and returns to the top to test the condition again.\n\nAn `EXIT` statement also terminates the loop and skips to the end.\n\n**Example:**\n```basic\nI = 0\nWHILE I \u003c 10\n  ? I\n  INC I\nWEND\n```\n\n## Graphic and Sound Statements\n\n### COLOR _num_ / C.\n\n**Set Color Number**\n\nChanges the color of `PLOT`, `DRAWTO` and the line color on `FILLTO` to _num_.\n\n**Example:**\n```basic\nCOLOR 1\nPLOT 10, 10\n```\n\n### DRAWTO _x_, _y_ / DR.\n\n**Draws A Line**\n\nDraws a line from the last position to the given _x_ and _y_ positions.\n\n**Example:**\n```basic\nPLOT 0, 0\nDRAWTO 100, 100\n```\n\n### FCOLOR _num_ / FC.\n\n**Sets Fill Color Number**\n\nChanges the filling color of `FILLTO` operation to _num_.\n\n**Example:**\n```basic\nFCOLOR 2\nFILLTO 50, 50\n```\n\n### FILLTO _x_, _y_ / FI.\n\n**Fill From Line To The Right**\n\nDraws a line from the last position to the given _x_ and _y_ position using `COLOR` number. For each plotted point it also paints all points to the right with the `FCOLOR` number, until a point with different color than the first is reached.\n\n**Example:**\n```basic\nCOLOR 1\nFCOLOR 2\nPLOT 10, 10\nFILLTO 50, 10\n```\n\n### GRAPHICS _num_ / G.\n\n**Sets Graphic Mode**\n\nSets the graphics mode for graphics operations. Below is a basic chart of GRAPHICS modes, their full screen resolution and number of available colors.\n\n**Text modes:**\n\n| Mode   | Resolution | # Of Colors  |\n|--------|------------|--------------|\n| GR. 0  | 40x24      |        2     |\n| GR. 1  | 20x24      |        5     |\n| GR. 2  | 20x12      |        5     |\n| GR. 12 | 40x24      |        5     |\n| GR. 13 | 40x12      |        5     |\n\n**Bitmapped graphics modes:**\n\n| Mode   | Resolution | # Of Colors   |\n|--------|------------|---------------|\n| GR. 3  | 40x24      |        4      |\n| GR. 4  | 80x48      |        2      |\n| GR. 5  | 80x48      |        4      |\n| GR. 6  | 160x96     |        2      |\n| GR. 7  | 160x96     |        4      |\n| GR. 8  | 320x192    |        2      |\n| GR. 9  | 80x192     |   16 shades   |\n| GR. 10 | 80x192     |        9      |\n| GR. 11 | 80x192     |     16 hues   |\n| GR. 14 | 160x192    |        2      |\n| GR. 15 | 160x192    |        4      |\n\n**Notes:**\n- `GRAPHICS 0` and `GRAPHICS 8` offer two colors, where the \"on\" pixels may be a different shade (luminance) of the background color's hue, but cannot have its own hue. (Television color artifacting effects can be utilized to simulate two additional colors.)\n- Mode 0 (and the text window found at the bottom of most other modes) can render 128 different characters (from a character set, aka font) in both normal video, and inverse video, based on whether the high bit of the character is set. See `PRINT COLOR()`.\n- Modes 1 and 2 are text modes that offer multiple colors, but only a single color (plus the background) may be used by any given character cell. The colors are chosen by the two high bits of the character.\n- Modes 12 and 13 are multicolor text modes, where every pair of two bits in a character's bitmap data are used to represent one of four colors.\n- The so-called \"GTIA modes\" -- 9, 10, and 11 -- offer 16 shades of the given background color, all nine color registers, or 15 hues of a particular brightness, respectively.\n\nFor graphics modes which include a 4-line `GRAPHICS 0` style text window at the bottom (all but 0, 9, 10, and 11), add 16 to the mode number to disable the text window. (e.g., `GRAPHICS 2+16`)\n\nAdd 32 to the mode number to prevent the graphics data from being cleared. (Note: Some graphics data may be replaced when changing modes.)\n\n**Example:**\n```basic\nGRAPHICS 8\nGRAPHICS 2+16  ' Disable text window\n```\n\n### LOCATE _x_, _y_, _var_ / LOC.\n\n**Get Color Of Pixel**\n\nReads the color of pixel in the specified _x_ and _y_ coordinates and store into variable _var_.\n\n**Example:**\n```basic\nLOCATE 10, 10, C\n? \"Color at 10,10 is \"; C\n```\n\n### PLOT _x_, _y_ / PL.\n\n**Plots A Single Point**\n\nPlots a point in the specified _x_ and _y_ coordinates, with the current `COLOR` number.\n\n**Example:**\n```basic\nCOLOR 1\nPLOT 10, 10\n```\n\n### PMGRAPHICS _num_ / PMG.\n\n**Player/Missile Graphics Mode**\n\nSet up Atari Player / Missile graphics. A value of 0 disables all player and missiles; a value of 1 sets up single line resolution; a value of 2 sets up double line resolution.\n\nSingle line mode uses 256 bytes per player, while double line uses 128 bytes per player. (Note that all four missiles share the same data.)\n\nFor retrieving the memory address of the player or missile data use the `PMADR()` function.\n\n**Example:**\n```basic\nPMGRAPHICS 2  ' Double line resolution\nADDR = PMADR(0)  ' Address of Player 0\n```\n\n### PMHPOS _num_,_pos_ / PM.\n\n**Player/Missile Horizontal Move**\n\nSet the horizontal position register for the player or missile _num_ to _pos_.\n\nPlayers 0 to 3 correspond to values 0 to 3 of _num_; missiles 0 to 3 correspond to the values 4 to 7, respectively.\n\nThis is the same as writing: `POKE $D000 + num , pos`\n\n**Note:** Player/Missile graphics on the Atari are strips that are as tall as the screen, and therefore to move a shape vertically its data must be moved within their 128- or 256-byte buffer (using the `MOVE` statement, for example).\n\n**Example:**\n```basic\nPMHPOS 0, 80  ' Move Player 0 to horizontal position 80\n```\n\n### SETCOLOR _num_, _hue_, _lum_ / SE.\n\n**Sets Displayed Color**\n\nAlters the color registers so that color number _num_ has the given _hue_ and _luminance_.\n\nTo set Player/Missile colors use negative values of _num_, -4 for player 0, -3 for player 1, -2 for player 2, and -1 for player 3.\n\nMissiles share the same color as their player, unless you combine them into a \"5th Player\" by setting bit number 4 of the `GPRIOR` register, e.g.: `POKE 623,16`. (You must also move them horizontally in unison if you wish to use them as a true 5th Player.)\n\nIt is possible to cause pixels of certain overlapping players to produce a third color (or black) by setting bit number 5 of the `GPRIOR` register, e.g. `POKE 623,32`.\n\n**Example:**\n```basic\nSETCOLOR 0, 4, 8  ' Set color 0 to hue 4, luminance 8\nSETCOLOR -4, 2, 10  ' Set Player 0 color\n```\n\n### SOUND _voice_, _pitch_, _dist_, _vol_ / S.\n### SOUND _voice_\n### SOUND\n\n**Adjust Voice Sound Parameters**\n\nAdjusts sound parameters for _voice_ (from 0 to 3) of the given _pitch_, _distortion_ and _volume_.\n\nIf only the _voice_ parameter is present, that voice is cleared so no sound is produced by that voice.\n\nIf no parameters are given, it clears all voices so that no sounds are produced.\n\n**Note:** TurboBASIC XL offers a `DSOUND` statement to pair sound channels for increased (16-bit) frequency range. This is not available in FORGE.\n\n**Example:**\n```basic\nSOUND 0, 121, 10, 8  ' Voice 0, pitch 121, distortion 10, volume 8\nSOUND 0  ' Clear voice 0\nSOUND    ' Clear all voices\n```\n\n## Device Input and Output Statements\n\n### BGET #_iochn_,_address_,_len_ / BG.\n\n**Binary Read From File**\n\nReads _length_ bytes from the channel _iochn_ and writes the bytes to _address_.\n\nFor example, to read to a byte array, use `ADR(array)` to specify the address.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\n**Example:**\n```basic\nDIM buffer(256) BYTE\nBGET #1, ADR(buffer), 256\n```\n\n### BPUT #_iochn_,_address_,_len_ / BP.\n\n**Binary Write To File**\n\nSimilar to `BGET`, but writes _length_ bytes from memory at _address_ to the channel _iochn_.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\n**Example:**\n```basic\nDIM buffer(256) BYTE\nBPUT #1, ADR(buffer), 256\n```\n\n### CLOSE #_iochn_ / CL.\n\n**Close Channel**\n\nCloses the input output channel _iochn_, finalizing all read/write operations.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\nNote that it is important to read the value of `ERR()` after close to ensure that written data is really on disk.\n\n**Example:**\n```basic\nCLOSE #1\nIF ERR() \u003c\u003e 1 THEN ? \"Error closing file\"\n```\n\n### GET #_iochn_, _var_, ...\n\n**Reads Bytes From File**\n\nReads one byte from channel _iochn_ and writes the value to _var_.\n\n_var_ can be a variable name or an array position (like `array(123)`)\n\nIn case of any error, `ERR()` returns the error value.\n\n**Example:**\n```basic\nGET #1, BYTE_VAL\n```\n\n### INPUT #_iochn_, _var_ / IN.\n\n**Input Variable Or String From File**\n\nReads a line from channel _iochn_ and stores to _var_.\n\nIf _var_ is a string variable, the full line is stored.\n\nIf _var_ is a numeric variable, the line is converted to a number first.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\n**Example:**\n```basic\nINPUT #1, LINE$\nINPUT #1, NUMBER\n```\n\n### OPEN #_ioc_,_mode_,_ax_,*dev* / O.\n\n**Opens I/O Channel**\n\nOpens I/O channel _ioc_ with _mode_, _aux_, over device *dev*.\n\nTo open a disk file for writing, _mode_ should be 8, _aux_ 0 and *dev* the file name as \"D:name.ext\".\n\nTo open a disk file for reading, _mode_ should be 4, _aux_ 0 and *dev* the file name as \"D:name.ext\".\n\nSee Atari BASIC manual for more documentation in the open modes, aux values, and device names.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\n**Example:**\n```basic\nOPEN #1, 4, 0, \"D:FILE.TXT\"  ' Open for reading\nOPEN #2, 8, 0, \"D:OUTPUT.TXT\"  ' Open for writing\n```\n\n### PRINT #_iochn_, ... / ?\n\n**Print Strings And Numbers To A File**\n\nUses the same rules as the normal print, but all the output is to the channel _iochn_. Note that you must put a comma after the channel number, not a semicolon.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\nNote that you can only read the error for the last element printed.\n\n**Example:**\n```basic\nPRINT #1, \"Hello, World\"\nPRINT #1, \"Number: \", 42\n```\n\n### PUT #_iochn_, _num_ / PU.\n\n**Outputs One Byte To The File**\n\nOutputs one byte _num_ to the channel _iochn_.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\n**Example:**\n```basic\nPUT #1, 65  ' Write byte value 65\n```\n\n### NOTE #_iochn_, _sectVar_, _byteVar_ / NO.\n\n**Get Current File Position**\n\nGets the current file position for channel _iochn_ and stores the sector number (16-bit) into _sectVar_ and the byte offset within the sector (8-bit) into _byteVar_.\n\nThis is used for building indexes for random-access file operations. The position returned represents where the next read or write operation will occur.\n\n_sectVar_ and _byteVar_ must be word variables. The sector value ranges from 0 to 65535, and the byte value ranges from 0 to 255.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\n**Example:**\n```basic\nNOTE #1, SEC, BYT\nPRINT #1, \"Record data\"\n```\n\nSee [NOTE/POINT](../advanced-topics/note-point.md) for detailed documentation.\n\n### POINT #_iochn_, _sectExpr_, _byteExpr_ / PO.\n\n**Set File Position**\n\nSets the file position for channel _iochn_ to the specified sector _sectExpr_ (16-bit) and byte offset _byteExpr_ (8-bit) within that sector.\n\nThis enables random-access file operations by jumping to a previously saved position (obtained with `NOTE`).\n\nThe sector value ranges from 0 to 65535, and the byte value ranges from 0 to 255.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\n**Example:**\n```basic\nPOINT #1, SEC, BYT\nINPUT #1, A$\n```\n\n**Note:** `NOTE` and `POINT` automatically preserve the AUX1 mode that was set when the file was opened with `OPEN`, ensuring compatibility with DOS file operations.\n\nThese commands work with disk files (`D:`) and other devices that support random access. They are undefined or may cause errors on devices that don't support positioning, such as the screen editor (`E:`) or keyboard (`K:`).\n\nSee [NOTE/POINT](../advanced-topics/note-point.md) for detailed documentation.\n\n### STATUS #_iochn_, _statusVar_ / ST.\n\n**Get Device Status**\n\nGets the status of the device on channel _iochn_ and stores the CIO status code into _statusVar_.\n\nThis command calls the CIO STATUS operation (command 13) on the specified channel. The status code indicates whether the STATUS operation itself succeeded (1 = success, \u003e127 = error).\n\nAfter a successful STATUS call, the device handler places device-specific status information into the DVSTAT buffer (memory locations 746-749). Use the `DVSTAT()` function or helper functions to read this information.\n\n_statusVar_ must be a word variable.\n\nOn any error, `ERR()` will hold an error code, on success `ERR()` reads 1.\n\n**Example:**\n```basic\nSTATUS #1, ST\nIF ST = 1 THEN\n  ERR_BITS = DVSTAT(0)\n  SENSE = DVSTAT(1)\nENDIF\n```\n\nThis command is particularly useful with R: devices (Atari 850, R:Verter, BOB-Verter) for checking carrier status, error bits, and buffer counts.\n\n### XIO #_iochn_, _cmd_, _aux1_, _aux2_, *dev* / X.\n\n**Generic I/O Operation**\n\nPerforms a general input/output operation on device *dev*, over channel _ioc_, with the command _cmd_ and auxiliary bytes _aux1_ and _aux2_.\n\nNote that the arguments of `XIO` statements are in different order than Atari BASIC, for consistency with other statements the _iochn_ is the first argument.\n\n**Example:**\n```basic\nXIO #1, 33, 0, 0, \"D:FILE.TXT\"  ' Delete file\n```\n\nSee [XIO Reference](../advanced-topics/xio-reference.md) for complete XIO command codes.\n\n## General Statements\n\n### ' / .\n\n**Line Comments**\n\nAny line starting with a dot or an apostrophe will be ignored. This is analogous to `REM` in Atari BASIC.\n\n**Example:**\n```basic\n' This is a comment\n. This is also a comment\nPRINT \"Hello\"  ' Inline comment\n```\n\n### CLR\n\n**Clears Variables And Free Memory**\n\nClears all integer and floating-point variables to 0, all strings to empty strings and frees all memory associated with arrays.\n\nAfter `CLR` you can't access arrays without allocating again with `DIM`.\n\n**Example:**\n```basic\nCLR  ' Clear all variables and arrays\n```\n\n### DATA _arr()_ [type] = n1,n2, ... / DA.\n\n**Defines Array With Initial Values**\n\nThis statement defines an array of fixed length with the values given.\n\nThe array name should not be used before, and type can be `BYTE` (abbreviated `B.`) or `WORD` (abbreviated `W.`). If no type is given, a word data is assumed.\n\nIf the name _arr_ ends with a `%` symbol, this defines a floating point array, in this case you can't specify a type. It is important that at least the first element of each line in the data has a decimal point to force storing the data as floating point.\n\nIf you end the `DATA` statement with a comma, the following line must be another `DATA` statement without the array name, and so on until the last line.\n\n**Example:**\n```basic\nDATA big() byte = $12,$23,$45,\nDATA       byte = $08,$09,$15\n```\n\nNote that the array can be modified afterwards like a normal array.\n\n**Advanced Usage:**\n\nByte `DATA` arrays can be used to include assembler routines (to call via `USR`), display lists and any other type of binary data.\n\nTo facilitate this, you can include constant strings and the address of other byte `DATA` array by name.\n\nAll the bytes of the string, including the initial length byte are included into the `DATA` array.\n\n**Example:**\n```basic\nDATA str() B. = \"Hello\", \"World\"\nX = ADR(str)\n? $(X), $(X+6)\nDATA ad() B. = $AD,str,$A2,0,$60\n? USR(ADR(ad)), str(0)\n```\n\n**Loading Data From A File:**\n\nThe cross-compiler also supports loading data from a file directly into the program, using the `BYTEFILE` (abbreviated `BYTEF.`) and `WORDFILE` (abbreviated `WORDF.` or simply `F.`) types and a file name enclosed in double quotes.\n\n**Example:**\n```basic\nDATA img() bytefile \"img.raw\"\nDATA pos() wordfile \"pos.bin\"\n```\n\nThe compiler will search the file in the same folder than the current basic source.\n\n**Storing Data Into ROM:**\n\nIn addition to the above, the cross compiler allows to specify that the data should be stored in ROM, instead of the default in RAM. This means that the data can't be modified in targets that use ROM (cartridges), but will lower RAM usage.\n\nTo specify this, simply add the `ROM` word after the type:\n\n```basic\nDATA img() ROM 1234,5678\nDATA pos() BYTE ROM 1,2,3,4\n```\n\n### DEC _var_ / DE.\n\n**Decrements Variable By 1**\n\nDecrements the variable by 1; this is equivalent to \"_var_ = _var_ - 1\", but faster.\n\n_var_ can be any integer variable or integer array element.\n\n**Example:**\n```basic\nDEC COUNTER\n```\n\n### DIM _arr_(_size_) [type], ... / DI.\n### DIM _var_, _var$_, _var%_ ...\n\n**Allocate An Array / Define Var**\n\nThe `DIM` statement allows defining arrays of specified length, and declaring variables explicitly, without assigning a value.\n\nThe type must be `BYTE` (abbreviated `B.`) to define a byte array, with numbers from 0 to 255, or `WORD` (can be left out) to define an array with integers from -32768 to 32767.\n\nIf the name _arr_ ends with a `$` or a `%` symbol, this defines a string array or floating point array respectively, in this case you can't specify a type.\n\nThe size of the array is the number of elements plus one, the elements are numerated from 0, so that an array dimensioned to 10 holds 11 values, from 0 to 10.\n\nThe array is cleared after the `DIM`, so all elements are 0 or an empty string.\n\nIn the second form, the variables given in the list are defined with the correct type, without giving a default value. The variables can be defined multiple times without an error if the types are always the same.\n\nYou can `DIM` more than one array or variable by separating the names with commas.\n\n**Example:**\n```basic\nDIM A(10), X, T$\n? A(5), X\n```\n\n### END\n\n**Ends Program**\n\nTerminates current program. `END` is only valid at end of input.\n\n**Example:**\n```basic\nIF DONE THEN END\n```\n\n### INC _var_\n\n**Increments Variable By 1**\n\nIncrements the variable by 1, this is equivalent to \"_var_ = _var_ + 1\", but faster.\n\n_var_ can be any integer variable or integer array element.\n\n**Example:**\n```basic\nINC COUNTER\n```\n\n### PAUSE _num_ / PA.\n### PAUSE\n\n**Pauses Execution**\n\nStops the current execution for the specified amount of time.\n\n_num_ is the time to pause in \"jiffies\", this is the number of TV scans in the system; 60 per second in NTSC or 50 per second in PAL.\n\nOmitting _num_ is the same as giving a value of 0, and pauses until the vertical retrace. This is useful for synchronization to the TV refresh and for fluid animation.\n\n**Example:**\n```basic\nPAUSE 60  ' Pause for 1 second (NTSC)\nPAUSE    ' Wait for vertical retrace\n```\n\n### TIMER / T.\n\n**Resets Internal Timer**\n\nResets value returned by `TIME` function to 0.\n\n**Example:**\n```basic\nTIMER\n? TIME  ' Will show 0\n```\n\n## Floating Point Statements\n\nThose statements are only available in the floating point version.\n\n### DEG\n\n**Sets \"Degrees\" Mode**\n\nMakes all trigonometric functions operate in degrees, so that 360 is the full circle.\n\n**Example:**\n```basic\nDEG\n? SIN(90)  ' Returns 1.0 (sine of 90 degrees)\n```\n\n### RAD\n\n**Sets \"Radians\" Mode**\n\nMakes all trigonometric functions operate in radians, so that 2pi is the full circle.\n\nThis mode is the default on startup.\n\n**Example:**\n```basic\nRAD\n? SIN(3.14159/2)  ' Returns approximately 1.0\n```\n\n## Low Level Statements\n\nThese are statements that directly modify memory. **Use with care!**\n\n### DPOKE _address_, _value_ / D.\n\n**Writes A 16-Bit Number To Memory**\n\nWrites the _value_ to the memory location at _address_ and _address+1_, using standard CPU order (low byte first).\n\n**Example:**\n```basic\nDPOKE 560, $4000  ' Write 16-bit value at address 560\n```\n\n### MOVE _from_, _to_, _length_ / M.\n### -MOVE _from_, _to_, _length_ / -.\n\n**Copies Bytes In Memory**\n\nCopies _length_ bytes in memory at address _from_ to address _to_.\n\nThe `MOVE` version copies from the lower address to the upper address; the `-MOVE` version copies from upper address to lower address.\n\nThe difference between the two MOVE statements is in case the memory ranges overlap; if _from_ is lower in memory than _to_, you need to use `-MOVE`, else you need to use `MOVE`, otherwise the result will not be a copy.\n\n`MOVE a, b, c` is equivalent to:\n```basic\nFOR I=0 to c-1\n  POKE b+I, PEEK(a+I)\nNEXT I\n```\n\nOn the other hand, `-MOVE a, b, c` is instead:\n```basic\nFOR I=c-1 to 0 STEP -1\n  POKE b+I, PEEK(a+I)\nNEXT I\n```\n\n**Example:**\n```basic\nMOVE $4000, $5000, 256  ' Copy 256 bytes forward\n-MOVE $5000, $4000, 256  ' Copy 256 bytes backward (overlapping)\n```\n\n### MSET _address_, _length_, _value_ / MS.\n\n**Sets Memory To A Value**\n\nWrites _length_ bytes in memory at given _address_ with _value_.\n\nThis is useful to clear graphics or P/M data, or simply to set a string to a repeated value.\n\n`MSET a, b, c` is equivalent to:\n```basic\nFOR I=0 to b-1\n  POKE a+I, c\nNEXT I\n```\n\n**Example:**\n```basic\nMSET $4000, 1024, 0  ' Clear 1KB of memory\n```\n\n### POKE _address_, _value_ / P.\n\n**Writes A Byte To Memory**\n\nWrites the _value_ (modulo 256) to the memory location at _address_.\n\n**Example:**\n```basic\nPOKE 710, 0  ' Set color register 2\n```\n\n## Display List Interrupts\n\n*Note: This is an advanced topic. See [Display List Interrupts](../advanced-topics/display-list-interrupts.md) for complete documentation.*\n\n### DLI SET _name_ = _op1_, _op2_, ... / DLIS.\n\n**Define A New DLI**\n\nSetups a new DLI with the given name and performing the _op_ operations.\n\nEach operation is of the form: _data_ `INTO` _address_ or _data_ `WSYNC` `INTO` _address_.\n\n_data_ is one constant byte or the name of a `DATA BYTE` array, and _address_ is a memory location to modify.\n\nIf _data_ is a `DATA` array, the first element (at index 0) will be used at the first line with DLI active in the screen, the second element at the second active line, etc.\n\nThe `WSYNC` word advances one line in the display area (this is done by writing to the `WSYNC` ANTIC register), so the value is set in the next screen line. You can put the `WSYNC` word multiple times to advance more than one line. This allows one DLI to modify multiple lines at the screen.\n\nMultiple `INTO` words can be used to write more than one register with the same value.\n\n`INTO` can be abbreviated to `I.` and `WSYNC` to `W.`.\n\nYou can specify any number of operations, but as each one takes some time you could see display artifacts if you use too many.\n\nNote that by defining a DLI you are simply giving it a name, you need to activate the DLI afterwards.\n\nYou can split a DLI definition over multiple lines, just like `DATA` by ending a line with a comma and starting the next line with `DLI =`\n\n**Example:**\n```basic\nDLI SET d1 = $24 INTO $D01A\nGRAPHICS 0\nPOKE DPEEK(560) + 16, 130\nDLI d1\n```\n\n### DLI _name_ / DL.\n### DLI / DL.\n\n**Enable/Disable A DLI**\n\nThis statement enables the DLI with the given name, the DLI must be defined before in the program.\n\nThis setups the OS DLI pointer to the named DLI and activates the interrupt bit in the display processor (the ANTIC chip), but does not activates on which lines the DLI must be called.\n\nTo define on which lines the DLI is active you must modify the Display List, see the examples in the [Display List Interrupts](../advanced-topics/display-list-interrupts.md) section.\n\nYou can also pass the name of a `DATA BYTE` array with a custom machine language routine to the `DLI` statement, the routine must begin with a _PHA_ and end with _PLA_ and _RTI_.\n\nWhen called without a name, this statement simply disables the DLI, returning the display to the original state.\n\n**Example:**\n```basic\nDLI d1  ' Enable DLI named d1\nDLI     ' Disable DLI\n```\n\n## Atari SIO Statements\n\nThe Atari Serial Input Output interface is the low-level interface between the Atari 8-bit computers and the serial peripherals, like disk-drives and modems.\n\n### SIO _ddevic_, _dunit_, _dcomnd_, _dstats_, _dbuf_, _dtimlo_, _dbyt_, _daux1_, _daux2_\n\n**Send Any Command Over SIO**\n\nThis function can be used to send any SIO command to any SIO device. For example, this command is used to read or write one sector in a floppy disk, or send special commands to a FujiNet network device.\n\n| Parameter | Description            |\n|-----------|------------------------|\n| DDEVIC    | Device # (e.g. $71)    |\n| DUNIT     | Unit #                 |\n| DCOMND    | Command # ($00-$FF)    |\n| DSTATS    | Read($40) / Write($80) |\n| DBUF      | Target buffer address  |\n| DTIMLO    | Timeout value          |\n| DBYT      | # of bytes in payload  |\n| DAUX1     | First Aux parameter   |\n| DAUX2     | Second Aux parameter  |\n\nThe meanings of each of these is highly dependent on the target device.\n\nSee [SIO Operations](../advanced-topics/sio-operations.md) for more details.\n\n### SERR() / SE.\n\n**Get Last SIO Error Function**\n\nThis function returns the value in `DSTATS`, which contains the error of the last SIO operation from the device.\n\nIn the context of the FujiNet device, can be used, along with `DVSTAT+4` to determine any error from a network operation.\n\n**Example:**\n```basic\nSIO $71, 1, $FF, $40, ADR(buffer), 64, 0, 0, 0\nIF SERR() \u003c\u003e 1 THEN ? \"SIO error: \"; SERR()\n```\n\n## FujiNet Statements\n\n*NOTE:* The FujiNet Statements are not available in the integer-only version.\n\nThese are statements that talk to the FujiNet network adapter, and can be used to open network connections, using any protocol supported.\n\nEach of these statements require a _unit_ number, of which 8 are available, numbered 1-8.\n\nThe general flow of use is:\n* `NOPEN` a connection\n* In a loop\n  * Check for any traffic with `NSTATUS`\n  * `NGET` if needed\n  * Send any traffic with `NPUT`\n* When done, `NCLOSE`.\n\n### NOPEN _unit_, _mode_, _trans_, _url_ / NO.\n\n**Open A Network Connection**\n\nUses `N:` _unit_ to open a connection to _url_ using the desired _mode_ and _trans_ settings.\n\n**Example URLs:**\n- `N:HTTPS://www.gnu.org/licenses/gpl-3.0.txt`\n\n**Common _modes_:**\n- 4: READ, mapped e.g. to GET in HTTP\n- 6: DIRECTORY, e.g. PROPFIND in HTTP\n- 8: WRITE, mapped e.g. to PUT in HTTP\n- 12: READ/WRITE, e.g. for TCP\n- 13: Mapped to POST in HTTP\n\n**Common _trans_:**\n- 0: No translation of characters.\n- 1: Change CR to ATASCII EOL.\n- 2: Change LF to ATASCII EOL.\n- 3: Change CR and LF to EOL.\n\n**Example:**\n```basic\nNOPEN 1, 4, 0, \"N:HTTPS://example.com/file.txt\"\n```\n\n### NCLOSE _unit_ / NC.\n\n**Close A Network Connection**\n\nCloses a network connection _unit_ previously opened by `NOPEN`.\n\n**Example:**\n```basic\nNCLOSE 1\n```\n\n### NSTATUS _unit_ / NS.\n\n**Get Network Connection Status**\n\nQueries the status of specified network _unit_. The result is stored in `DVSTAT` starting at `$02EA`, and has the format:\n\n| Address | Description             |\n|---------|-------------------------|\n| $02EA   | # of bytes waiting (LO) |\n| $02EB   | # of bytes waiting (HI) |\n| $02EC   | Connected? (0 or 1)     |\n| $02ED   | Most recent error #     |\n\nYou can easily get the # of bytes waiting by doing the following:\n\n```basic\nNSTATUS 1\nBW = DPEEK($02EA)\n```\n\n### NGET _unit_, _addr_, _len_ / NG.\n\n**Read Bytes From Network To _addr_**\n\nReads _len_ bytes from the network connection and stores them at memory address _addr_.\n\nWhen reading, _len_ must be less than, or equal to the number of bytes waiting to be received, or an SIO error will result. Therefore, it is a good idea to figure out how many bytes are waiting using the `NSTATUS` command.\n\n**Example:**\n```basic\nDIM buffer(1024) BYTE\nNSTATUS 1\nBYTES = DPEEK($02EA)\nIF BYTES \u003e 0 THEN\n  NGET 1, ADR(buffer), BYTES\nENDIF\n```\n\n### NPUT _unit_, _addr_, _len_ / NP.\n\n**Write Bytes To Network From _addr_**\n\nWrites _len_ bytes to the network connection from memory address _addr_.\n\nWhen writing, _len_ must be less than, or equal to the number of bytes in the source buffer.\n\n**Example:**\n```basic\nDIM data(100) BYTE\nNPUT 1, ADR(data), 100\n```\n\nFor complete documentation, see [FujiNet](../advanced-topics/fujinet.md).\n\nFor example all of the available SIO commands for FujiNet Network at this link:\n[SIO Commands for FujiNet Devices](https://github.com/FujiNetWIFI/fujinet-platformio/wiki/SIO-Commands-for-Device-IDs-%2471-to-%2478)\n\n## Next Steps\n\n- [Functions](functions.md) - Complete function reference\n- [Expressions](expressions.md) - Expression operators and types\n- [Advanced Topics](../advanced-topics/) - Advanced programming techniques\n"},"currentPath":"language-reference/statements"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["forge","language-reference","statements"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

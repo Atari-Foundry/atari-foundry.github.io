@@ -1,0 +1,301 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">EXAMPLES | atrforge Documentation | Atari Foundry</title><meta name="description" content="atrforge documentation: EXAMPLES" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">atrforge<!-- --> Documentation</p><h1 class="page-title">EXAMPLES</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/advanced">ADVANCED</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atr-format">ATR FORMAT</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atrcp">ATRCP</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atrforge">ATRFORGE</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/attributions">ATTRIBUTIONS</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/boot-files">BOOT FILES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/changelog">CHANGELOG</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/convertatr">CONVERTATR</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/dos-formats">DOS FORMATS</a></li><li><a class="doc-link active" style="padding-left:0rem" href="/docs/atrforge/examples">EXAMPLES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/file-attributes">FILE ATTRIBUTES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/installation">INSTALLATION</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/lsatr">LSATR</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/troubleshooting">TROUBLESHOOTING</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/utf8-conversion">UTF8 CONVERSION</a></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>Usage Examples</h1>
+<p>Here are some real-world examples of using atrforge tools. These are actual scenarios you might encounter, with actual commands you can use. No theory, just practice.</p>
+<h2>Basic Image Creation</h2>
+<h3>Simple Disk Image</h3>
+<p>Create a basic disk image with a few files:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge mydisk.atr file1.com file2.bas file3.txt
+</code></pre></pre>
+<p>That&#x27;s it. Three files, one disk. Simple.</p>
+<h3>Organized Disk Image</h3>
+<p>Create a disk with organized directories:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge organized.atr \
+    games/ game1.com game2.com \
+    utils/ util1.com util2.com \
+    docs/ readme.txt manual.txt
+</code></pre></pre>
+<p>This creates:</p>
+<ul>
+<li><code>games/game1.com</code> and <code>games/game2.com</code></li>
+<li><code>utils/util1.com</code> and <code>utils/util2.com</code></li>
+<li><code>docs/readme.txt</code> and <code>docs/manual.txt</code></li>
+</ul>
+<p>Organization is good. Your future self will thank you.</p>
+<h2>Bootable Disks</h2>
+<h3>Simple Bootable Game</h3>
+<p>Create a bootable game disk:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -b game.atr mygame.com
+</code></pre></pre>
+<p>Boot the Atari with this disk, and the game runs automatically. No typing required.</p>
+<h3>Bootable Disk with DOS</h3>
+<p>Create a bootable disk with DOS and startup file:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge bwdos.atr \
+    dos/ -b +ph dos/xbw130.dos \
+    +p startup.bat \
+    config.sys
+</code></pre></pre>
+<p>This creates:</p>
+<ul>
+<li>Bootable disk (DOS boots automatically)</li>
+<li>DOS file is hidden and protected</li>
+<li>Startup file is protected</li>
+<li>Config file is regular</li>
+</ul>
+<h3>Bootable Disk with Relocated Bootloader</h3>
+<p>If your game loads at a low address that conflicts with the bootloader:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -B 6 -b game.atr mygame.com
+</code></pre></pre>
+<p>This moves the bootloader to page 6, leaving page 7 free for your game.</p>
+<h2>File Attributes</h2>
+<h3>Protected System Files</h3>
+<p>Create a disk with protected system files:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge system.atr \
+    +p config.sys \
+    +p autoexec.bat \
+    normal.com
+</code></pre></pre>
+<p>System files are protected, regular files are not.</p>
+<h3>Hidden Files</h3>
+<p>Create a disk with hidden files:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge disk.atr \
+    +h secret.com \
+    visible.com
+</code></pre></pre>
+<p><code>secret.com</code> is hidden, <code>visible.com</code> is not. On SpartaDOS-X, hidden files won&#x27;t show in normal directory listings.</p>
+<h3>Combined Attributes</h3>
+<p>Create a disk with files that have multiple attributes:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge disk.atr \
+    +ph system.com \
+    +pa backup.com \
+    normal.com
+</code></pre></pre>
+<ul>
+<li><code>system.com</code> is protected and hidden</li>
+<li><code>backup.com</code> is protected and archived</li>
+<li><code>normal.com</code> has no special attributes</li>
+</ul>
+<h2>Adding Files to Existing Images</h2>
+<h3>Add Single File</h3>
+<p>Add a file to an existing disk:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -a existing.atr newfile.com
+</code></pre></pre>
+<p>The original disk is backed up automatically (as <code>existing.atr.bak</code>).</p>
+<h3>Add Multiple Files</h3>
+<p>Add several files at once:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -a existing.atr file1.com file2.bas file3.txt
+</code></pre></pre>
+<p>All files are added in one operation.</p>
+<h3>Add Files to Subdirectory</h3>
+<p>Add files to a subdirectory:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -a existing.atr games/ newgame1.com newgame2.com
+</code></pre></pre>
+<p>The <code>games/</code> directory is created if it doesn&#x27;t exist.</p>
+<h2>Listing and Extracting</h2>
+<h3>List Files</h3>
+<p>See what&#x27;s in a disk image:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr disk.atr
+</code></pre></pre>
+<p>Simple listing of all files.</p>
+<h3>Atari-Style Listing</h3>
+<p>List files in native Atari format:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -a disk.atr
+</code></pre></pre>
+<p>For that authentic Atari directory listing feel.</p>
+<h3>Extract All Files</h3>
+<p>Extract everything to a directory:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -X extracted/ disk.atr
+</code></pre></pre>
+<p>All files are extracted, preserving directory structure.</p>
+<h3>Extract with Lowercase Names</h3>
+<p>Extract files with lowercase filenames:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -l -X output/ disk.atr
+</code></pre></pre>
+<p>Useful if you&#x27;re working on a case-sensitive filesystem.</p>
+<h3>Verify Image</h3>
+<p>Check if an image is valid:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr --verify disk.atr
+</code></pre></pre>
+<p>Quick check to see if the image is okay.</p>
+<h2>Converting Images</h2>
+<h3>Resize Image</h3>
+<p>Make a disk bigger:</p>
+<pre><pre class="language-bash"><code class="language-bash">convertatr --resize 1440 disk1.atr disk1_large.atr
+</code></pre></pre>
+<p>Resizes to 1440 sectors (360k).</p>
+<h3>Convert Sector Size</h3>
+<p>Convert from 128-byte to 256-byte sectors:</p>
+<pre><pre class="language-bash"><code class="language-bash">convertatr --sector-size 256 disk128.atr disk256.atr
+</code></pre></pre>
+<p>Changes the sector size while preserving data.</p>
+<h3>Resize and Convert</h3>
+<p>Do both at once:</p>
+<pre><pre class="language-bash"><code class="language-bash">convertatr --resize 1440 --sector-size 256 disk.atr newdisk.atr
+</code></pre></pre>
+<p>Efficient! Two operations in one command.</p>
+<h2>Copying Files</h2>
+<h3>Extract Single File</h3>
+<p>Extract one file from a disk:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrcp disk.atr:MYFILE.COM myfile.com
+</code></pre></pre>
+<p>Just that one file, nothing else.</p>
+<h3>Add Single File</h3>
+<p>Add one file to a disk:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrcp myfile.com disk.atr:MYFILE.COM
+</code></pre></pre>
+<p>Updates the disk, creates a backup automatically.</p>
+<h3>Add File with Same Name</h3>
+<p>Add a file using its original name:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrcp myfile.com disk.atr:
+</code></pre></pre>
+<p>The <code>:</code> with no path uses the source filename.</p>
+<h3>Add File to Subdirectory</h3>
+<p>Add a file to a subdirectory:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrcp game.com disk.atr:GAMES/GAME.COM
+</code></pre></pre>
+<p>Directory is created automatically if needed.</p>
+<h2>UTF8/ATASCII Conversion</h2>
+<h3>Edit a BASIC File</h3>
+<p>Complete workflow for editing a BASIC file:</p>
+<pre><pre class="language-bash"><code class="language-bash"># 1. Extract and convert to UTF8
+atrcp --to-utf8 disk.atr:PROGRAM.BAS program.bas
+
+# 2. Edit in your favorite editor
+vim program.bas
+
+# 3. Add back and convert to ATASCII
+atrcp --to-atascii program.bas disk.atr:PROGRAM.BAS
+</code></pre></pre>
+<p>Now you can edit Atari BASIC files in modern editors.</p>
+<h3>Create Image with UTF8 Conversion</h3>
+<p>Create a disk, converting files from UTF8 to ATASCII:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge --to-atascii disk.atr edited.bas converted.txt
+</code></pre></pre>
+<p>Files are converted during image creation.</p>
+<h3>Convert Entire Image</h3>
+<p>Convert all files in an image to UTF8:</p>
+<pre><pre class="language-bash"><code class="language-bash">convertatr --convert-utf8 --resize 1440 disk.atr disk_utf8.atr
+</code></pre></pre>
+<p>Creates a new image with all files converted.</p>
+<h3>Extract with 7-bit Mode</h3>
+<p>Extract a file as 7-bit ASCII:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrcp --7bit --to-utf8 disk.atr:FILE.TXT file.txt
+</code></pre></pre>
+<p>Strips the high bit for maximum compatibility.</p>
+<h2>Real-World Scenarios</h2>
+<h3>Creating a Game Distribution Disk</h3>
+<p>Create a professional game disk:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge gamedisk.atr \
+    -b game.com \
+    +p readme.txt \
+    +p license.txt \
+    docs/ manual.txt
+</code></pre></pre>
+<ul>
+<li>Game boots automatically</li>
+<li>Documentation is protected</li>
+<li>Organized structure</li>
+</ul>
+<h3>Archiving Old Disks</h3>
+<p>Extract files from old disks for archival:</p>
+<pre><pre class="language-bash"><code class="language-bash"># Extract all files
+lsatr -X archive/ olddisk1.atr olddisk2.atr olddisk3.atr
+
+# Verify images first
+lsatr --verify olddisk1.atr
+lsatr --verify olddisk2.atr
+lsatr --verify olddisk3.atr
+</code></pre></pre>
+<p>Preserve old software for posterity.</p>
+<h3>Updating a Single File</h3>
+<p>Update one file on a disk:</p>
+<pre><pre class="language-bash"><code class="language-bash"># Extract the file
+atrcp --to-utf8 disk.atr:CONFIG.TXT config.txt
+
+# Edit it
+vim config.txt
+
+# Add it back
+atrcp --to-atascii config.txt disk.atr:CONFIG.TXT
+</code></pre></pre>
+<p>Quick update without recreating the entire disk.</p>
+<h3>Converting Old Images</h3>
+<p>Convert old 128-byte sector images to 256-byte:</p>
+<pre><pre class="language-bash"><code class="language-bash">convertatr --sector-size 256 old128.atr new256.atr
+</code></pre></pre>
+<p>Modernize old disk images.</p>
+<h3>Creating a Bootable Development Disk</h3>
+<p>Create a disk for development work:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge devdisk.atr \
+    -b devtool.com \
+    source/ file1.bas file2.bas \
+    data/ data1.dat data2.dat \
+    +p config.cfg
+</code></pre></pre>
+<ul>
+<li>Development tool boots automatically</li>
+<li>Source files organized</li>
+<li>Config file protected</li>
+</ul>
+<h2>Batch Operations</h2>
+<h3>Extract Multiple Images</h3>
+<p>Extract files from multiple images:</p>
+<pre><pre class="language-bash"><code class="language-bash">for img in *.atr; do
+    mkdir -p &quot;extracted/${img%.atr}&quot;
+    lsatr -X &quot;extracted/${img%.atr}/&quot; &quot;$img&quot;
+done
+</code></pre></pre>
+<p>Extract all ATR files in the current directory.</p>
+<h3>Convert Multiple Images</h3>
+<p>Convert all images to 256-byte sectors:</p>
+<pre><pre class="language-bash"><code class="language-bash">for img in *.atr; do
+    convertatr --sector-size 256 &quot;$img&quot; &quot;converted/${img}&quot;
+done
+</code></pre></pre>
+<p>Batch conversion of multiple images.</p>
+<h3>Create Multiple Boot Disks</h3>
+<p>Create bootable disks for multiple games:</p>
+<pre><pre class="language-bash"><code class="language-bash">for game in game*.com; do
+    atrforge -b &quot;${game%.com}.atr&quot; &quot;$game&quot;
+done
+</code></pre></pre>
+<p>Create a bootable disk for each game.</p>
+<h2>Advanced Examples</h2>
+<h3>Custom Size Disk</h3>
+<p>Create a disk with a specific minimum size:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -s 360000 disk.atr current_files.com
+</code></pre></pre>
+<p>Creates at least a 360k disk, even if files would fit in smaller.</p>
+<h3>Exact Size Disk</h3>
+<p>Create a disk with exact sector count:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -x custom.atr file1.com file2.bas
+</code></pre></pre>
+<p>Uses non-standard sector count to fit exactly.</p>
+<h3>Complex Directory Structure</h3>
+<p>Create a disk with a complex directory structure:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge complex.atr \
+    system/ +p system/config.sys \
+    games/ action/ game1.com game2.com \
+    games/ puzzle/ game3.com game4.com \
+    utils/ +p utils/tool.com \
+    docs/ readme.txt manual.txt
+</code></pre></pre>
+<p>Multiple levels of organization.</p>
+<h2>Tips from the Examples</h2>
+<ol>
+<li><strong>Use directories</strong> - Organize files into directories for better structure</li>
+<li><strong>Protect important files</strong> - Use <code>+p</code> for files that shouldn&#x27;t be modified</li>
+<li><strong>Test boot files</strong> - Always test bootable disks before distributing</li>
+<li><strong>Backup before modifying</strong> - Tools create backups, but it doesn&#x27;t hurt to have your own</li>
+<li><strong>Verify images</strong> - Use <code>--verify</code> to check images before using them</li>
+<li><strong>Convert for editing</strong> - Use UTF8 conversion when editing text files</li>
+<li><strong>Batch operations</strong> - Use shell scripts for repetitive tasks</li>
+</ol>
+<h2>See Also</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/atrforge/atrforge">atrforge</a> - Complete atrforge documentation</li>
+<li><a node="[object Object]" href="/docs/atrforge/lsatr">lsatr</a> - Complete lsatr documentation</li>
+<li><a node="[object Object]" href="/docs/atrforge/convertatr">convertatr</a> - Complete convertatr documentation</li>
+<li><a node="[object Object]" href="/docs/atrforge/atrcp">atrcp</a> - Complete atrcp documentation</li>
+<li><a node="[object Object]" href="/docs/atrforge/advanced">Advanced</a> - More advanced techniques</li>
+</ul>
+<hr/>
+<p><em>For the complete tool list, see the <a node="[object Object]" href="/docs/atrforge">main documentation index</a>.</em></p></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"atrforge","productDocs":{"product":"atrforge","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ADVANCED.md","relativePath":"ADVANCED.md","relativeDir":"","filename":"ADVANCED","slug":"advanced","name":"ADVANCED"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATR_FORMAT.md","relativePath":"ATR_FORMAT.md","relativeDir":"","filename":"ATR_FORMAT","slug":"atr-format","name":"ATR FORMAT"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRCP.md","relativePath":"ATRCP.md","relativeDir":"","filename":"ATRCP","slug":"atrcp","name":"ATRCP"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRFORGE.md","relativePath":"ATRFORGE.md","relativeDir":"","filename":"ATRFORGE","slug":"atrforge","name":"ATRFORGE"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATTRIBUTIONS.md","relativePath":"ATTRIBUTIONS.md","relativeDir":"","filename":"ATTRIBUTIONS","slug":"attributions","name":"ATTRIBUTIONS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","relativePath":"BOOT_FILES.md","relativeDir":"","filename":"BOOT_FILES","slug":"boot-files","name":"BOOT FILES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CHANGELOG.md","relativePath":"CHANGELOG.md","relativeDir":"","filename":"CHANGELOG","slug":"changelog","name":"CHANGELOG"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CONVERTATR.md","relativePath":"CONVERTATR.md","relativeDir":"","filename":"CONVERTATR","slug":"convertatr","name":"CONVERTATR"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/DOS_FORMATS.md","relativePath":"DOS_FORMATS.md","relativeDir":"","filename":"DOS_FORMATS","slug":"dos-formats","name":"DOS FORMATS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","relativePath":"EXAMPLES.md","relativeDir":"","filename":"EXAMPLES","slug":"examples","name":"EXAMPLES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/FILE_ATTRIBUTES.md","relativePath":"FILE_ATTRIBUTES.md","relativeDir":"","filename":"FILE_ATTRIBUTES","slug":"file-attributes","name":"FILE ATTRIBUTES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/INSTALLATION.md","relativePath":"INSTALLATION.md","relativeDir":"","filename":"INSTALLATION","slug":"installation","name":"INSTALLATION"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","relativePath":"LSATR.md","relativeDir":"","filename":"LSATR","slug":"lsatr","name":"LSATR"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","relativePath":"TROUBLESHOOTING.md","relativeDir":"","filename":"TROUBLESHOOTING","slug":"troubleshooting","name":"TROUBLESHOOTING"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/UTF8_CONVERSION.md","relativePath":"UTF8_CONVERSION.md","relativeDir":"","filename":"UTF8_CONVERSION","slug":"utf8-conversion","name":"UTF8 CONVERSION"}],"navTree":{"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/README.md","isIndex":true},{"name":"ADVANCED","slug":"advanced","path":"ADVANCED.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ADVANCED.md","isIndex":false},{"name":"ATR FORMAT","slug":"atr-format","path":"ATR_FORMAT.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATR_FORMAT.md","isIndex":false},{"name":"ATRCP","slug":"atrcp","path":"ATRCP.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRCP.md","isIndex":false},{"name":"ATRFORGE","slug":"atrforge","path":"ATRFORGE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRFORGE.md","isIndex":false},{"name":"ATTRIBUTIONS","slug":"attributions","path":"ATTRIBUTIONS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATTRIBUTIONS.md","isIndex":false},{"name":"BOOT FILES","slug":"boot-files","path":"BOOT_FILES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","isIndex":false},{"name":"CHANGELOG","slug":"changelog","path":"CHANGELOG.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CHANGELOG.md","isIndex":false},{"name":"CONVERTATR","slug":"convertatr","path":"CONVERTATR.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CONVERTATR.md","isIndex":false},{"name":"DOS FORMATS","slug":"dos-formats","path":"DOS_FORMATS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/DOS_FORMATS.md","isIndex":false},{"name":"EXAMPLES","slug":"examples","path":"EXAMPLES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","isIndex":false},{"name":"FILE ATTRIBUTES","slug":"file-attributes","path":"FILE_ATTRIBUTES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/FILE_ATTRIBUTES.md","isIndex":false},{"name":"INSTALLATION","slug":"installation","path":"INSTALLATION.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/INSTALLATION.md","isIndex":false},{"name":"LSATR","slug":"lsatr","path":"LSATR.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","isIndex":false},{"name":"TROUBLESHOOTING","slug":"troubleshooting","path":"TROUBLESHOOTING.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","isIndex":false},{"name":"UTF8 CONVERSION","slug":"utf8-conversion","path":"UTF8_CONVERSION.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/UTF8_CONVERSION.md","isIndex":false}]}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","relativePath":"EXAMPLES.md","relativeDir":"","filename":"EXAMPLES","slug":"examples","name":"EXAMPLES","content":"# Usage Examples\n\nHere are some real-world examples of using atrforge tools. These are actual scenarios you might encounter, with actual commands you can use. No theory, just practice.\n\n## Basic Image Creation\n\n### Simple Disk Image\n\nCreate a basic disk image with a few files:\n\n```bash\natrforge mydisk.atr file1.com file2.bas file3.txt\n```\n\nThat's it. Three files, one disk. Simple.\n\n### Organized Disk Image\n\nCreate a disk with organized directories:\n\n```bash\natrforge organized.atr \\\n    games/ game1.com game2.com \\\n    utils/ util1.com util2.com \\\n    docs/ readme.txt manual.txt\n```\n\nThis creates:\n- `games/game1.com` and `games/game2.com`\n- `utils/util1.com` and `utils/util2.com`\n- `docs/readme.txt` and `docs/manual.txt`\n\nOrganization is good. Your future self will thank you.\n\n## Bootable Disks\n\n### Simple Bootable Game\n\nCreate a bootable game disk:\n\n```bash\natrforge -b game.atr mygame.com\n```\n\nBoot the Atari with this disk, and the game runs automatically. No typing required.\n\n### Bootable Disk with DOS\n\nCreate a bootable disk with DOS and startup file:\n\n```bash\natrforge bwdos.atr \\\n    dos/ -b +ph dos/xbw130.dos \\\n    +p startup.bat \\\n    config.sys\n```\n\nThis creates:\n- Bootable disk (DOS boots automatically)\n- DOS file is hidden and protected\n- Startup file is protected\n- Config file is regular\n\n### Bootable Disk with Relocated Bootloader\n\nIf your game loads at a low address that conflicts with the bootloader:\n\n```bash\natrforge -B 6 -b game.atr mygame.com\n```\n\nThis moves the bootloader to page 6, leaving page 7 free for your game.\n\n## File Attributes\n\n### Protected System Files\n\nCreate a disk with protected system files:\n\n```bash\natrforge system.atr \\\n    +p config.sys \\\n    +p autoexec.bat \\\n    normal.com\n```\n\nSystem files are protected, regular files are not.\n\n### Hidden Files\n\nCreate a disk with hidden files:\n\n```bash\natrforge disk.atr \\\n    +h secret.com \\\n    visible.com\n```\n\n`secret.com` is hidden, `visible.com` is not. On SpartaDOS-X, hidden files won't show in normal directory listings.\n\n### Combined Attributes\n\nCreate a disk with files that have multiple attributes:\n\n```bash\natrforge disk.atr \\\n    +ph system.com \\\n    +pa backup.com \\\n    normal.com\n```\n\n- `system.com` is protected and hidden\n- `backup.com` is protected and archived\n- `normal.com` has no special attributes\n\n## Adding Files to Existing Images\n\n### Add Single File\n\nAdd a file to an existing disk:\n\n```bash\natrforge -a existing.atr newfile.com\n```\n\nThe original disk is backed up automatically (as `existing.atr.bak`).\n\n### Add Multiple Files\n\nAdd several files at once:\n\n```bash\natrforge -a existing.atr file1.com file2.bas file3.txt\n```\n\nAll files are added in one operation.\n\n### Add Files to Subdirectory\n\nAdd files to a subdirectory:\n\n```bash\natrforge -a existing.atr games/ newgame1.com newgame2.com\n```\n\nThe `games/` directory is created if it doesn't exist.\n\n## Listing and Extracting\n\n### List Files\n\nSee what's in a disk image:\n\n```bash\nlsatr disk.atr\n```\n\nSimple listing of all files.\n\n### Atari-Style Listing\n\nList files in native Atari format:\n\n```bash\nlsatr -a disk.atr\n```\n\nFor that authentic Atari directory listing feel.\n\n### Extract All Files\n\nExtract everything to a directory:\n\n```bash\nlsatr -X extracted/ disk.atr\n```\n\nAll files are extracted, preserving directory structure.\n\n### Extract with Lowercase Names\n\nExtract files with lowercase filenames:\n\n```bash\nlsatr -l -X output/ disk.atr\n```\n\nUseful if you're working on a case-sensitive filesystem.\n\n### Verify Image\n\nCheck if an image is valid:\n\n```bash\nlsatr --verify disk.atr\n```\n\nQuick check to see if the image is okay.\n\n## Converting Images\n\n### Resize Image\n\nMake a disk bigger:\n\n```bash\nconvertatr --resize 1440 disk1.atr disk1_large.atr\n```\n\nResizes to 1440 sectors (360k).\n\n### Convert Sector Size\n\nConvert from 128-byte to 256-byte sectors:\n\n```bash\nconvertatr --sector-size 256 disk128.atr disk256.atr\n```\n\nChanges the sector size while preserving data.\n\n### Resize and Convert\n\nDo both at once:\n\n```bash\nconvertatr --resize 1440 --sector-size 256 disk.atr newdisk.atr\n```\n\nEfficient! Two operations in one command.\n\n## Copying Files\n\n### Extract Single File\n\nExtract one file from a disk:\n\n```bash\natrcp disk.atr:MYFILE.COM myfile.com\n```\n\nJust that one file, nothing else.\n\n### Add Single File\n\nAdd one file to a disk:\n\n```bash\natrcp myfile.com disk.atr:MYFILE.COM\n```\n\nUpdates the disk, creates a backup automatically.\n\n### Add File with Same Name\n\nAdd a file using its original name:\n\n```bash\natrcp myfile.com disk.atr:\n```\n\nThe `:` with no path uses the source filename.\n\n### Add File to Subdirectory\n\nAdd a file to a subdirectory:\n\n```bash\natrcp game.com disk.atr:GAMES/GAME.COM\n```\n\nDirectory is created automatically if needed.\n\n## UTF8/ATASCII Conversion\n\n### Edit a BASIC File\n\nComplete workflow for editing a BASIC file:\n\n```bash\n# 1. Extract and convert to UTF8\natrcp --to-utf8 disk.atr:PROGRAM.BAS program.bas\n\n# 2. Edit in your favorite editor\nvim program.bas\n\n# 3. Add back and convert to ATASCII\natrcp --to-atascii program.bas disk.atr:PROGRAM.BAS\n```\n\nNow you can edit Atari BASIC files in modern editors.\n\n### Create Image with UTF8 Conversion\n\nCreate a disk, converting files from UTF8 to ATASCII:\n\n```bash\natrforge --to-atascii disk.atr edited.bas converted.txt\n```\n\nFiles are converted during image creation.\n\n### Convert Entire Image\n\nConvert all files in an image to UTF8:\n\n```bash\nconvertatr --convert-utf8 --resize 1440 disk.atr disk_utf8.atr\n```\n\nCreates a new image with all files converted.\n\n### Extract with 7-bit Mode\n\nExtract a file as 7-bit ASCII:\n\n```bash\natrcp --7bit --to-utf8 disk.atr:FILE.TXT file.txt\n```\n\nStrips the high bit for maximum compatibility.\n\n## Real-World Scenarios\n\n### Creating a Game Distribution Disk\n\nCreate a professional game disk:\n\n```bash\natrforge gamedisk.atr \\\n    -b game.com \\\n    +p readme.txt \\\n    +p license.txt \\\n    docs/ manual.txt\n```\n\n- Game boots automatically\n- Documentation is protected\n- Organized structure\n\n### Archiving Old Disks\n\nExtract files from old disks for archival:\n\n```bash\n# Extract all files\nlsatr -X archive/ olddisk1.atr olddisk2.atr olddisk3.atr\n\n# Verify images first\nlsatr --verify olddisk1.atr\nlsatr --verify olddisk2.atr\nlsatr --verify olddisk3.atr\n```\n\nPreserve old software for posterity.\n\n### Updating a Single File\n\nUpdate one file on a disk:\n\n```bash\n# Extract the file\natrcp --to-utf8 disk.atr:CONFIG.TXT config.txt\n\n# Edit it\nvim config.txt\n\n# Add it back\natrcp --to-atascii config.txt disk.atr:CONFIG.TXT\n```\n\nQuick update without recreating the entire disk.\n\n### Converting Old Images\n\nConvert old 128-byte sector images to 256-byte:\n\n```bash\nconvertatr --sector-size 256 old128.atr new256.atr\n```\n\nModernize old disk images.\n\n### Creating a Bootable Development Disk\n\nCreate a disk for development work:\n\n```bash\natrforge devdisk.atr \\\n    -b devtool.com \\\n    source/ file1.bas file2.bas \\\n    data/ data1.dat data2.dat \\\n    +p config.cfg\n```\n\n- Development tool boots automatically\n- Source files organized\n- Config file protected\n\n## Batch Operations\n\n### Extract Multiple Images\n\nExtract files from multiple images:\n\n```bash\nfor img in *.atr; do\n    mkdir -p \"extracted/${img%.atr}\"\n    lsatr -X \"extracted/${img%.atr}/\" \"$img\"\ndone\n```\n\nExtract all ATR files in the current directory.\n\n### Convert Multiple Images\n\nConvert all images to 256-byte sectors:\n\n```bash\nfor img in *.atr; do\n    convertatr --sector-size 256 \"$img\" \"converted/${img}\"\ndone\n```\n\nBatch conversion of multiple images.\n\n### Create Multiple Boot Disks\n\nCreate bootable disks for multiple games:\n\n```bash\nfor game in game*.com; do\n    atrforge -b \"${game%.com}.atr\" \"$game\"\ndone\n```\n\nCreate a bootable disk for each game.\n\n## Advanced Examples\n\n### Custom Size Disk\n\nCreate a disk with a specific minimum size:\n\n```bash\natrforge -s 360000 disk.atr current_files.com\n```\n\nCreates at least a 360k disk, even if files would fit in smaller.\n\n### Exact Size Disk\n\nCreate a disk with exact sector count:\n\n```bash\natrforge -x custom.atr file1.com file2.bas\n```\n\nUses non-standard sector count to fit exactly.\n\n### Complex Directory Structure\n\nCreate a disk with a complex directory structure:\n\n```bash\natrforge complex.atr \\\n    system/ +p system/config.sys \\\n    games/ action/ game1.com game2.com \\\n    games/ puzzle/ game3.com game4.com \\\n    utils/ +p utils/tool.com \\\n    docs/ readme.txt manual.txt\n```\n\nMultiple levels of organization.\n\n## Tips from the Examples\n\n1. **Use directories** - Organize files into directories for better structure\n2. **Protect important files** - Use `+p` for files that shouldn't be modified\n3. **Test boot files** - Always test bootable disks before distributing\n4. **Backup before modifying** - Tools create backups, but it doesn't hurt to have your own\n5. **Verify images** - Use `--verify` to check images before using them\n6. **Convert for editing** - Use UTF8 conversion when editing text files\n7. **Batch operations** - Use shell scripts for repetitive tasks\n\n## See Also\n\n- [atrforge](ATRFORGE.md) - Complete atrforge documentation\n- [lsatr](LSATR.md) - Complete lsatr documentation\n- [convertatr](CONVERTATR.md) - Complete convertatr documentation\n- [atrcp](ATRCP.md) - Complete atrcp documentation\n- [Advanced](ADVANCED.md) - More advanced techniques\n\n---\n\n*For the complete tool list, see the [main documentation index](README.md).*\n"},"currentPath":"examples"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["atrforge","examples"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">BUILDING | crucible Documentation | Atari Foundry</title><meta name="description" content="crucible documentation: BUILDING" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">crucible<!-- --> Documentation</p><h1 class="page-title">BUILDING</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/api-reference">API REFERENCE</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/architecture">ARCHITECTURE</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/attributions">ATTRIBUTIONS</a></li><li><a class="doc-link active" style="padding-left:0rem" href="/docs/crucible/building">BUILDING</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/changelog">CHANGELOG</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/crucible/user-guide">USER GUIDE</a></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>Building Crucible</h1>
+<h2>Table of Contents</h2>
+<ol>
+<li><a node="[object Object]" href="/docs/crucible/building#prerequisites">Prerequisites</a></li>
+<li><a node="[object Object]" href="/docs/crucible/building#quick-build">Quick Build</a></li>
+<li><a node="[object Object]" href="/docs/crucible/building#build-options">Build Options</a></li>
+<li><a node="[object Object]" href="/docs/crucible/building#platform-specific-instructions">Platform-Specific Instructions</a></li>
+<li><a node="[object Object]" href="/docs/crucible/building#troubleshooting">Troubleshooting</a></li>
+</ol>
+<h2>Prerequisites</h2>
+<h3>Required</h3>
+<ul>
+<li><strong>C Compiler</strong>: GCC 4.8+ or compatible (Clang, MSVC)</li>
+<li><strong>Make</strong>: GNU Make 3.81+ or compatible</li>
+<li><strong>Standard C Library</strong>: POSIX-compliant C library</li>
+<li><strong>Math Library</strong>: Standard math library (<code>libm</code>)</li>
+</ul>
+<h3>Optional</h3>
+<ul>
+<li><strong>Git</strong>: For version control</li>
+<li><strong>Debugger</strong>: GDB or compatible for debugging</li>
+</ul>
+<h2>Quick Build</h2>
+<h3>Standard Build</h3>
+<pre><pre class="language-bash"><code class="language-bash"># Clone or download source
+cd crucible
+
+# Build
+make
+
+# Executable will be in build/crucible
+./build/crucible -h
+</code></pre></pre>
+<h3>Clean Build</h3>
+<pre><pre class="language-bash"><code class="language-bash"># Remove all build artifacts
+make clean
+
+# Rebuild
+make
+</code></pre></pre>
+<h2>Build Options</h2>
+<h3>Make Targets</h3>
+<ul>
+<li><code>make</code> or <code>make all</code> - Build project (default)</li>
+<li><code>make clean</code> - Remove all build artifacts</li>
+<li><code>make help</code> - Show build system help</li>
+<li><code>make test</code> - Run automated tests</li>
+</ul>
+<h3>Compiler Options</h3>
+<p>The Makefile uses these default flags:</p>
+<pre><pre class="language-makefile"><code class="language-makefile">CFLAGS = -Iccan -O3 -Wall -g -flto
+LDLIBS = -lm
+</code></pre></pre>
+<p><strong>Flags Explained</strong>:</p>
+<ul>
+<li><code>-Iccan</code>: Include path for ccan library</li>
+<li><code>-O3</code>: Maximum optimization</li>
+<li><code>-Wall</code>: Enable all warnings</li>
+<li><code>-g</code>: Include debug symbols</li>
+<li><code>-flto</code>: Link-time optimization</li>
+<li><code>-lm</code>: Link math library</li>
+</ul>
+<h3>Custom Build Options</h3>
+<h4>Debug Build</h4>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-g -O0 -Wall&quot;
+</code></pre></pre>
+<h4>Release Build (No Debug Symbols)</h4>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-O3 -flto -DNDEBUG&quot;
+</code></pre></pre>
+<h4>Custom Compiler</h4>
+<pre><pre class="language-bash"><code class="language-bash">make CC=clang
+</code></pre></pre>
+<h4>Disable LTO</h4>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-Iccan -O3 -Wall -g&quot;
+</code></pre></pre>
+<h2>Build System Details</h2>
+<h3>Directory Structure</h3>
+<pre><code>crucible/
+├── build/          # Build output (created)
+│   ├── obj/        # Object files
+│   └── crucible    # Executable
+├── src/            # Source files
+├── ccan/           # C library headers
+├── asm/            # Assembly sources
+└── Makefile        # Build configuration
+</code></pre>
+<h3>Source Files</h3>
+<p><strong>Core</strong>:</p>
+<ul>
+<li><code>src/sim65.c</code> - CPU simulator</li>
+<li><code>src/atari.c</code> - BIOS emulation</li>
+<li><code>src/atcio.c</code> - CIO system</li>
+<li><code>src/main.c</code> - Main program</li>
+</ul>
+<p><strong>Devices</strong>:</p>
+<ul>
+<li><code>src/ataridos.c</code> - D: device</li>
+<li><code>src/athost.c</code> - H: device</li>
+<li><code>src/atrdev.c</code> - R: device</li>
+<li><code>src/atsio.c</code> - SIO emulation</li>
+</ul>
+<p><strong>Filesystem</strong>:</p>
+<ul>
+<li><code>src/atrfs.c</code> - ATR filesystem</li>
+<li><code>src/dosfname.c</code> - DOS filename handling</li>
+</ul>
+<p><strong>Hardware</strong>:</p>
+<ul>
+<li><code>src/hw.c</code> - Hardware registers</li>
+</ul>
+<p><strong>Math</strong>:</p>
+<ul>
+<li><code>src/mathpack.c</code> - Math pack integration</li>
+</ul>
+<h3>Dependencies</h3>
+<p><strong>Internal</strong>:</p>
+<ul>
+<li><code>ccan/</code> - C library headers (included in source)</li>
+</ul>
+<p><strong>External</strong>:</p>
+<ul>
+<li>Standard C library (<code>libc</code>)</li>
+<li>Math library (<code>libm</code>)</li>
+<li>No other external dependencies</li>
+</ul>
+<h3>Build Process</h3>
+<ol>
+<li><strong>Compilation</strong>: Each <code>.c</code> file compiled to <code>.o</code> object file</li>
+<li><strong>Linking</strong>: All object files linked into executable</li>
+<li><strong>LTO</strong>: Link-time optimization (if enabled) optimizes across files</li>
+</ol>
+<h2>Platform-Specific Instructions</h2>
+<h3>Linux</h3>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>GCC or Clang</li>
+<li>Make</li>
+<li>Standard development tools</li>
+</ul>
+<p><strong>Build</strong>:</p>
+<pre><pre class="language-bash"><code class="language-bash">make
+</code></pre></pre>
+<p><strong>Install</strong> (optional):</p>
+<pre><pre class="language-bash"><code class="language-bash">sudo cp build/crucible /usr/local/bin/
+</code></pre></pre>
+<h3>macOS</h3>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>Xcode Command Line Tools</li>
+<li>Make (included with Xcode)</li>
+</ul>
+<p><strong>Build</strong>:</p>
+<pre><pre class="language-bash"><code class="language-bash">make
+</code></pre></pre>
+<p><strong>Note</strong>: May need to install Xcode Command Line Tools:</p>
+<pre><pre class="language-bash"><code class="language-bash">xcode-select --install
+</code></pre></pre>
+<h3>Windows</h3>
+<p><strong>Option 1: MinGW/MSYS2</strong></p>
+<pre><pre class="language-bash"><code class="language-bash"># Install MSYS2, then:
+pacman -S mingw-w64-x86_64-gcc make
+
+# Build
+make CC=x86_64-w64-mingw32-gcc
+</code></pre></pre>
+<p><strong>Option 2: Visual Studio</strong></p>
+<ol>
+<li>Open Developer Command Prompt</li>
+<li>Navigate to source directory</li>
+<li>Use NMake or convert Makefile to Visual Studio project</li>
+</ol>
+<p><strong>Option 3: WSL (Windows Subsystem for Linux)</strong></p>
+<p>Use Linux build instructions in WSL environment.</p>
+<h3>Cross-Compilation</h3>
+<p><strong>Example: Build for ARM</strong></p>
+<pre><pre class="language-bash"><code class="language-bash">make CC=arm-linux-gnueabihf-gcc
+</code></pre></pre>
+<p><strong>Example: Build for 32-bit</strong></p>
+<pre><pre class="language-bash"><code class="language-bash">make CC=gcc CFLAGS=&quot;-Iccan -O3 -Wall -g -m32&quot;
+</code></pre></pre>
+<h2>Troubleshooting</h2>
+<h3>Build Errors</h3>
+<h4>&quot;Command not found: gcc&quot;</h4>
+<p><strong>Solution</strong>: Install GCC compiler</p>
+<ul>
+<li>Linux: <code>sudo apt-get install gcc</code> (Debian/Ubuntu)</li>
+<li>macOS: Install Xcode Command Line Tools</li>
+<li>Windows: Install MinGW or use WSL</li>
+</ul>
+<h4>&quot;fatal error: sim65.h: No such file or directory&quot;</h4>
+<p><strong>Solution</strong>: Ensure you&#x27;re in the project root directory</p>
+<pre><pre class="language-bash"><code class="language-bash">cd /path/to/crucible
+make clean
+make
+</code></pre></pre>
+<h4>&quot;undefined reference to <code>sqrt</code>&quot;</h4>
+<p><strong>Solution</strong>: Link math library (should be automatic, but try):</p>
+<pre><pre class="language-bash"><code class="language-bash">make LDLIBS=&quot;-lm&quot;
+</code></pre></pre>
+<h4>LTO Errors</h4>
+<p><strong>Solution</strong>: Disable LTO</p>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-Iccan -O3 -Wall -g&quot;
+</code></pre></pre>
+<h3>Runtime Errors</h3>
+<h4>&quot;can&#x27;t open disk image&quot;</h4>
+<p><strong>Solution</strong>: Check file path and permissions</p>
+<pre><pre class="language-bash"><code class="language-bash">ls -l disk.atr
+chmod 644 disk.atr
+</code></pre></pre>
+<h4>Segmentation Fault</h4>
+<p><strong>Solution</strong>: Build with debug symbols and use debugger</p>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-g -O0 -Wall&quot;
+gdb ./build/crucible
+</code></pre></pre>
+<h3>Performance Issues</h3>
+<h4>Slow Execution</h4>
+<p><strong>Solutions</strong>:</p>
+<ul>
+<li>Enable optimizations: <code>make CFLAGS=&quot;-Iccan -O3 -flto -Wall&quot;</code></li>
+<li>Disable debug output: Remove <code>-d</code> flag</li>
+<li>Use cycle-based timing: <code>-o cycletime</code></li>
+</ul>
+<h4>Large Binary Size</h4>
+<p><strong>Solution</strong>: Strip debug symbols</p>
+<pre><pre class="language-bash"><code class="language-bash">strip build/crucible
+</code></pre></pre>
+<h2>Advanced Build Configuration</h2>
+<h3>Custom Makefile Variables</h3>
+<p>Edit <code>Makefile</code> or override on command line:</p>
+<pre><pre class="language-bash"><code class="language-bash"># Custom compiler
+make CC=clang
+
+# Custom flags
+make CFLAGS=&quot;-Iccan -O2 -Wall -g -DDEBUG&quot;
+
+# Custom build directory
+make BDIR=output
+</code></pre></pre>
+<h3>Separate Debug/Release Builds</h3>
+<pre><pre class="language-bash"><code class="language-bash"># Debug build
+mkdir -p build-debug
+make BDIR=build-debug CFLAGS=&quot;-Iccan -g -O0 -Wall&quot;
+
+# Release build
+mkdir -p build-release
+make BDIR=build-release CFLAGS=&quot;-Iccan -O3 -flto -Wall -DNDEBUG&quot;
+</code></pre></pre>
+<h3>Static Linking</h3>
+<pre><pre class="language-bash"><code class="language-bash">make LDFLAGS=&quot;-static&quot;
+</code></pre></pre>
+<h3>32-bit Build</h3>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-Iccan -O3 -Wall -g -m32&quot; LDFLAGS=&quot;-m32&quot;
+</code></pre></pre>
+<h2>Testing the Build</h2>
+<h3>Run Tests</h3>
+<pre><pre class="language-bash"><code class="language-bash">make test
+</code></pre></pre>
+<h3>Manual Test</h3>
+<pre><pre class="language-bash"><code class="language-bash"># Test help
+./build/crucible -h
+
+# Test with sample program
+./build/crucible testfiles/hello.xex
+</code></pre></pre>
+<h2>Installation</h2>
+<h3>System-Wide Installation</h3>
+<p><strong>Linux/macOS</strong>:</p>
+<pre><pre class="language-bash"><code class="language-bash">sudo cp build/crucible /usr/local/bin/
+</code></pre></pre>
+<p><strong>User Installation</strong>:</p>
+<pre><pre class="language-bash"><code class="language-bash">cp build/crucible ~/bin/
+# Add ~/bin to PATH if not already
+</code></pre></pre>
+<h3>Create Package</h3>
+<p><strong>Debian/Ubuntu</strong>:</p>
+<pre><pre class="language-bash"><code class="language-bash"># Create .deb package (requires packaging tools)
+dpkg-buildpackage -us -uc
+</code></pre></pre>
+<h2>Development Build</h2>
+<h3>Enable All Warnings</h3>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-Iccan -Wall -Wextra -Wpedantic -g -O0&quot;
+</code></pre></pre>
+<h3>Address Sanitizer</h3>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-Iccan -g -O0 -fsanitize=address&quot; LDLIBS=&quot;-lm -fsanitize=address&quot;
+</code></pre></pre>
+<h3>Valgrind Support</h3>
+<pre><pre class="language-bash"><code class="language-bash">make CFLAGS=&quot;-Iccan -g -O0&quot;
+valgrind ./build/crucible program.xex
+</code></pre></pre>
+<h2>See Also</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/crucible/user-guide">User Guide</a> - Usage instructions</li>
+<li><a node="[object Object]" href="/docs/crucible/architecture">Architecture</a> - System design</li>
+<li><a node="[object Object]" href="/docs/crucible/api-reference">API Reference</a> - Developer API</li>
+</ul></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"crucible","productDocs":{"product":"crucible","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/API_REFERENCE.md","relativePath":"API_REFERENCE.md","relativeDir":"","filename":"API_REFERENCE","slug":"api-reference","name":"API REFERENCE"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ARCHITECTURE.md","relativePath":"ARCHITECTURE.md","relativeDir":"","filename":"ARCHITECTURE","slug":"architecture","name":"ARCHITECTURE"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ATTRIBUTIONS.md","relativePath":"ATTRIBUTIONS.md","relativeDir":"","filename":"ATTRIBUTIONS","slug":"attributions","name":"ATTRIBUTIONS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/BUILDING.md","relativePath":"BUILDING.md","relativeDir":"","filename":"BUILDING","slug":"building","name":"BUILDING"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/CHANGELOG.md","relativePath":"CHANGELOG.md","relativeDir":"","filename":"CHANGELOG","slug":"changelog","name":"CHANGELOG"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/USER_GUIDE.md","relativePath":"USER_GUIDE.md","relativeDir":"","filename":"USER_GUIDE","slug":"user-guide","name":"USER GUIDE"}],"navTree":{"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/README.md","isIndex":true},{"name":"API REFERENCE","slug":"api-reference","path":"API_REFERENCE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/API_REFERENCE.md","isIndex":false},{"name":"ARCHITECTURE","slug":"architecture","path":"ARCHITECTURE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ARCHITECTURE.md","isIndex":false},{"name":"ATTRIBUTIONS","slug":"attributions","path":"ATTRIBUTIONS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/ATTRIBUTIONS.md","isIndex":false},{"name":"BUILDING","slug":"building","path":"BUILDING.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/BUILDING.md","isIndex":false},{"name":"CHANGELOG","slug":"changelog","path":"CHANGELOG.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/CHANGELOG.md","isIndex":false},{"name":"USER GUIDE","slug":"user-guide","path":"USER_GUIDE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/USER_GUIDE.md","isIndex":false}]}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/crucible/BUILDING.md","relativePath":"BUILDING.md","relativeDir":"","filename":"BUILDING","slug":"building","name":"BUILDING","content":"# Building Crucible\n\n## Table of Contents\n\n1. [Prerequisites](#prerequisites)\n2. [Quick Build](#quick-build)\n3. [Build Options](#build-options)\n4. [Platform-Specific Instructions](#platform-specific-instructions)\n5. [Troubleshooting](#troubleshooting)\n\n## Prerequisites\n\n### Required\n\n- **C Compiler**: GCC 4.8+ or compatible (Clang, MSVC)\n- **Make**: GNU Make 3.81+ or compatible\n- **Standard C Library**: POSIX-compliant C library\n- **Math Library**: Standard math library (`libm`)\n\n### Optional\n\n- **Git**: For version control\n- **Debugger**: GDB or compatible for debugging\n\n## Quick Build\n\n### Standard Build\n\n```bash\n# Clone or download source\ncd crucible\n\n# Build\nmake\n\n# Executable will be in build/crucible\n./build/crucible -h\n```\n\n### Clean Build\n\n```bash\n# Remove all build artifacts\nmake clean\n\n# Rebuild\nmake\n```\n\n## Build Options\n\n### Make Targets\n\n- `make` or `make all` - Build project (default)\n- `make clean` - Remove all build artifacts\n- `make help` - Show build system help\n- `make test` - Run automated tests\n\n### Compiler Options\n\nThe Makefile uses these default flags:\n\n```makefile\nCFLAGS = -Iccan -O3 -Wall -g -flto\nLDLIBS = -lm\n```\n\n**Flags Explained**:\n- `-Iccan`: Include path for ccan library\n- `-O3`: Maximum optimization\n- `-Wall`: Enable all warnings\n- `-g`: Include debug symbols\n- `-flto`: Link-time optimization\n- `-lm`: Link math library\n\n### Custom Build Options\n\n#### Debug Build\n\n```bash\nmake CFLAGS=\"-g -O0 -Wall\"\n```\n\n#### Release Build (No Debug Symbols)\n\n```bash\nmake CFLAGS=\"-O3 -flto -DNDEBUG\"\n```\n\n#### Custom Compiler\n\n```bash\nmake CC=clang\n```\n\n#### Disable LTO\n\n```bash\nmake CFLAGS=\"-Iccan -O3 -Wall -g\"\n```\n\n## Build System Details\n\n### Directory Structure\n\n```\ncrucible/\n├── build/          # Build output (created)\n│   ├── obj/        # Object files\n│   └── crucible    # Executable\n├── src/            # Source files\n├── ccan/           # C library headers\n├── asm/            # Assembly sources\n└── Makefile        # Build configuration\n```\n\n### Source Files\n\n**Core**:\n- `src/sim65.c` - CPU simulator\n- `src/atari.c` - BIOS emulation\n- `src/atcio.c` - CIO system\n- `src/main.c` - Main program\n\n**Devices**:\n- `src/ataridos.c` - D: device\n- `src/athost.c` - H: device\n- `src/atrdev.c` - R: device\n- `src/atsio.c` - SIO emulation\n\n**Filesystem**:\n- `src/atrfs.c` - ATR filesystem\n- `src/dosfname.c` - DOS filename handling\n\n**Hardware**:\n- `src/hw.c` - Hardware registers\n\n**Math**:\n- `src/mathpack.c` - Math pack integration\n\n### Dependencies\n\n**Internal**:\n- `ccan/` - C library headers (included in source)\n\n**External**:\n- Standard C library (`libc`)\n- Math library (`libm`)\n- No other external dependencies\n\n### Build Process\n\n1. **Compilation**: Each `.c` file compiled to `.o` object file\n2. **Linking**: All object files linked into executable\n3. **LTO**: Link-time optimization (if enabled) optimizes across files\n\n## Platform-Specific Instructions\n\n### Linux\n\n**Requirements**:\n- GCC or Clang\n- Make\n- Standard development tools\n\n**Build**:\n```bash\nmake\n```\n\n**Install** (optional):\n```bash\nsudo cp build/crucible /usr/local/bin/\n```\n\n### macOS\n\n**Requirements**:\n- Xcode Command Line Tools\n- Make (included with Xcode)\n\n**Build**:\n```bash\nmake\n```\n\n**Note**: May need to install Xcode Command Line Tools:\n```bash\nxcode-select --install\n```\n\n### Windows\n\n**Option 1: MinGW/MSYS2**\n\n```bash\n# Install MSYS2, then:\npacman -S mingw-w64-x86_64-gcc make\n\n# Build\nmake CC=x86_64-w64-mingw32-gcc\n```\n\n**Option 2: Visual Studio**\n\n1. Open Developer Command Prompt\n2. Navigate to source directory\n3. Use NMake or convert Makefile to Visual Studio project\n\n**Option 3: WSL (Windows Subsystem for Linux)**\n\nUse Linux build instructions in WSL environment.\n\n### Cross-Compilation\n\n**Example: Build for ARM**\n\n```bash\nmake CC=arm-linux-gnueabihf-gcc\n```\n\n**Example: Build for 32-bit**\n\n```bash\nmake CC=gcc CFLAGS=\"-Iccan -O3 -Wall -g -m32\"\n```\n\n## Troubleshooting\n\n### Build Errors\n\n#### \"Command not found: gcc\"\n\n**Solution**: Install GCC compiler\n- Linux: `sudo apt-get install gcc` (Debian/Ubuntu)\n- macOS: Install Xcode Command Line Tools\n- Windows: Install MinGW or use WSL\n\n#### \"fatal error: sim65.h: No such file or directory\"\n\n**Solution**: Ensure you're in the project root directory\n```bash\ncd /path/to/crucible\nmake clean\nmake\n```\n\n#### \"undefined reference to `sqrt`\"\n\n**Solution**: Link math library (should be automatic, but try):\n```bash\nmake LDLIBS=\"-lm\"\n```\n\n#### LTO Errors\n\n**Solution**: Disable LTO\n```bash\nmake CFLAGS=\"-Iccan -O3 -Wall -g\"\n```\n\n### Runtime Errors\n\n#### \"can't open disk image\"\n\n**Solution**: Check file path and permissions\n```bash\nls -l disk.atr\nchmod 644 disk.atr\n```\n\n#### Segmentation Fault\n\n**Solution**: Build with debug symbols and use debugger\n```bash\nmake CFLAGS=\"-g -O0 -Wall\"\ngdb ./build/crucible\n```\n\n### Performance Issues\n\n#### Slow Execution\n\n**Solutions**:\n- Enable optimizations: `make CFLAGS=\"-Iccan -O3 -flto -Wall\"`\n- Disable debug output: Remove `-d` flag\n- Use cycle-based timing: `-o cycletime`\n\n#### Large Binary Size\n\n**Solution**: Strip debug symbols\n```bash\nstrip build/crucible\n```\n\n## Advanced Build Configuration\n\n### Custom Makefile Variables\n\nEdit `Makefile` or override on command line:\n\n```bash\n# Custom compiler\nmake CC=clang\n\n# Custom flags\nmake CFLAGS=\"-Iccan -O2 -Wall -g -DDEBUG\"\n\n# Custom build directory\nmake BDIR=output\n```\n\n### Separate Debug/Release Builds\n\n```bash\n# Debug build\nmkdir -p build-debug\nmake BDIR=build-debug CFLAGS=\"-Iccan -g -O0 -Wall\"\n\n# Release build\nmkdir -p build-release\nmake BDIR=build-release CFLAGS=\"-Iccan -O3 -flto -Wall -DNDEBUG\"\n```\n\n### Static Linking\n\n```bash\nmake LDFLAGS=\"-static\"\n```\n\n### 32-bit Build\n\n```bash\nmake CFLAGS=\"-Iccan -O3 -Wall -g -m32\" LDFLAGS=\"-m32\"\n```\n\n## Testing the Build\n\n### Run Tests\n\n```bash\nmake test\n```\n\n### Manual Test\n\n```bash\n# Test help\n./build/crucible -h\n\n# Test with sample program\n./build/crucible testfiles/hello.xex\n```\n\n## Installation\n\n### System-Wide Installation\n\n**Linux/macOS**:\n```bash\nsudo cp build/crucible /usr/local/bin/\n```\n\n**User Installation**:\n```bash\ncp build/crucible ~/bin/\n# Add ~/bin to PATH if not already\n```\n\n### Create Package\n\n**Debian/Ubuntu**:\n```bash\n# Create .deb package (requires packaging tools)\ndpkg-buildpackage -us -uc\n```\n\n## Development Build\n\n### Enable All Warnings\n\n```bash\nmake CFLAGS=\"-Iccan -Wall -Wextra -Wpedantic -g -O0\"\n```\n\n### Address Sanitizer\n\n```bash\nmake CFLAGS=\"-Iccan -g -O0 -fsanitize=address\" LDLIBS=\"-lm -fsanitize=address\"\n```\n\n### Valgrind Support\n\n```bash\nmake CFLAGS=\"-Iccan -g -O0\"\nvalgrind ./build/crucible program.xex\n```\n\n## See Also\n\n- [User Guide](USER_GUIDE.md) - Usage instructions\n- [Architecture](ARCHITECTURE.md) - System design\n- [API Reference](API_REFERENCE.md) - Developer API\n"},"currentPath":"building"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["crucible","building"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

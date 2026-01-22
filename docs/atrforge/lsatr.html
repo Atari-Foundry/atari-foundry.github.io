@@ -1,0 +1,210 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">LSATR | atrforge Documentation | Atari Foundry</title><meta name="description" content="atrforge documentation: LSATR" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">atrforge<!-- --> Documentation</p><h1 class="page-title">LSATR</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/advanced">ADVANCED</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atr-format">ATR FORMAT</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atrcp">ATRCP</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atrforge">ATRFORGE</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/attributions">ATTRIBUTIONS</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/boot-files">BOOT FILES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/changelog">CHANGELOG</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/convertatr">CONVERTATR</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/dos-formats">DOS FORMATS</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/examples">EXAMPLES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/file-attributes">FILE ATTRIBUTES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/installation">INSTALLATION</a></li><li><a class="doc-link active" style="padding-left:0rem" href="/docs/atrforge/lsatr">LSATR</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/troubleshooting">TROUBLESHOOTING</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/utf8-conversion">UTF8 CONVERSION</a></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>lsatr - List and Extract ATR Contents</h1>
+<p><code>lsatr</code> is the nosy neighbor of the atrforge toolkit. It peeks inside ATR images, lists their contents, and extracts files. Think of it as <code>ls</code> and <code>tar</code> combined, but specifically designed for 8-bit disk images. It&#x27;s actually pretty useful.</p>
+<h2>Overview</h2>
+<p>lsatr can read and extract files from a wide variety of Atari DOS formats. It&#x27;s like a universal disk image reader, except it doesn&#x27;t actually read the disk - it reads the image file. You know, the modern way.</p>
+<p><strong>What it does:</strong></p>
+<ul>
+<li>Lists files in ATR images</li>
+<li>Extracts files from ATR images</li>
+<li>Supports multiple DOS formats (see below)</li>
+<li>Shows file sizes, dates, and attributes</li>
+<li>Verifies ATR image integrity</li>
+</ul>
+<p><strong>What it doesn&#x27;t do:</strong></p>
+<ul>
+<li>Create new images (that&#x27;s <code>atrforge</code>&#x27;s job)</li>
+<li>Modify images (use <code>atrforge -a</code> or <code>atrcp</code> for that)</li>
+<li>Make your coffee (still working on it)</li>
+</ul>
+<h2>Command Syntax</h2>
+<pre><pre class="language-bash"><code class="language-bash">lsatr [options] &lt;atr_image_file&gt;
+</code></pre></pre>
+<p>Simple enough: give it options and an ATR file, and it does its thing.</p>
+<h2>Options</h2>
+<h3><code>-a</code> - Atari Format Listing</h3>
+<p>Shows the listing in native Atari format instead of the default UNIX-style format. This means:</p>
+<ul>
+<li>Filename separated by spaces to the extension (like &quot;MY FILE COM&quot; instead of &quot;MYFILE.COM&quot;)</li>
+<li>Size, date, and time (if available)</li>
+<li>Each subdirectory in a separate listing</li>
+</ul>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -a disk.atr
+</code></pre></pre>
+<p>The standard format shows size, date, time (if available), and the full path at the end. Use <code>-a</code> if you want that nostalgic Atari feel.</p>
+<h3><code>-l</code> - Lowercase Filenames</h3>
+<p>Converts all filenames to lowercase when listing or extracting. Because sometimes you want consistency, and Atari filenames are traditionally uppercase.</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -l disk.atr
+</code></pre></pre>
+<p>This affects both listing and extraction. Useful if you&#x27;re working on a case-sensitive filesystem and want everything lowercase.</p>
+<h3><code>-x</code> - Extract to Current Directory</h3>
+<p>Extracts all files to the current directory. Simple and straightforward.</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -x disk.atr
+</code></pre></pre>
+<p>Files are extracted with their directory structure preserved (relative to the current directory). If a file already exists, it won&#x27;t be overwritten unless you use <code>-f</code>.</p>
+<h3><code>-X &lt;path&gt;</code> - Extract to Specific Directory</h3>
+<p>Extracts all files to the specified directory. If the directory doesn&#x27;t exist, it will be created. How convenient!</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -X output/ disk.atr
+</code></pre></pre>
+<p>This is the preferred way to extract files if you want them in a specific location. The directory is created automatically, so you don&#x27;t need to create it first.</p>
+<h3><code>-f</code> - Force Overwrite</h3>
+<p>Allows overwriting existing files during extraction. By default, lsatr won&#x27;t overwrite existing files (because we&#x27;re not monsters). Use this flag if you want to overwrite them anyway.</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -f -X output/ disk.atr
+</code></pre></pre>
+<p><strong>Warning:</strong> This will overwrite files without asking. Make sure you know what you&#x27;re doing.</p>
+<h3><code>-q</code> - Quiet Mode</h3>
+<p>Suppresses informational messages. Only shows errors and the actual output (file listings or extraction progress).</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -q disk.atr
+</code></pre></pre>
+<p>Useful in scripts or when you just want the facts without the commentary.</p>
+<h3><code>--verify</code> - Verify Image Integrity</h3>
+<p>Verifies that the ATR image is valid and can be loaded correctly. This checks:</p>
+<ul>
+<li>Valid ATR header</li>
+<li>Reasonable sector count and size</li>
+<li>Image structure integrity</li>
+</ul>
+<pre><pre class="language-bash"><code class="language-bash">lsatr --verify disk.atr
+</code></pre></pre>
+<p>This is a read-only operation - it doesn&#x27;t extract or list files, just verifies the image is okay. Useful for checking if an image is corrupted before trying to use it.</p>
+<h3><code>-h</code> - Help</h3>
+<p>Shows a brief help message. You&#x27;re reading the extended version.</p>
+<h3><code>-v</code> - Version</h3>
+<p>Shows version information. Because version numbers are important.</p>
+<h2>Supported DOS Formats</h2>
+<p>lsatr supports reading from a wide variety of Atari DOS formats. Here&#x27;s the list:</p>
+<h3>Creation Support (SpartaDOS/BW-DOS)</h3>
+<ul>
+<li><strong>SpartaDOS</strong> - Full read/write support (this is what <code>atrforge</code> creates)</li>
+<li><strong>BW-DOS</strong> - Full read/write support (compatible with SpartaDOS)</li>
+</ul>
+<h3>Read-Only Support</h3>
+<ul>
+<li><strong>Atari DOS 1</strong> - Single density only</li>
+<li><strong>Atari DOS 2.0</strong> - Single and double density</li>
+<li><strong>Atari DOS 2.5</strong> - Enhanced density</li>
+<li><strong>MyDOS</strong> - Up to 16MB images</li>
+<li><strong>LiteDOS 2.x</strong> - LiteDOS and LiteDOS-SE</li>
+<li><strong>BAS2BOOT images</strong> - Extracts the BAS file inside</li>
+<li><strong>Howfen DOS images</strong> - Extracts the raw BOOT images</li>
+<li><strong>K-file boot images</strong> - Extracts the XEX file inside</li>
+</ul>
+<p>lsatr tries each format in order until it finds one that works. It&#x27;s like a universal key that tries different locks until one opens.</p>
+<h2>Listing Formats</h2>
+<h3>Standard Format</h3>
+<p>The default format shows:</p>
+<ul>
+<li>File size</li>
+<li>Date and time (if available)</li>
+<li>Full path</li>
+</ul>
+<p>Example:</p>
+<pre><code>   1234 2024-01-15 10:30:00 GAMES/GAME1.COM
+   5678 2024-01-15 10:31:00 GAMES/GAME2.COM
+</code></pre>
+<h3>Atari Format (<code>-a</code>)</h3>
+<p>The Atari format shows:</p>
+<ul>
+<li>Filename with spaces (e.g., &quot;MY FILE COM&quot;)</li>
+<li>Size</li>
+<li>Date and time</li>
+<li>Separate listings for each subdirectory</li>
+</ul>
+<p>Example:</p>
+<pre><code>MY FILE    COM    1234  2024-01-15 10:30:00
+ANOTHER    BAS    5678  2024-01-15 10:31:00
+</code></pre>
+<h2>Extraction Behavior</h2>
+<p>When extracting files:</p>
+<ol>
+<li><strong>Directory structure is preserved</strong> - Subdirectories are created as needed</li>
+<li><strong>Path sanitization</strong> - Dangerous path components (<code>..</code>, absolute paths) are removed for security</li>
+<li><strong>File permissions</strong> - Extracted files are created with mode 0666 (read/write for all)</li>
+<li><strong>Overwrite protection</strong> - Existing files are not overwritten unless <code>-f</code> is used</li>
+</ol>
+<h2>Examples</h2>
+<h3>Basic Listing</h3>
+<p>List files in an ATR image:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr disk.atr
+</code></pre></pre>
+<h3>Atari-Style Listing</h3>
+<p>List files in native Atari format:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -a disk.atr
+</code></pre></pre>
+<h3>Extract to Current Directory</h3>
+<p>Extract all files to the current directory:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -x disk.atr
+</code></pre></pre>
+<h3>Extract to Specific Directory</h3>
+<p>Extract all files to a specific directory:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -X extracted/ disk.atr
+</code></pre></pre>
+<h3>Extract with Lowercase Names</h3>
+<p>Extract files with lowercase filenames:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -l -X output/ disk.atr
+</code></pre></pre>
+<h3>Force Overwrite</h3>
+<p>Extract files, overwriting existing ones:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -f -X output/ disk.atr
+</code></pre></pre>
+<h3>Verify Image</h3>
+<p>Check if an ATR image is valid:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr --verify disk.atr
+</code></pre></pre>
+<h3>Quiet Mode</h3>
+<p>List files without informational messages:</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr -q disk.atr
+</code></pre></pre>
+<h3>Multiple Images</h3>
+<p>You can list multiple images (though extraction only works with one at a time):</p>
+<pre><pre class="language-bash"><code class="language-bash">lsatr disk1.atr disk2.atr disk3.atr
+</code></pre></pre>
+<h2>Security Considerations</h2>
+<p>lsatr implements path sanitization to prevent directory traversal attacks:</p>
+<ul>
+<li><strong>Directory traversal prevention</strong> - <code>..</code> components are removed from paths</li>
+<li><strong>Absolute path rejection</strong> - Absolute paths are rejected</li>
+<li><strong>Path validation</strong> - All path components are validated</li>
+</ul>
+<p>However, you should still be cautious when extracting files from untrusted ATR images. See <a node="[object Object]" href="/docs/atrforge/security">SECURITY.md</a> for more details.</p>
+<h2>Tips and Tricks</h2>
+<ol>
+<li>
+<p><strong>Use <code>-X</code> for extraction</strong> - It&#x27;s cleaner than <code>-x</code> and lets you specify the output directory.</p>
+</li>
+<li>
+<p><strong>Combine <code>-l</code> with extraction</strong> - If you want lowercase filenames, use <code>-l</code> with <code>-x</code> or <code>-X</code>.</p>
+</li>
+<li>
+<p><strong>Verify before extracting</strong> - Use <code>--verify</code> to check an image before extracting, especially if it&#x27;s from an untrusted source.</p>
+</li>
+<li>
+<p><strong>Atari format for nostalgia</strong> - Use <code>-a</code> if you want that authentic Atari directory listing feel.</p>
+</li>
+<li>
+<p><strong>Quiet mode in scripts</strong> - Use <code>-q</code> when scripting to avoid extra output.</p>
+</li>
+</ol>
+<h2>Common Mistakes</h2>
+<ul>
+<li>
+<p><strong>Trying to extract multiple images</strong> - Extraction only works with one image at a time. List multiple, extract one.</p>
+</li>
+<li>
+<p><strong>Forgetting the directory with <code>-X</code></strong> - The <code>-X</code> option requires a directory argument. Don&#x27;t forget it.</p>
+</li>
+<li>
+<p><strong>Expecting <code>-a</code> to work with extraction</strong> - The <code>-a</code> and <code>-x</code> options are incompatible. Pick one.</p>
+</li>
+<li>
+<p><strong>Not using <code>-f</code> when you need to overwrite</strong> - By default, existing files won&#x27;t be overwritten. Use <code>-f</code> if you want to force it.</p>
+</li>
+</ul>
+<h2>See Also</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/atrforge/examples">Examples</a> - More usage examples</li>
+<li><a node="[object Object]" href="/docs/atrforge/dos-formats">DOS Formats</a> - Details on supported formats</li>
+<li><a node="[object Object]" href="/docs/atrforge/troubleshooting">Troubleshooting</a> - Common issues and solutions</li>
+<li><a node="[object Object]" href="/docs/atrforge/atrcp">atrcp</a> - For copying individual files</li>
+</ul>
+<hr/>
+<p><em>For the complete tool list, see the <a node="[object Object]" href="/docs/atrforge">main documentation index</a>.</em></p></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"atrforge","productDocs":{"product":"atrforge","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ADVANCED.md","relativePath":"ADVANCED.md","relativeDir":"","filename":"ADVANCED","slug":"advanced","name":"ADVANCED"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATR_FORMAT.md","relativePath":"ATR_FORMAT.md","relativeDir":"","filename":"ATR_FORMAT","slug":"atr-format","name":"ATR FORMAT"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRCP.md","relativePath":"ATRCP.md","relativeDir":"","filename":"ATRCP","slug":"atrcp","name":"ATRCP"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRFORGE.md","relativePath":"ATRFORGE.md","relativeDir":"","filename":"ATRFORGE","slug":"atrforge","name":"ATRFORGE"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATTRIBUTIONS.md","relativePath":"ATTRIBUTIONS.md","relativeDir":"","filename":"ATTRIBUTIONS","slug":"attributions","name":"ATTRIBUTIONS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","relativePath":"BOOT_FILES.md","relativeDir":"","filename":"BOOT_FILES","slug":"boot-files","name":"BOOT FILES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CHANGELOG.md","relativePath":"CHANGELOG.md","relativeDir":"","filename":"CHANGELOG","slug":"changelog","name":"CHANGELOG"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CONVERTATR.md","relativePath":"CONVERTATR.md","relativeDir":"","filename":"CONVERTATR","slug":"convertatr","name":"CONVERTATR"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/DOS_FORMATS.md","relativePath":"DOS_FORMATS.md","relativeDir":"","filename":"DOS_FORMATS","slug":"dos-formats","name":"DOS FORMATS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","relativePath":"EXAMPLES.md","relativeDir":"","filename":"EXAMPLES","slug":"examples","name":"EXAMPLES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/FILE_ATTRIBUTES.md","relativePath":"FILE_ATTRIBUTES.md","relativeDir":"","filename":"FILE_ATTRIBUTES","slug":"file-attributes","name":"FILE ATTRIBUTES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/INSTALLATION.md","relativePath":"INSTALLATION.md","relativeDir":"","filename":"INSTALLATION","slug":"installation","name":"INSTALLATION"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","relativePath":"LSATR.md","relativeDir":"","filename":"LSATR","slug":"lsatr","name":"LSATR"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","relativePath":"TROUBLESHOOTING.md","relativeDir":"","filename":"TROUBLESHOOTING","slug":"troubleshooting","name":"TROUBLESHOOTING"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/UTF8_CONVERSION.md","relativePath":"UTF8_CONVERSION.md","relativeDir":"","filename":"UTF8_CONVERSION","slug":"utf8-conversion","name":"UTF8 CONVERSION"}],"navTree":{"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/README.md","isIndex":true},{"name":"ADVANCED","slug":"advanced","path":"ADVANCED.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ADVANCED.md","isIndex":false},{"name":"ATR FORMAT","slug":"atr-format","path":"ATR_FORMAT.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATR_FORMAT.md","isIndex":false},{"name":"ATRCP","slug":"atrcp","path":"ATRCP.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRCP.md","isIndex":false},{"name":"ATRFORGE","slug":"atrforge","path":"ATRFORGE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRFORGE.md","isIndex":false},{"name":"ATTRIBUTIONS","slug":"attributions","path":"ATTRIBUTIONS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATTRIBUTIONS.md","isIndex":false},{"name":"BOOT FILES","slug":"boot-files","path":"BOOT_FILES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","isIndex":false},{"name":"CHANGELOG","slug":"changelog","path":"CHANGELOG.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CHANGELOG.md","isIndex":false},{"name":"CONVERTATR","slug":"convertatr","path":"CONVERTATR.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CONVERTATR.md","isIndex":false},{"name":"DOS FORMATS","slug":"dos-formats","path":"DOS_FORMATS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/DOS_FORMATS.md","isIndex":false},{"name":"EXAMPLES","slug":"examples","path":"EXAMPLES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","isIndex":false},{"name":"FILE ATTRIBUTES","slug":"file-attributes","path":"FILE_ATTRIBUTES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/FILE_ATTRIBUTES.md","isIndex":false},{"name":"INSTALLATION","slug":"installation","path":"INSTALLATION.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/INSTALLATION.md","isIndex":false},{"name":"LSATR","slug":"lsatr","path":"LSATR.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","isIndex":false},{"name":"TROUBLESHOOTING","slug":"troubleshooting","path":"TROUBLESHOOTING.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","isIndex":false},{"name":"UTF8 CONVERSION","slug":"utf8-conversion","path":"UTF8_CONVERSION.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/UTF8_CONVERSION.md","isIndex":false}]}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","relativePath":"LSATR.md","relativeDir":"","filename":"LSATR","slug":"lsatr","name":"LSATR","content":"# lsatr - List and Extract ATR Contents\n\n`lsatr` is the nosy neighbor of the atrforge toolkit. It peeks inside ATR images, lists their contents, and extracts files. Think of it as `ls` and `tar` combined, but specifically designed for 8-bit disk images. It's actually pretty useful.\n\n## Overview\n\nlsatr can read and extract files from a wide variety of Atari DOS formats. It's like a universal disk image reader, except it doesn't actually read the disk - it reads the image file. You know, the modern way.\n\n**What it does:**\n- Lists files in ATR images\n- Extracts files from ATR images\n- Supports multiple DOS formats (see below)\n- Shows file sizes, dates, and attributes\n- Verifies ATR image integrity\n\n**What it doesn't do:**\n- Create new images (that's `atrforge`'s job)\n- Modify images (use `atrforge -a` or `atrcp` for that)\n- Make your coffee (still working on it)\n\n## Command Syntax\n\n```bash\nlsatr [options] \u003catr_image_file\u003e\n```\n\nSimple enough: give it options and an ATR file, and it does its thing.\n\n## Options\n\n### `-a` - Atari Format Listing\n\nShows the listing in native Atari format instead of the default UNIX-style format. This means:\n- Filename separated by spaces to the extension (like \"MY FILE COM\" instead of \"MYFILE.COM\")\n- Size, date, and time (if available)\n- Each subdirectory in a separate listing\n\n```bash\nlsatr -a disk.atr\n```\n\nThe standard format shows size, date, time (if available), and the full path at the end. Use `-a` if you want that nostalgic Atari feel.\n\n### `-l` - Lowercase Filenames\n\nConverts all filenames to lowercase when listing or extracting. Because sometimes you want consistency, and Atari filenames are traditionally uppercase.\n\n```bash\nlsatr -l disk.atr\n```\n\nThis affects both listing and extraction. Useful if you're working on a case-sensitive filesystem and want everything lowercase.\n\n### `-x` - Extract to Current Directory\n\nExtracts all files to the current directory. Simple and straightforward.\n\n```bash\nlsatr -x disk.atr\n```\n\nFiles are extracted with their directory structure preserved (relative to the current directory). If a file already exists, it won't be overwritten unless you use `-f`.\n\n### `-X \u003cpath\u003e` - Extract to Specific Directory\n\nExtracts all files to the specified directory. If the directory doesn't exist, it will be created. How convenient!\n\n```bash\nlsatr -X output/ disk.atr\n```\n\nThis is the preferred way to extract files if you want them in a specific location. The directory is created automatically, so you don't need to create it first.\n\n### `-f` - Force Overwrite\n\nAllows overwriting existing files during extraction. By default, lsatr won't overwrite existing files (because we're not monsters). Use this flag if you want to overwrite them anyway.\n\n```bash\nlsatr -f -X output/ disk.atr\n```\n\n**Warning:** This will overwrite files without asking. Make sure you know what you're doing.\n\n### `-q` - Quiet Mode\n\nSuppresses informational messages. Only shows errors and the actual output (file listings or extraction progress).\n\n```bash\nlsatr -q disk.atr\n```\n\nUseful in scripts or when you just want the facts without the commentary.\n\n### `--verify` - Verify Image Integrity\n\nVerifies that the ATR image is valid and can be loaded correctly. This checks:\n- Valid ATR header\n- Reasonable sector count and size\n- Image structure integrity\n\n```bash\nlsatr --verify disk.atr\n```\n\nThis is a read-only operation - it doesn't extract or list files, just verifies the image is okay. Useful for checking if an image is corrupted before trying to use it.\n\n### `-h` - Help\n\nShows a brief help message. You're reading the extended version.\n\n### `-v` - Version\n\nShows version information. Because version numbers are important.\n\n## Supported DOS Formats\n\nlsatr supports reading from a wide variety of Atari DOS formats. Here's the list:\n\n### Creation Support (SpartaDOS/BW-DOS)\n\n- **SpartaDOS** - Full read/write support (this is what `atrforge` creates)\n- **BW-DOS** - Full read/write support (compatible with SpartaDOS)\n\n### Read-Only Support\n\n- **Atari DOS 1** - Single density only\n- **Atari DOS 2.0** - Single and double density\n- **Atari DOS 2.5** - Enhanced density\n- **MyDOS** - Up to 16MB images\n- **LiteDOS 2.x** - LiteDOS and LiteDOS-SE\n- **BAS2BOOT images** - Extracts the BAS file inside\n- **Howfen DOS images** - Extracts the raw BOOT images\n- **K-file boot images** - Extracts the XEX file inside\n\nlsatr tries each format in order until it finds one that works. It's like a universal key that tries different locks until one opens.\n\n## Listing Formats\n\n### Standard Format\n\nThe default format shows:\n- File size\n- Date and time (if available)\n- Full path\n\nExample:\n```\n   1234 2024-01-15 10:30:00 GAMES/GAME1.COM\n   5678 2024-01-15 10:31:00 GAMES/GAME2.COM\n```\n\n### Atari Format (`-a`)\n\nThe Atari format shows:\n- Filename with spaces (e.g., \"MY FILE COM\")\n- Size\n- Date and time\n- Separate listings for each subdirectory\n\nExample:\n```\nMY FILE    COM    1234  2024-01-15 10:30:00\nANOTHER    BAS    5678  2024-01-15 10:31:00\n```\n\n## Extraction Behavior\n\nWhen extracting files:\n\n1. **Directory structure is preserved** - Subdirectories are created as needed\n2. **Path sanitization** - Dangerous path components (`..`, absolute paths) are removed for security\n3. **File permissions** - Extracted files are created with mode 0666 (read/write for all)\n4. **Overwrite protection** - Existing files are not overwritten unless `-f` is used\n\n## Examples\n\n### Basic Listing\n\nList files in an ATR image:\n\n```bash\nlsatr disk.atr\n```\n\n### Atari-Style Listing\n\nList files in native Atari format:\n\n```bash\nlsatr -a disk.atr\n```\n\n### Extract to Current Directory\n\nExtract all files to the current directory:\n\n```bash\nlsatr -x disk.atr\n```\n\n### Extract to Specific Directory\n\nExtract all files to a specific directory:\n\n```bash\nlsatr -X extracted/ disk.atr\n```\n\n### Extract with Lowercase Names\n\nExtract files with lowercase filenames:\n\n```bash\nlsatr -l -X output/ disk.atr\n```\n\n### Force Overwrite\n\nExtract files, overwriting existing ones:\n\n```bash\nlsatr -f -X output/ disk.atr\n```\n\n### Verify Image\n\nCheck if an ATR image is valid:\n\n```bash\nlsatr --verify disk.atr\n```\n\n### Quiet Mode\n\nList files without informational messages:\n\n```bash\nlsatr -q disk.atr\n```\n\n### Multiple Images\n\nYou can list multiple images (though extraction only works with one at a time):\n\n```bash\nlsatr disk1.atr disk2.atr disk3.atr\n```\n\n## Security Considerations\n\nlsatr implements path sanitization to prevent directory traversal attacks:\n\n- **Directory traversal prevention** - `..` components are removed from paths\n- **Absolute path rejection** - Absolute paths are rejected\n- **Path validation** - All path components are validated\n\nHowever, you should still be cautious when extracting files from untrusted ATR images. See [SECURITY.md](../SECURITY.md) for more details.\n\n## Tips and Tricks\n\n1. **Use `-X` for extraction** - It's cleaner than `-x` and lets you specify the output directory.\n\n2. **Combine `-l` with extraction** - If you want lowercase filenames, use `-l` with `-x` or `-X`.\n\n3. **Verify before extracting** - Use `--verify` to check an image before extracting, especially if it's from an untrusted source.\n\n4. **Atari format for nostalgia** - Use `-a` if you want that authentic Atari directory listing feel.\n\n5. **Quiet mode in scripts** - Use `-q` when scripting to avoid extra output.\n\n## Common Mistakes\n\n- **Trying to extract multiple images** - Extraction only works with one image at a time. List multiple, extract one.\n\n- **Forgetting the directory with `-X`** - The `-X` option requires a directory argument. Don't forget it.\n\n- **Expecting `-a` to work with extraction** - The `-a` and `-x` options are incompatible. Pick one.\n\n- **Not using `-f` when you need to overwrite** - By default, existing files won't be overwritten. Use `-f` if you want to force it.\n\n## See Also\n\n- [Examples](EXAMPLES.md) - More usage examples\n- [DOS Formats](DOS_FORMATS.md) - Details on supported formats\n- [Troubleshooting](TROUBLESHOOTING.md) - Common issues and solutions\n- [atrcp](ATRCP.md) - For copying individual files\n\n---\n\n*For the complete tool list, see the [main documentation index](README.md).*\n"},"currentPath":"lsatr"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["atrforge","lsatr"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

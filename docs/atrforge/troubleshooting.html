@@ -1,0 +1,450 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">TROUBLESHOOTING | atrforge Documentation | Atari Foundry</title><meta name="description" content="atrforge documentation: TROUBLESHOOTING" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">atrforge<!-- --> Documentation</p><h1 class="page-title">TROUBLESHOOTING</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/advanced">ADVANCED</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atr-format">ATR FORMAT</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atrcp">ATRCP</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atrforge">ATRFORGE</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/attributions">ATTRIBUTIONS</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/boot-files">BOOT FILES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/changelog">CHANGELOG</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/convertatr">CONVERTATR</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/dos-formats">DOS FORMATS</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/examples">EXAMPLES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/file-attributes">FILE ATTRIBUTES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/installation">INSTALLATION</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/lsatr">LSATR</a></li><li><a class="doc-link active" style="padding-left:0rem" href="/docs/atrforge/troubleshooting">TROUBLESHOOTING</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/utf8-conversion">UTF8 CONVERSION</a></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>Troubleshooting</h1>
+<p>Things go wrong. It happens. This guide will help you figure out what went wrong and how to fix it. Most problems have simple solutions. Some don&#x27;t. We&#x27;ll cover both.</p>
+<h2>Common Error Messages</h2>
+<h3>&quot;can&#x27;t open file&quot;</h3>
+<p><strong>What it means:</strong> The tool can&#x27;t open the specified file.</p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>File doesn&#x27;t exist</li>
+<li>Wrong path</li>
+<li>Permission issues</li>
+<li>File is locked by another process</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Check the file path (typos are common)</li>
+<li>Verify the file exists: <code>ls -l filename</code></li>
+<li>Check file permissions: <code>chmod</code> if needed</li>
+<li>Make sure no other program has the file open</li>
+</ul>
+<h3>&quot;not an ATR image&quot;</h3>
+<p><strong>What it means:</strong> The file isn&#x27;t a valid ATR image.</p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>File is corrupted</li>
+<li>File is in a different format</li>
+<li>File is empty or incomplete</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Verify the file is actually an ATR image</li>
+<li>Check file size (ATR files should be at least a few KB)</li>
+<li>Try downloading/copying the file again</li>
+<li>Check if it&#x27;s a different disk image format</li>
+</ul>
+<h3>&quot;invalid ATR image size&quot;</h3>
+<p><strong>What it means:</strong> The ATR header has invalid size information.</p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Corrupted header</li>
+<li>Non-standard ATR file</li>
+<li>File was truncated</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Try <code>lsatr --verify</code> to check the image</li>
+<li>The tools may auto-correct some size issues</li>
+<li>If it&#x27;s a known good image, it might be a tool bug (report it)</li>
+</ul>
+<h3>&quot;can&#x27;t write to output file&quot;</h3>
+<p><strong>What it means:</strong> Can&#x27;t write the output file.</p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Disk full</li>
+<li>Permission denied</li>
+<li>File is read-only</li>
+<li>Path doesn&#x27;t exist</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Check disk space: <code>df -h</code></li>
+<li>Check write permissions</li>
+<li>Make sure the directory exists</li>
+<li>Check if file is read-only: <code>chmod</code> if needed</li>
+</ul>
+<h3>&quot;option needs an argument&quot;</h3>
+<p><strong>What it means:</strong> You used an option that requires an argument but didn&#x27;t provide one.</p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Missing argument after option</li>
+<li>Wrong option syntax</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Check the option syntax in the documentation</li>
+<li>Make sure arguments come immediately after options that need them</li>
+<li>Example: <code>-X output/</code> not <code>-Xoutput/</code> (space matters)</li>
+</ul>
+<h2>Image Format Issues</h2>
+<h3>Image Won&#x27;t Load</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Image doesn&#x27;t work in emulator</li>
+<li>Image doesn&#x27;t boot</li>
+<li>Error messages when trying to use image</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Wrong DOS format for target system</li>
+<li>Corrupted image</li>
+<li>Incompatible sector size</li>
+<li>Boot file issues</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Verify image: <code>lsatr --verify image.atr</code></li>
+<li>Check DOS format compatibility</li>
+<li>Try recreating the image</li>
+<li>Check boot file format and requirements</li>
+</ul>
+<h3>Image Too Large</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Error about image size</li>
+<li>Image creation fails</li>
+<li>&quot;image size calculation overflow&quot;</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Files too large for available disk sizes</li>
+<li>Maximum size exceeded (16MB limit)</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Check total file sizes</li>
+<li>Use <code>-x</code> for exact sizing if needed</li>
+<li>Split files across multiple disks</li>
+<li>Maximum ATR size is 16MB (65535 sectors × 256 bytes)</li>
+</ul>
+<h3>Image Too Small</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Files don&#x27;t fit</li>
+<li>&quot;not enough space&quot; errors</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Files are larger than selected disk size</li>
+<li>Disk size calculation was wrong</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Use a larger disk size (atrforge picks automatically)</li>
+<li>Use <code>-s</code> to specify minimum size</li>
+<li>Remove some files</li>
+<li>Check actual file sizes</li>
+</ul>
+<h2>File Size Problems</h2>
+<h3>Files Don&#x27;t Fit</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Error when adding files</li>
+<li>Files missing from image</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Files too large for disk</li>
+<li>Not enough free space</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Check file sizes before creating image</li>
+<li>Use larger disk size</li>
+<li>Remove unnecessary files</li>
+<li>Split across multiple disks</li>
+</ul>
+<h3>Unexpected File Sizes</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Files appear larger/smaller than expected</li>
+<li>Size mismatches</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Directory overhead</li>
+<li>Filesystem overhead</li>
+<li>Rounding in size calculations</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Some overhead is normal</li>
+<li>Check actual disk usage, not just file sizes</li>
+<li>Use <code>lsatr</code> to see actual file sizes in image</li>
+</ul>
+<h2>Boot File Problems</h2>
+<h3>Boot File Doesn&#x27;t Load</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Disk doesn&#x27;t boot</li>
+<li>Boot process fails</li>
+<li>System hangs on boot</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>File not in binary format</li>
+<li>Bootloader conflict</li>
+<li>Memory conflicts</li>
+<li>Corrupted boot file</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Verify file is in Atari binary format (<code>.com</code>, <code>.xex</code>)</li>
+<li>Try relocating bootloader: <code>atrforge -B 6 -b disk.atr file.com</code></li>
+<li>Check file isn&#x27;t corrupted</li>
+<li>Test file separately (not as boot file)</li>
+</ul>
+<h3>Bootloader Conflicts</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Boot process starts but fails</li>
+<li>Memory errors</li>
+<li>Program doesn&#x27;t load correctly</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Program loads at same address as bootloader</li>
+<li>Memory layout conflicts</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Relocate bootloader: <code>atrforge -B 6 -b disk.atr file.com</code></li>
+<li>Check program&#x27;s load address</li>
+<li>Try different bootloader pages (6, 5, or 4)</li>
+</ul>
+<h2>Conversion Issues</h2>
+<h3>UTF8 Conversion Problems</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Files don&#x27;t work after conversion</li>
+<li>Characters are wrong</li>
+<li>Files are corrupted</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Converting binary files (don&#x27;t do this)</li>
+<li>Round-trip conversion issues</li>
+<li>Character encoding problems</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Only convert text files, not binary files</li>
+<li>Test converted files before using</li>
+<li>Keep backups of original files</li>
+<li>Use 7-bit mode if needed: <code>--7bit</code></li>
+</ul>
+<h3>Sector Size Conversion Fails</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Conversion doesn&#x27;t work</li>
+<li>Data loss</li>
+<li>Image corruption</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Incompatible DOS format</li>
+<li>Corrupted source image</li>
+<li>Size calculation errors</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Verify source image first: <code>lsatr --verify source.atr</code></li>
+<li>Check DOS format compatibility</li>
+<li>Backup before converting</li>
+<li>Try extracting files and recreating instead</li>
+</ul>
+<h2>Permission Problems</h2>
+<h3>Can&#x27;t Write Files</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Permission denied errors</li>
+<li>Can&#x27;t create output files</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Directory permissions</li>
+<li>File permissions</li>
+<li>Read-only filesystem</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Check directory permissions: <code>ls -ld directory</code></li>
+<li>Check file permissions: <code>ls -l file</code></li>
+<li>Use <code>chmod</code> to fix permissions</li>
+<li>Make sure you have write access</li>
+</ul>
+<h3>Can&#x27;t Read Files</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Permission denied when reading</li>
+<li>Can&#x27;t open input files</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>File permissions</li>
+<li>Directory permissions</li>
+<li>File ownership</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Check file permissions: <code>ls -l file</code></li>
+<li>Use <code>chmod</code> to fix if needed</li>
+<li>Check if you have read access</li>
+<li>Check file ownership</li>
+</ul>
+<h2>Path Issues</h2>
+<h3>Path Not Found</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>&quot;can&#x27;t find path&quot; errors</li>
+<li>Files not found</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Wrong path</li>
+<li>Path doesn&#x27;t exist</li>
+<li>Typo in path</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Double-check the path</li>
+<li>Use absolute paths if relative paths fail</li>
+<li>Check for typos</li>
+<li>Verify directory exists</li>
+</ul>
+<h3>Path Traversal Warnings</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Warnings about path components</li>
+<li>Files not extracted</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Dangerous path components (<code>..</code>, absolute paths)</li>
+<li>Security feature blocking extraction</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>This is a security feature (it&#x27;s working as intended)</li>
+<li>Sanitize paths in source images</li>
+<li>Use safe path names</li>
+<li>Check <a node="[object Object]" href="/docs/atrforge/security">SECURITY.md</a> for details</li>
+</ul>
+<h2>Memory/Resource Issues</h2>
+<h3>Out of Memory</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>&quot;out of memory&quot; errors</li>
+<li>Process killed</li>
+<li>System slowdown</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Very large images (approaching 16MB)</li>
+<li>System low on memory</li>
+<li>Too many files</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Close other applications</li>
+<li>Use smaller images</li>
+<li>Process images one at a time</li>
+<li>Increase system memory if possible</li>
+</ul>
+<h3>Disk Space Issues</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>&quot;disk full&quot; errors</li>
+<li>Can&#x27;t write output</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Disk actually full</li>
+<li>Quota exceeded</li>
+<li>Temporary files</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Check disk space: <code>df -h</code></li>
+<li>Free up disk space</li>
+<li>Clean temporary files</li>
+<li>Use different output location</li>
+</ul>
+<h2>Build/Installation Issues</h2>
+<h3>Build Fails</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li><code>make</code> fails</li>
+<li>Compilation errors</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Missing compiler</li>
+<li>Missing dependencies</li>
+<li>Source code issues</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Install C compiler (GCC or Clang)</li>
+<li>Install build tools (<code>make</code>)</li>
+<li>Check error messages for specific issues</li>
+<li>Try <code>make clean</code> and rebuild</li>
+</ul>
+<h3>Program Not Found</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>&quot;command not found&quot;</li>
+<li>Can&#x27;t run tools</li>
+</ul>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Not in PATH</li>
+<li>Not installed</li>
+<li>Wrong location</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Add <code>bin/</code> to PATH</li>
+<li>Copy binaries to system path</li>
+<li>Use full path: <code>./bin/atrforge</code></li>
+<li>Check installation completed</li>
+</ul>
+<h2>Getting More Help</h2>
+<h3>Check Documentation</h3>
+<ul>
+<li>Read the relevant tool documentation</li>
+<li>Check <a node="[object Object]" href="/docs/atrforge/examples">Examples</a> for similar scenarios</li>
+<li>Review <a node="[object Object]" href="/docs/atrforge/advanced">Advanced</a> topics</li>
+</ul>
+<h3>Verify Your Setup</h3>
+<ul>
+<li>Check tool versions: <code>atrforge -v</code></li>
+<li>Verify images: <code>lsatr --verify image.atr</code></li>
+<li>Test with simple examples first</li>
+</ul>
+<h3>Report Issues</h3>
+<p>If you find a bug:</p>
+<ol>
+<li>Check if it&#x27;s already known</li>
+<li>Gather information (error messages, commands used, file sizes)</li>
+<li>Report with details</li>
+<li>Include sample files if possible (small, non-sensitive)</li>
+</ol>
+<h2>Prevention Tips</h2>
+<ol>
+<li><strong>Backup before modifying</strong> - Tools create backups, but have your own too</li>
+<li><strong>Verify images</strong> - Use <code>--verify</code> before using images</li>
+<li><strong>Test boot files</strong> - Always test bootable disks</li>
+<li><strong>Check file formats</strong> - Make sure files are in correct format</li>
+<li><strong>Start simple</strong> - Test with simple examples before complex operations</li>
+<li><strong>Read error messages</strong> - They usually tell you what&#x27;s wrong</li>
+<li><strong>Check documentation</strong> - Most questions are answered in the docs</li>
+</ol>
+<h2>See Also</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/atrforge/examples">Examples</a> - Working examples that might help</li>
+<li><a node="[object Object]" href="/docs/atrforge/advanced">Advanced</a> - Advanced techniques that might solve issues</li>
+<li>Tool-specific documentation for detailed help</li>
+<li><a node="[object Object]" href="/docs/atrforge/security">SECURITY.md</a> - Security-related issues</li>
+</ul>
+<hr/>
+<p><em>For the complete tool list, see the <a node="[object Object]" href="/docs/atrforge">main documentation index</a>.</em></p></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"atrforge","productDocs":{"product":"atrforge","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ADVANCED.md","relativePath":"ADVANCED.md","relativeDir":"","filename":"ADVANCED","slug":"advanced","name":"ADVANCED"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATR_FORMAT.md","relativePath":"ATR_FORMAT.md","relativeDir":"","filename":"ATR_FORMAT","slug":"atr-format","name":"ATR FORMAT"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRCP.md","relativePath":"ATRCP.md","relativeDir":"","filename":"ATRCP","slug":"atrcp","name":"ATRCP"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRFORGE.md","relativePath":"ATRFORGE.md","relativeDir":"","filename":"ATRFORGE","slug":"atrforge","name":"ATRFORGE"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATTRIBUTIONS.md","relativePath":"ATTRIBUTIONS.md","relativeDir":"","filename":"ATTRIBUTIONS","slug":"attributions","name":"ATTRIBUTIONS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","relativePath":"BOOT_FILES.md","relativeDir":"","filename":"BOOT_FILES","slug":"boot-files","name":"BOOT FILES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CHANGELOG.md","relativePath":"CHANGELOG.md","relativeDir":"","filename":"CHANGELOG","slug":"changelog","name":"CHANGELOG"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CONVERTATR.md","relativePath":"CONVERTATR.md","relativeDir":"","filename":"CONVERTATR","slug":"convertatr","name":"CONVERTATR"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/DOS_FORMATS.md","relativePath":"DOS_FORMATS.md","relativeDir":"","filename":"DOS_FORMATS","slug":"dos-formats","name":"DOS FORMATS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","relativePath":"EXAMPLES.md","relativeDir":"","filename":"EXAMPLES","slug":"examples","name":"EXAMPLES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/FILE_ATTRIBUTES.md","relativePath":"FILE_ATTRIBUTES.md","relativeDir":"","filename":"FILE_ATTRIBUTES","slug":"file-attributes","name":"FILE ATTRIBUTES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/INSTALLATION.md","relativePath":"INSTALLATION.md","relativeDir":"","filename":"INSTALLATION","slug":"installation","name":"INSTALLATION"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","relativePath":"LSATR.md","relativeDir":"","filename":"LSATR","slug":"lsatr","name":"LSATR"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","relativePath":"TROUBLESHOOTING.md","relativeDir":"","filename":"TROUBLESHOOTING","slug":"troubleshooting","name":"TROUBLESHOOTING"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/UTF8_CONVERSION.md","relativePath":"UTF8_CONVERSION.md","relativeDir":"","filename":"UTF8_CONVERSION","slug":"utf8-conversion","name":"UTF8 CONVERSION"}],"navTree":{"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/README.md","isIndex":true},{"name":"ADVANCED","slug":"advanced","path":"ADVANCED.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ADVANCED.md","isIndex":false},{"name":"ATR FORMAT","slug":"atr-format","path":"ATR_FORMAT.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATR_FORMAT.md","isIndex":false},{"name":"ATRCP","slug":"atrcp","path":"ATRCP.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRCP.md","isIndex":false},{"name":"ATRFORGE","slug":"atrforge","path":"ATRFORGE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRFORGE.md","isIndex":false},{"name":"ATTRIBUTIONS","slug":"attributions","path":"ATTRIBUTIONS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATTRIBUTIONS.md","isIndex":false},{"name":"BOOT FILES","slug":"boot-files","path":"BOOT_FILES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","isIndex":false},{"name":"CHANGELOG","slug":"changelog","path":"CHANGELOG.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CHANGELOG.md","isIndex":false},{"name":"CONVERTATR","slug":"convertatr","path":"CONVERTATR.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CONVERTATR.md","isIndex":false},{"name":"DOS FORMATS","slug":"dos-formats","path":"DOS_FORMATS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/DOS_FORMATS.md","isIndex":false},{"name":"EXAMPLES","slug":"examples","path":"EXAMPLES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","isIndex":false},{"name":"FILE ATTRIBUTES","slug":"file-attributes","path":"FILE_ATTRIBUTES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/FILE_ATTRIBUTES.md","isIndex":false},{"name":"INSTALLATION","slug":"installation","path":"INSTALLATION.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/INSTALLATION.md","isIndex":false},{"name":"LSATR","slug":"lsatr","path":"LSATR.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","isIndex":false},{"name":"TROUBLESHOOTING","slug":"troubleshooting","path":"TROUBLESHOOTING.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","isIndex":false},{"name":"UTF8 CONVERSION","slug":"utf8-conversion","path":"UTF8_CONVERSION.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/UTF8_CONVERSION.md","isIndex":false}]}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","relativePath":"TROUBLESHOOTING.md","relativeDir":"","filename":"TROUBLESHOOTING","slug":"troubleshooting","name":"TROUBLESHOOTING","content":"# Troubleshooting\n\nThings go wrong. It happens. This guide will help you figure out what went wrong and how to fix it. Most problems have simple solutions. Some don't. We'll cover both.\n\n## Common Error Messages\n\n### \"can't open file\"\n\n**What it means:** The tool can't open the specified file.\n\n**Possible causes:**\n- File doesn't exist\n- Wrong path\n- Permission issues\n- File is locked by another process\n\n**Solutions:**\n- Check the file path (typos are common)\n- Verify the file exists: `ls -l filename`\n- Check file permissions: `chmod` if needed\n- Make sure no other program has the file open\n\n### \"not an ATR image\"\n\n**What it means:** The file isn't a valid ATR image.\n\n**Possible causes:**\n- File is corrupted\n- File is in a different format\n- File is empty or incomplete\n\n**Solutions:**\n- Verify the file is actually an ATR image\n- Check file size (ATR files should be at least a few KB)\n- Try downloading/copying the file again\n- Check if it's a different disk image format\n\n### \"invalid ATR image size\"\n\n**What it means:** The ATR header has invalid size information.\n\n**Possible causes:**\n- Corrupted header\n- Non-standard ATR file\n- File was truncated\n\n**Solutions:**\n- Try `lsatr --verify` to check the image\n- The tools may auto-correct some size issues\n- If it's a known good image, it might be a tool bug (report it)\n\n### \"can't write to output file\"\n\n**What it means:** Can't write the output file.\n\n**Possible causes:**\n- Disk full\n- Permission denied\n- File is read-only\n- Path doesn't exist\n\n**Solutions:**\n- Check disk space: `df -h`\n- Check write permissions\n- Make sure the directory exists\n- Check if file is read-only: `chmod` if needed\n\n### \"option needs an argument\"\n\n**What it means:** You used an option that requires an argument but didn't provide one.\n\n**Possible causes:**\n- Missing argument after option\n- Wrong option syntax\n\n**Solutions:**\n- Check the option syntax in the documentation\n- Make sure arguments come immediately after options that need them\n- Example: `-X output/` not `-Xoutput/` (space matters)\n\n## Image Format Issues\n\n### Image Won't Load\n\n**Symptoms:**\n- Image doesn't work in emulator\n- Image doesn't boot\n- Error messages when trying to use image\n\n**Possible causes:**\n- Wrong DOS format for target system\n- Corrupted image\n- Incompatible sector size\n- Boot file issues\n\n**Solutions:**\n- Verify image: `lsatr --verify image.atr`\n- Check DOS format compatibility\n- Try recreating the image\n- Check boot file format and requirements\n\n### Image Too Large\n\n**Symptoms:**\n- Error about image size\n- Image creation fails\n- \"image size calculation overflow\"\n\n**Possible causes:**\n- Files too large for available disk sizes\n- Maximum size exceeded (16MB limit)\n\n**Solutions:**\n- Check total file sizes\n- Use `-x` for exact sizing if needed\n- Split files across multiple disks\n- Maximum ATR size is 16MB (65535 sectors × 256 bytes)\n\n### Image Too Small\n\n**Symptoms:**\n- Files don't fit\n- \"not enough space\" errors\n\n**Possible causes:**\n- Files are larger than selected disk size\n- Disk size calculation was wrong\n\n**Solutions:**\n- Use a larger disk size (atrforge picks automatically)\n- Use `-s` to specify minimum size\n- Remove some files\n- Check actual file sizes\n\n## File Size Problems\n\n### Files Don't Fit\n\n**Symptoms:**\n- Error when adding files\n- Files missing from image\n\n**Possible causes:**\n- Files too large for disk\n- Not enough free space\n\n**Solutions:**\n- Check file sizes before creating image\n- Use larger disk size\n- Remove unnecessary files\n- Split across multiple disks\n\n### Unexpected File Sizes\n\n**Symptoms:**\n- Files appear larger/smaller than expected\n- Size mismatches\n\n**Possible causes:**\n- Directory overhead\n- Filesystem overhead\n- Rounding in size calculations\n\n**Solutions:**\n- Some overhead is normal\n- Check actual disk usage, not just file sizes\n- Use `lsatr` to see actual file sizes in image\n\n## Boot File Problems\n\n### Boot File Doesn't Load\n\n**Symptoms:**\n- Disk doesn't boot\n- Boot process fails\n- System hangs on boot\n\n**Possible causes:**\n- File not in binary format\n- Bootloader conflict\n- Memory conflicts\n- Corrupted boot file\n\n**Solutions:**\n- Verify file is in Atari binary format (`.com`, `.xex`)\n- Try relocating bootloader: `atrforge -B 6 -b disk.atr file.com`\n- Check file isn't corrupted\n- Test file separately (not as boot file)\n\n### Bootloader Conflicts\n\n**Symptoms:**\n- Boot process starts but fails\n- Memory errors\n- Program doesn't load correctly\n\n**Possible causes:**\n- Program loads at same address as bootloader\n- Memory layout conflicts\n\n**Solutions:**\n- Relocate bootloader: `atrforge -B 6 -b disk.atr file.com`\n- Check program's load address\n- Try different bootloader pages (6, 5, or 4)\n\n## Conversion Issues\n\n### UTF8 Conversion Problems\n\n**Symptoms:**\n- Files don't work after conversion\n- Characters are wrong\n- Files are corrupted\n\n**Possible causes:**\n- Converting binary files (don't do this)\n- Round-trip conversion issues\n- Character encoding problems\n\n**Solutions:**\n- Only convert text files, not binary files\n- Test converted files before using\n- Keep backups of original files\n- Use 7-bit mode if needed: `--7bit`\n\n### Sector Size Conversion Fails\n\n**Symptoms:**\n- Conversion doesn't work\n- Data loss\n- Image corruption\n\n**Possible causes:**\n- Incompatible DOS format\n- Corrupted source image\n- Size calculation errors\n\n**Solutions:**\n- Verify source image first: `lsatr --verify source.atr`\n- Check DOS format compatibility\n- Backup before converting\n- Try extracting files and recreating instead\n\n## Permission Problems\n\n### Can't Write Files\n\n**Symptoms:**\n- Permission denied errors\n- Can't create output files\n\n**Possible causes:**\n- Directory permissions\n- File permissions\n- Read-only filesystem\n\n**Solutions:**\n- Check directory permissions: `ls -ld directory`\n- Check file permissions: `ls -l file`\n- Use `chmod` to fix permissions\n- Make sure you have write access\n\n### Can't Read Files\n\n**Symptoms:**\n- Permission denied when reading\n- Can't open input files\n\n**Possible causes:**\n- File permissions\n- Directory permissions\n- File ownership\n\n**Solutions:**\n- Check file permissions: `ls -l file`\n- Use `chmod` to fix if needed\n- Check if you have read access\n- Check file ownership\n\n## Path Issues\n\n### Path Not Found\n\n**Symptoms:**\n- \"can't find path\" errors\n- Files not found\n\n**Possible causes:**\n- Wrong path\n- Path doesn't exist\n- Typo in path\n\n**Solutions:**\n- Double-check the path\n- Use absolute paths if relative paths fail\n- Check for typos\n- Verify directory exists\n\n### Path Traversal Warnings\n\n**Symptoms:**\n- Warnings about path components\n- Files not extracted\n\n**Possible causes:**\n- Dangerous path components (`..`, absolute paths)\n- Security feature blocking extraction\n\n**Solutions:**\n- This is a security feature (it's working as intended)\n- Sanitize paths in source images\n- Use safe path names\n- Check [SECURITY.md](../SECURITY.md) for details\n\n## Memory/Resource Issues\n\n### Out of Memory\n\n**Symptoms:**\n- \"out of memory\" errors\n- Process killed\n- System slowdown\n\n**Possible causes:**\n- Very large images (approaching 16MB)\n- System low on memory\n- Too many files\n\n**Solutions:**\n- Close other applications\n- Use smaller images\n- Process images one at a time\n- Increase system memory if possible\n\n### Disk Space Issues\n\n**Symptoms:**\n- \"disk full\" errors\n- Can't write output\n\n**Possible causes:**\n- Disk actually full\n- Quota exceeded\n- Temporary files\n\n**Solutions:**\n- Check disk space: `df -h`\n- Free up disk space\n- Clean temporary files\n- Use different output location\n\n## Build/Installation Issues\n\n### Build Fails\n\n**Symptoms:**\n- `make` fails\n- Compilation errors\n\n**Possible causes:**\n- Missing compiler\n- Missing dependencies\n- Source code issues\n\n**Solutions:**\n- Install C compiler (GCC or Clang)\n- Install build tools (`make`)\n- Check error messages for specific issues\n- Try `make clean` and rebuild\n\n### Program Not Found\n\n**Symptoms:**\n- \"command not found\"\n- Can't run tools\n\n**Possible causes:**\n- Not in PATH\n- Not installed\n- Wrong location\n\n**Solutions:**\n- Add `bin/` to PATH\n- Copy binaries to system path\n- Use full path: `./bin/atrforge`\n- Check installation completed\n\n## Getting More Help\n\n### Check Documentation\n\n- Read the relevant tool documentation\n- Check [Examples](EXAMPLES.md) for similar scenarios\n- Review [Advanced](ADVANCED.md) topics\n\n### Verify Your Setup\n\n- Check tool versions: `atrforge -v`\n- Verify images: `lsatr --verify image.atr`\n- Test with simple examples first\n\n### Report Issues\n\nIf you find a bug:\n1. Check if it's already known\n2. Gather information (error messages, commands used, file sizes)\n3. Report with details\n4. Include sample files if possible (small, non-sensitive)\n\n## Prevention Tips\n\n1. **Backup before modifying** - Tools create backups, but have your own too\n2. **Verify images** - Use `--verify` before using images\n3. **Test boot files** - Always test bootable disks\n4. **Check file formats** - Make sure files are in correct format\n5. **Start simple** - Test with simple examples before complex operations\n6. **Read error messages** - They usually tell you what's wrong\n7. **Check documentation** - Most questions are answered in the docs\n\n## See Also\n\n- [Examples](EXAMPLES.md) - Working examples that might help\n- [Advanced](ADVANCED.md) - Advanced techniques that might solve issues\n- Tool-specific documentation for detailed help\n- [SECURITY.md](../SECURITY.md) - Security-related issues\n\n---\n\n*For the complete tool list, see the [main documentation index](README.md).*\n"},"currentPath":"troubleshooting"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["atrforge","troubleshooting"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

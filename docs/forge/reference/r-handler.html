@@ -1,0 +1,261 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">r-handler | forge Documentation | Atari Foundry</title><meta name="description" content="forge documentation: r-handler" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">forge<!-- --> Documentation</p><h1 class="page-title">r-handler</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/forge/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/forge/index">index</a></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">cc65</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/cc65">README</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">about</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/about/attributions">attributions</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/about/why-forge">why-forge</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">advanced topics</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/cio-reference">cio-reference</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/display-list-interrupts">display-list-interrupts</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/fujinet">fujinet</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/low-level-programming">low-level-programming</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/note-point">note-point</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/sio-operations">sio-operations</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/xio-reference">xio-reference</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">getting started</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/compiling">compiling</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/differences">differences</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/first-steps">first-steps</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/introduction">introduction</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">editor</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/editor/editor-guide">editor-guide</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/editor/editor-optimization">editor-optimization</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">language reference</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/expressions">expressions</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/functions">functions</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/statements">statements</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/syntax">syntax</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">reference</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/hardware-registers">hardware-registers</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/interrupts">interrupts</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/iocb-structure">iocb-structure</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/memory-map">memory-map</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/memory-usage">memory-usage</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/os-equates">os-equates</a></li><li><a class="doc-link active" style="padding-left:1.2rem" href="/docs/forge/reference/r-handler">r-handler</a></li></ul></div></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>R: Handler</h1>
+<p>R: device handler reference for RS-232 serial ports (Atari 850, R:Verter, BOB-Verter).</p>
+<h2>Overview</h2>
+<p>The R: device is typically a handler for an RS-232 serial port. This serial port can be on an Atari 850, an MIO, Black Box or P:R:Connection from ICD. Most handlers are the same with subtle differences.</p>
+<h2>What is an R: Device?</h2>
+<p>The R: device is a handler for an RS-232 serial port. This serial port can be on:</p>
+<ul>
+<li><strong>Atari 850</strong> - Interface module with 4 RS-232 ports</li>
+<li><strong>MIO</strong> - Multi I/O interface</li>
+<li><strong>Black Box</strong> - Enhanced I/O interface</li>
+<li><strong>P:R:Connection</strong> - ICD interface</li>
+<li><strong>R:Verter</strong> - Modern serial interface</li>
+<li><strong>BOB-Verter</strong> - Modern serial interface</li>
+</ul>
+<h2>Atari 850</h2>
+<p>The Atari 850 is a computer peripheral for the Atari 8-bit line of computers that was released in 1980. It was called an &quot;Interface module&quot; that connected to the SIO port.</p>
+<p>It provided:</p>
+<ul>
+<li><strong>4 RS-232 serial ports:</strong>
+<ul>
+<li>R1: - Fully functional</li>
+<li>R2:-R4: - Did not provide all RS-232 signals</li>
+</ul>
+</li>
+<li><strong>1 parallel port:</strong> P1:</li>
+</ul>
+<h2>Opening an R: Device</h2>
+<h3>OPEN #<em>channel</em>, <em>aux1</em>, <em>aux2</em>, &quot;R_n_:&quot;</h3>
+<p><strong>Aux1</strong> specifies the direction of the port:</p>
+<pre><code>7 6 5 4 3 2 1 0
+----------------
+| | | | | | | | |
+----------------
+</code></pre>
+<ul>
+<li><strong>Aux1[7:4]</strong> = NOT USED</li>
+<li><strong>Aux1[3]</strong> = Specifies Output when high</li>
+<li><strong>Aux1[2]</strong> = Specifies Input when high</li>
+<li><strong>Aux1[1]</strong> = NOT USED</li>
+<li><strong>Aux1[0]</strong> = Specifies Concurrent I/O mode</li>
+</ul>
+<p><strong>Common values:</strong></p>
+<ul>
+<li><strong>4</strong> = Input only</li>
+<li><strong>8</strong> = Output only</li>
+<li><strong>12</strong> = Input and Output (read/write)</li>
+<li><strong>13</strong> = Input and Output with Concurrent I/O mode</li>
+</ul>
+<p><strong>Aux2</strong> is not used.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">OPEN #1, 12, 0, &quot;R1:&quot;  &#x27; Open R1: for read/write
+</code></pre></pre>
+<h2>XIO Commands</h2>
+<h3>XIO 34 - DTR/RTS Control</h3>
+<p><strong>XIO 34, #<em>channel</em>, <em>aux1</em>, <em>aux2</em>, &quot;R_n_:&quot;</strong></p>
+<p>Aux1 bits do the following:</p>
+<ul>
+<li><strong>Aux1[7]</strong> = DTR control enable (active high)</li>
+<li><strong>Aux1[6]</strong> = Force DTR value</li>
+<li><strong>Aux1[5]</strong> = RTS control enable (active high)</li>
+<li><strong>Aux1[4]</strong> = Force RTS value</li>
+<li><strong>Aux1[3:0]</strong> = not used</li>
+</ul>
+<p><strong>To force DTR off:</strong> Aux1 = 128<br/>
+<strong>To force DTR on:</strong> Aux1 = 192</p>
+<p>Aux2 is unused.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">XIO 34, #1, 192, 0, &quot;R1:&quot;  &#x27; Force DTR on
+XIO 34, #1, 128, 0, &quot;R1:&quot;  &#x27; Force DTR off
+</code></pre></pre>
+<h3>XIO 36 - Set Baud Rate and Parameters</h3>
+<p><strong>XIO 36, #<em>channel</em>, <em>aux1</em>, <em>aux2</em>, &quot;R_n_:&quot;</strong></p>
+<p>Aux1 selects the Baud rate, Word size and stop bits. Add the values listed below to obtain the BASIC number.</p>
+<p><strong>Aux1[3:0] = Baud rate:</strong></p>
+<table><thead><tr><th>Value</th><th>Baud Rate</th></tr></thead><tbody><tr><td>0</td><td>300 bps</td></tr><tr><td>1</td><td>57600 bps (was 45.5 bps in 850 spec)</td></tr><tr><td>2</td><td>50 bps</td></tr><tr><td>3</td><td>115200 bps (was 56.875 bps in 850 spec)</td></tr><tr><td>4</td><td>75 bps</td></tr><tr><td>5</td><td>110 bps</td></tr><tr><td>6</td><td>134.5 bps</td></tr><tr><td>7</td><td>150 bps</td></tr><tr><td>8</td><td>300 bps</td></tr><tr><td>9</td><td>600 bps</td></tr><tr><td>10</td><td>1200 bps</td></tr><tr><td>11</td><td>1800 bps</td></tr><tr><td>12</td><td>2400 bps</td></tr><tr><td>13</td><td>4800 bps</td></tr><tr><td>14</td><td>9600 bps</td></tr><tr><td>15</td><td>19200 bps</td></tr></tbody></table>
+<p><strong>Aux1[5:4] = Word size:</strong></p>
+<table><thead><tr><th>Value</th><th>Word Size</th></tr></thead><tbody><tr><td>0</td><td>8 bits</td></tr><tr><td>1</td><td>7 bits</td></tr><tr><td>2</td><td>6 bits</td></tr><tr><td>3</td><td>5 bits</td></tr></tbody></table>
+<p><strong>Aux1[6]</strong> = Select 230400 bps (feature added to Atari800)</p>
+<p><strong>Aux1[7]</strong> = Stop bits:</p>
+<ul>
+<li>0 = 1 stop bit</li>
+<li>1 = 2 stop bits</li>
+</ul>
+<p><strong>Aux2</strong> specifies whether or not the Interface Module should check Data Set Ready (DSR), Clear to Send (CTS) and/or Carrier Detect (CD). This function is currently not supported.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">&#x27; 1200 baud, 8 bits, 1 stop bit
+&#x27; 10 (1200 baud) + 0 (8 bits) + 0 (1 stop) = 10
+XIO 36, #1, 10, 0, &quot;R1:&quot;
+
+&#x27; 9600 baud, 8 bits, 1 stop bit
+&#x27; 14 (9600 baud) + 0 (8 bits) + 0 (1 stop) = 14
+XIO 36, #1, 14, 0, &quot;R1:&quot;
+</code></pre></pre>
+<h3>XIO 38 - Set Translation Mode</h3>
+<p><strong>XIO 38, #<em>channel</em>, <em>aux1</em>, <em>aux2</em>, &quot;R_n_:&quot;</strong></p>
+<p>Aux1 specifies the translation mode, input/output parity modes and the append Line Feed option.</p>
+<p><strong>Aux1[1:0] = Output Parity</strong> (* Not Implemented)</p>
+<ul>
+<li>0 = Do not change parity bit</li>
+<li>1 = Set output parity odd</li>
+<li>2 = Set output parity even</li>
+<li>3 = Set output parity bit to 1</li>
+</ul>
+<p><strong>Aux1[3:2] = Input Parity</strong></p>
+<ul>
+<li>0 = Ignore and do not change Parity bit (NO PARITY)</li>
+<li>1 = Set Parity to ODD</li>
+<li>2 = Set Parity to EVEN</li>
+<li>3 = Do not use Parity (NO PARITY)</li>
+</ul>
+<p><strong>Aux1[4]</strong> = Heavy Translation * Not Implemented</p>
+<ul>
+<li>0 = Light Translation</li>
+<li>1 = Heavy Translation</li>
+</ul>
+<p><strong>Aux1[5]</strong> = Translation</p>
+<ul>
+<li>0 = Translation ON</li>
+<li>1 = Translation off</li>
+</ul>
+<p><strong>Aux1[6]</strong> = Line Feeds</p>
+<ul>
+<li>0 = Do not append LF</li>
+<li>1 = Append LF after Carriage Return</li>
+</ul>
+<p><strong>Aux1[7]</strong> = Not Used</p>
+<p>Aux2 is the numeric representation of the &quot;won&#x27;t translate&quot; character for heavy translation. (Not currently supported.)</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">&#x27; Full ATASCII translation, append LF
+&#x27; 0 (no parity) + 0 (light) + 0 (translation on) + 64 (append LF) = 64
+XIO 38, #1, 64, 0, &quot;R1:&quot;
+</code></pre></pre>
+<h3>XIO 40 - Start Concurrent I/O Mode</h3>
+<p><strong>XIO 40, #<em>channel</em>, <em>aux1</em>, <em>aux2</em>, &quot;R_n_:&quot;</strong></p>
+<p>XIO 40 starts concurrent I/O Mode.</p>
+<p>Both Aux1 and Aux2 are used to specify an output buffer, but using the specified input buffer is not currently supported. The default 256 byte internal buffer is used when both Aux1 and Aux2 = 0.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">XIO 40, #1, 0, 0, &quot;R1:&quot;  &#x27; Start concurrent I/O
+</code></pre></pre>
+<h2>STATUS Command</h2>
+<h3>STATUS #<em>channel</em>, <em>statusVar</em></h3>
+<p>The STATUS command will update the memory locations 746-749 (DVSTAT buffer).</p>
+<p><strong>DVSTAT Buffer:</strong></p>
+<table><thead><tr><th>Address</th><th>Hex</th><th>Description</th></tr></thead><tbody><tr><td>746</td><td>$02EA</td><td>Error bits (bitfield)</td></tr><tr><td>747</td><td>$02EB</td><td>Sense byte or buffer count low byte</td></tr><tr><td>748</td><td>$02EC</td><td>Buffer count high byte (usually 0)</td></tr><tr><td>749</td><td>$02ED</td><td>Output buffer count</td></tr></tbody></table>
+<h3>Error Bits (746 / $02EA)</h3>
+<p><em>Not Implemented in all handlers</em></p>
+<ul>
+<li><strong>Bit 7</strong> = Received Data Framing Error</li>
+<li><strong>Bit 6</strong> = Received Data Byte Overrun Error</li>
+<li><strong>Bit 5</strong> = Received Data Parity Error</li>
+<li><strong>Bit 4</strong> = Received Data Buffer Overflow error</li>
+<li><strong>Bit 3</strong> = Illegal Option Combination Attempted</li>
+<li><strong>Bit 2</strong> = External Device Not Fully Ready Flag</li>
+<li><strong>Bit 1</strong> = Error On Block Data Transfer Out</li>
+<li><strong>Bit 0</strong> = Error On Command To Interface Module</li>
+</ul>
+<h3>Sense Byte (747 / $02EB)</h3>
+<p><strong>Concurrent I/O Mode:</strong></p>
+<ul>
+<li>Number of Characters in Input buffer (Low Byte)</li>
+</ul>
+<p><strong>Non-Concurrent I/O Mode:</strong> (* Not Implemented)</p>
+<ul>
+<li><strong>Bit 7</strong> = Data Set Ready (DSR) status during current STATUS command</li>
+<li><strong>Bit 6</strong> = DSR status during last STATUS command</li>
+<li><strong>Bit 5</strong> = Clear to Send (CTS) status during current STATUS command</li>
+<li><strong>Bit 4</strong> = CTS status during last STATUS command</li>
+<li><strong>Bit 3</strong> = CARRIER DETECT (CD) status during current STATUS command</li>
+<li><strong>Bit 2</strong> = CD status during last STATUS command</li>
+<li><strong>Bit 1</strong> = NOT USED</li>
+<li><strong>Bit 0</strong> = Data Receive (RCV) current status</li>
+</ul>
+<p><strong>Checking carrier:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">STATUS #1, ST
+IF ST = 1 AND (PEEK(747) AND 8) &lt;&gt; 0 THEN
+  ? &quot;Connection active&quot;
+ELSE
+  ? &quot;No carrier&quot;
+ENDIF
+</code></pre></pre>
+<h3>Buffer Counts</h3>
+<p><strong>Concurrent I/O Mode:</strong></p>
+<ul>
+<li><strong>747 + 256 * 748</strong> = Input buffer count</li>
+<li><strong>749</strong> = Output buffer count</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">STATUS #1, ST
+IF ST = 1 THEN
+  INPUT_BYTES = PEEK(747) + 256 * PEEK(748)
+  OUTPUT_BYTES = PEEK(749)
+  ? &quot;Input buffer: &quot;; INPUT_BYTES; &quot; bytes&quot;
+  ? &quot;Output buffer: &quot;; OUTPUT_BYTES; &quot; bytes&quot;
+ENDIF
+</code></pre></pre>
+<h2>Basic I/O Operations</h2>
+<h3>GET, INPUT, PUT, PRINT</h3>
+<p>Use as normal:</p>
+<pre><pre class="language-basic"><code class="language-basic">GET #1, BYTE_VAL
+INPUT #1, LINE$
+PUT #1, BYTE_VAL
+PRINT #1, &quot;Hello&quot;
+</code></pre></pre>
+<h3>CLOSE</h3>
+<p>Closes the Serial port or the network connection.</p>
+<pre><pre class="language-basic"><code class="language-basic">CLOSE #1
+</code></pre></pre>
+<h2>Example: Terminal Program</h2>
+<pre><pre class="language-basic"><code class="language-basic">&#x27; Open R: device
+OPEN #1, 12, 0, &quot;R1:&quot;
+
+&#x27; Set baud rate (1200 baud, 8 bits, 1 stop)
+XIO 36, #1, 10, 0, &quot;R1:&quot;
+
+&#x27; Set translation (append LF)
+XIO 38, #1, 64, 0, &quot;R1:&quot;
+
+&#x27; Start concurrent I/O
+XIO 40, #1, 0, 0, &quot;R1:&quot;
+
+&#x27; Terminal loop
+REPEAT
+  &#x27; Check for incoming data
+  STATUS #1, ST
+  IF ST = 1 THEN
+    BYTES = PEEK(747) + 256 * PEEK(748)
+    IF BYTES &gt; 0 THEN
+      GET #1, C
+      PUT C  &#x27; Echo to screen
+    ENDIF
+  ENDIF
+  
+  &#x27; Check for keyboard input
+  IF KEY() THEN
+    GET K
+    PUT #1, K  &#x27; Send to serial port
+  ENDIF
+UNTIL K = 27  &#x27; ESC to exit
+
+CLOSE #1
+</code></pre></pre>
+<h2>Limitations</h2>
+<p>Not all features of the 850 are currently supported by all emulators/handlers:</p>
+<ol>
+<li>Cannot set RTS or XMT in XIO 34</li>
+<li>Cannot select 45.5 bps or 56.875 bps in XIO 36</li>
+<li>Cannot monitor DSR, CTS or CD in XIO 36</li>
+<li>Heavy ASCII/ATASCII translation</li>
+<li>Early force of short I/O block (XIO 32)</li>
+<li>Cannot set output parity with XIO 38</li>
+<li>Using a different input buffer as specified by XIO 40 is not supported</li>
+<li>Error bits at location 746 are not always implemented</li>
+<li>Cannot have more than one R: device open at a time in some implementations</li>
+</ol>
+<h2>Related Topics</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/forge/reference/advanced-topics/cio-reference">CIO Reference</a> - Central I/O operations</li>
+<li><a node="[object Object]" href="/docs/forge/reference/advanced-topics/xio-reference">XIO Reference</a> - Extended I/O commands</li>
+<li><a node="[object Object]" href="/docs/forge/iocb-structure">IOCB Structure</a> - IOCB details</li>
+<li><a node="[object Object]" href="/docs/forge/reference/language-reference/functions">Functions</a> - DVSTAT() function</li>
+</ul></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"forge","productDocs":{"product":"forge","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/cc65/README.md","relativePath":"cc65/README.md","relativeDir":"cc65","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/attributions.md","relativePath":"about/attributions.md","relativeDir":"about","filename":"attributions","slug":"attributions","name":"attributions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/cio-reference.md","relativePath":"advanced-topics/cio-reference.md","relativeDir":"advanced-topics","filename":"cio-reference","slug":"cio-reference","name":"cio-reference"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/compiling.md","relativePath":"getting-started/compiling.md","relativeDir":"getting-started","filename":"compiling","slug":"compiling","name":"compiling"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/differences.md","relativePath":"getting-started/differences.md","relativeDir":"getting-started","filename":"differences","slug":"differences","name":"differences"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/display-list-interrupts.md","relativePath":"advanced-topics/display-list-interrupts.md","relativeDir":"advanced-topics","filename":"display-list-interrupts","slug":"display-list-interrupts","name":"display-list-interrupts"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-guide.md","relativePath":"editor/editor-guide.md","relativeDir":"editor","filename":"editor-guide","slug":"editor-guide","name":"editor-guide"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-optimization.md","relativePath":"editor/editor-optimization.md","relativeDir":"editor","filename":"editor-optimization","slug":"editor-optimization","name":"editor-optimization"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/expressions.md","relativePath":"language-reference/expressions.md","relativeDir":"language-reference","filename":"expressions","slug":"expressions","name":"expressions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/first-steps.md","relativePath":"getting-started/first-steps.md","relativeDir":"getting-started","filename":"first-steps","slug":"first-steps","name":"first-steps"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/fujinet.md","relativePath":"advanced-topics/fujinet.md","relativeDir":"advanced-topics","filename":"fujinet","slug":"fujinet","name":"fujinet"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/functions.md","relativePath":"language-reference/functions.md","relativeDir":"language-reference","filename":"functions","slug":"functions","name":"functions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/hardware-registers.md","relativePath":"reference/hardware-registers.md","relativeDir":"reference","filename":"hardware-registers","slug":"hardware-registers","name":"hardware-registers"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/index.md","relativePath":"index.md","relativeDir":"","filename":"index","slug":"index","name":"index"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/interrupts.md","relativePath":"reference/interrupts.md","relativeDir":"reference","filename":"interrupts","slug":"interrupts","name":"interrupts"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/introduction.md","relativePath":"getting-started/introduction.md","relativeDir":"getting-started","filename":"introduction","slug":"introduction","name":"introduction"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/iocb-structure.md","relativePath":"reference/iocb-structure.md","relativeDir":"reference","filename":"iocb-structure","slug":"iocb-structure","name":"iocb-structure"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/low-level-programming.md","relativePath":"advanced-topics/low-level-programming.md","relativeDir":"advanced-topics","filename":"low-level-programming","slug":"low-level-programming","name":"low-level-programming"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-map.md","relativePath":"reference/memory-map.md","relativeDir":"reference","filename":"memory-map","slug":"memory-map","name":"memory-map"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-usage.md","relativePath":"reference/memory-usage.md","relativeDir":"reference","filename":"memory-usage","slug":"memory-usage","name":"memory-usage"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/note-point.md","relativePath":"advanced-topics/note-point.md","relativeDir":"advanced-topics","filename":"note-point","slug":"note-point","name":"note-point"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/os-equates.md","relativePath":"reference/os-equates.md","relativeDir":"reference","filename":"os-equates","slug":"os-equates","name":"os-equates"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/r-handler.md","relativePath":"reference/r-handler.md","relativeDir":"reference","filename":"r-handler","slug":"r-handler","name":"r-handler"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/sio-operations.md","relativePath":"advanced-topics/sio-operations.md","relativeDir":"advanced-topics","filename":"sio-operations","slug":"sio-operations","name":"sio-operations"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/statements.md","relativePath":"language-reference/statements.md","relativeDir":"language-reference","filename":"statements","slug":"statements","name":"statements"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/syntax.md","relativePath":"language-reference/syntax.md","relativeDir":"language-reference","filename":"syntax","slug":"syntax","name":"syntax"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/why-forge.md","relativePath":"about/why-forge.md","relativeDir":"about","filename":"why-forge","slug":"why-forge","name":"why-forge"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/xio-reference.md","relativePath":"advanced-topics/xio-reference.md","relativeDir":"advanced-topics","filename":"xio-reference","slug":"xio-reference","name":"xio-reference"}],"navTree":{"cc65":{"_files":[{"name":"README","slug":"readme","path":"cc65/README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/cc65/README.md","isIndex":true}]},"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/README.md","isIndex":true},{"name":"index","slug":"index","path":"index.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/index.md","isIndex":false}],"about":{"_files":[{"name":"attributions","slug":"attributions","path":"about/attributions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/attributions.md","isIndex":false},{"name":"why-forge","slug":"why-forge","path":"about/why-forge.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/why-forge.md","isIndex":false}]},"advanced-topics":{"_files":[{"name":"cio-reference","slug":"cio-reference","path":"advanced-topics/cio-reference.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/cio-reference.md","isIndex":false},{"name":"display-list-interrupts","slug":"display-list-interrupts","path":"advanced-topics/display-list-interrupts.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/display-list-interrupts.md","isIndex":false},{"name":"fujinet","slug":"fujinet","path":"advanced-topics/fujinet.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/fujinet.md","isIndex":false},{"name":"low-level-programming","slug":"low-level-programming","path":"advanced-topics/low-level-programming.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/low-level-programming.md","isIndex":false},{"name":"note-point","slug":"note-point","path":"advanced-topics/note-point.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/note-point.md","isIndex":false},{"name":"sio-operations","slug":"sio-operations","path":"advanced-topics/sio-operations.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/sio-operations.md","isIndex":false},{"name":"xio-reference","slug":"xio-reference","path":"advanced-topics/xio-reference.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/xio-reference.md","isIndex":false}]},"getting-started":{"_files":[{"name":"compiling","slug":"compiling","path":"getting-started/compiling.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/compiling.md","isIndex":false},{"name":"differences","slug":"differences","path":"getting-started/differences.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/differences.md","isIndex":false},{"name":"first-steps","slug":"first-steps","path":"getting-started/first-steps.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/first-steps.md","isIndex":false},{"name":"introduction","slug":"introduction","path":"getting-started/introduction.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/introduction.md","isIndex":false}]},"editor":{"_files":[{"name":"editor-guide","slug":"editor-guide","path":"editor/editor-guide.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-guide.md","isIndex":false},{"name":"editor-optimization","slug":"editor-optimization","path":"editor/editor-optimization.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-optimization.md","isIndex":false}]},"language-reference":{"_files":[{"name":"expressions","slug":"expressions","path":"language-reference/expressions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/expressions.md","isIndex":false},{"name":"functions","slug":"functions","path":"language-reference/functions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/functions.md","isIndex":false},{"name":"statements","slug":"statements","path":"language-reference/statements.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/statements.md","isIndex":false},{"name":"syntax","slug":"syntax","path":"language-reference/syntax.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/syntax.md","isIndex":false}]},"reference":{"_files":[{"name":"hardware-registers","slug":"hardware-registers","path":"reference/hardware-registers.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/hardware-registers.md","isIndex":false},{"name":"interrupts","slug":"interrupts","path":"reference/interrupts.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/interrupts.md","isIndex":false},{"name":"iocb-structure","slug":"iocb-structure","path":"reference/iocb-structure.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/iocb-structure.md","isIndex":false},{"name":"memory-map","slug":"memory-map","path":"reference/memory-map.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-map.md","isIndex":false},{"name":"memory-usage","slug":"memory-usage","path":"reference/memory-usage.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-usage.md","isIndex":false},{"name":"os-equates","slug":"os-equates","path":"reference/os-equates.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/os-equates.md","isIndex":false},{"name":"r-handler","slug":"r-handler","path":"reference/r-handler.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/r-handler.md","isIndex":false}]}}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/r-handler.md","relativePath":"reference/r-handler.md","relativeDir":"reference","filename":"r-handler","slug":"r-handler","name":"r-handler","content":"# R: Handler\n\nR: device handler reference for RS-232 serial ports (Atari 850, R:Verter, BOB-Verter).\n\n## Overview\n\nThe R: device is typically a handler for an RS-232 serial port. This serial port can be on an Atari 850, an MIO, Black Box or P:R:Connection from ICD. Most handlers are the same with subtle differences.\n\n## What is an R: Device?\n\nThe R: device is a handler for an RS-232 serial port. This serial port can be on:\n\n- **Atari 850** - Interface module with 4 RS-232 ports\n- **MIO** - Multi I/O interface\n- **Black Box** - Enhanced I/O interface\n- **P:R:Connection** - ICD interface\n- **R:Verter** - Modern serial interface\n- **BOB-Verter** - Modern serial interface\n\n## Atari 850\n\nThe Atari 850 is a computer peripheral for the Atari 8-bit line of computers that was released in 1980. It was called an \"Interface module\" that connected to the SIO port.\n\nIt provided:\n- **4 RS-232 serial ports:**\n  - R1: - Fully functional\n  - R2:-R4: - Did not provide all RS-232 signals\n- **1 parallel port:** P1:\n\n## Opening an R: Device\n\n### OPEN #_channel_, _aux1_, _aux2_, \"R_n_:\"\n\n**Aux1** specifies the direction of the port:\n\n```\n7 6 5 4 3 2 1 0\n----------------\n| | | | | | | | |\n----------------\n```\n\n- **Aux1[7:4]** = NOT USED\n- **Aux1[3]** = Specifies Output when high\n- **Aux1[2]** = Specifies Input when high\n- **Aux1[1]** = NOT USED\n- **Aux1[0]** = Specifies Concurrent I/O mode\n\n**Common values:**\n- **4** = Input only\n- **8** = Output only\n- **12** = Input and Output (read/write)\n- **13** = Input and Output with Concurrent I/O mode\n\n**Aux2** is not used.\n\n**Example:**\n```basic\nOPEN #1, 12, 0, \"R1:\"  ' Open R1: for read/write\n```\n\n## XIO Commands\n\n### XIO 34 - DTR/RTS Control\n\n**XIO 34, #_channel_, _aux1_, _aux2_, \"R_n_:\"**\n\nAux1 bits do the following:\n\n- **Aux1[7]** = DTR control enable (active high)\n- **Aux1[6]** = Force DTR value\n- **Aux1[5]** = RTS control enable (active high)\n- **Aux1[4]** = Force RTS value\n- **Aux1[3:0]** = not used\n\n**To force DTR off:** Aux1 = 128  \n**To force DTR on:** Aux1 = 192\n\nAux2 is unused.\n\n**Example:**\n```basic\nXIO 34, #1, 192, 0, \"R1:\"  ' Force DTR on\nXIO 34, #1, 128, 0, \"R1:\"  ' Force DTR off\n```\n\n### XIO 36 - Set Baud Rate and Parameters\n\n**XIO 36, #_channel_, _aux1_, _aux2_, \"R_n_:\"**\n\nAux1 selects the Baud rate, Word size and stop bits. Add the values listed below to obtain the BASIC number.\n\n**Aux1[3:0] = Baud rate:**\n\n| Value | Baud Rate |\n|-------|-----------|\n| 0 | 300 bps |\n| 1 | 57600 bps (was 45.5 bps in 850 spec) |\n| 2 | 50 bps |\n| 3 | 115200 bps (was 56.875 bps in 850 spec) |\n| 4 | 75 bps |\n| 5 | 110 bps |\n| 6 | 134.5 bps |\n| 7 | 150 bps |\n| 8 | 300 bps |\n| 9 | 600 bps |\n| 10 | 1200 bps |\n| 11 | 1800 bps |\n| 12 | 2400 bps |\n| 13 | 4800 bps |\n| 14 | 9600 bps |\n| 15 | 19200 bps |\n\n**Aux1[5:4] = Word size:**\n\n| Value | Word Size |\n|-------|-----------|\n| 0 | 8 bits |\n| 1 | 7 bits |\n| 2 | 6 bits |\n| 3 | 5 bits |\n\n**Aux1[6]** = Select 230400 bps (feature added to Atari800)\n\n**Aux1[7]** = Stop bits:\n- 0 = 1 stop bit\n- 1 = 2 stop bits\n\n**Aux2** specifies whether or not the Interface Module should check Data Set Ready (DSR), Clear to Send (CTS) and/or Carrier Detect (CD). This function is currently not supported.\n\n**Example:**\n```basic\n' 1200 baud, 8 bits, 1 stop bit\n' 10 (1200 baud) + 0 (8 bits) + 0 (1 stop) = 10\nXIO 36, #1, 10, 0, \"R1:\"\n\n' 9600 baud, 8 bits, 1 stop bit\n' 14 (9600 baud) + 0 (8 bits) + 0 (1 stop) = 14\nXIO 36, #1, 14, 0, \"R1:\"\n```\n\n### XIO 38 - Set Translation Mode\n\n**XIO 38, #_channel_, _aux1_, _aux2_, \"R_n_:\"**\n\nAux1 specifies the translation mode, input/output parity modes and the append Line Feed option.\n\n**Aux1[1:0] = Output Parity** (* Not Implemented)\n- 0 = Do not change parity bit\n- 1 = Set output parity odd\n- 2 = Set output parity even\n- 3 = Set output parity bit to 1\n\n**Aux1[3:2] = Input Parity**\n- 0 = Ignore and do not change Parity bit (NO PARITY)\n- 1 = Set Parity to ODD\n- 2 = Set Parity to EVEN\n- 3 = Do not use Parity (NO PARITY)\n\n**Aux1[4]** = Heavy Translation * Not Implemented\n- 0 = Light Translation\n- 1 = Heavy Translation\n\n**Aux1[5]** = Translation\n- 0 = Translation ON\n- 1 = Translation off\n\n**Aux1[6]** = Line Feeds\n- 0 = Do not append LF\n- 1 = Append LF after Carriage Return\n\n**Aux1[7]** = Not Used\n\nAux2 is the numeric representation of the \"won't translate\" character for heavy translation. (Not currently supported.)\n\n**Example:**\n```basic\n' Full ATASCII translation, append LF\n' 0 (no parity) + 0 (light) + 0 (translation on) + 64 (append LF) = 64\nXIO 38, #1, 64, 0, \"R1:\"\n```\n\n### XIO 40 - Start Concurrent I/O Mode\n\n**XIO 40, #_channel_, _aux1_, _aux2_, \"R_n_:\"**\n\nXIO 40 starts concurrent I/O Mode.\n\nBoth Aux1 and Aux2 are used to specify an output buffer, but using the specified input buffer is not currently supported. The default 256 byte internal buffer is used when both Aux1 and Aux2 = 0.\n\n**Example:**\n```basic\nXIO 40, #1, 0, 0, \"R1:\"  ' Start concurrent I/O\n```\n\n## STATUS Command\n\n### STATUS #_channel_, _statusVar_\n\nThe STATUS command will update the memory locations 746-749 (DVSTAT buffer).\n\n**DVSTAT Buffer:**\n\n| Address | Hex | Description |\n|---------|-----|-------------|\n| 746 | $02EA | Error bits (bitfield) |\n| 747 | $02EB | Sense byte or buffer count low byte |\n| 748 | $02EC | Buffer count high byte (usually 0) |\n| 749 | $02ED | Output buffer count |\n\n### Error Bits (746 / $02EA)\n\n*Not Implemented in all handlers*\n\n- **Bit 7** = Received Data Framing Error\n- **Bit 6** = Received Data Byte Overrun Error\n- **Bit 5** = Received Data Parity Error\n- **Bit 4** = Received Data Buffer Overflow error\n- **Bit 3** = Illegal Option Combination Attempted\n- **Bit 2** = External Device Not Fully Ready Flag\n- **Bit 1** = Error On Block Data Transfer Out\n- **Bit 0** = Error On Command To Interface Module\n\n### Sense Byte (747 / $02EB)\n\n**Concurrent I/O Mode:**\n- Number of Characters in Input buffer (Low Byte)\n\n**Non-Concurrent I/O Mode:** (* Not Implemented)\n- **Bit 7** = Data Set Ready (DSR) status during current STATUS command\n- **Bit 6** = DSR status during last STATUS command\n- **Bit 5** = Clear to Send (CTS) status during current STATUS command\n- **Bit 4** = CTS status during last STATUS command\n- **Bit 3** = CARRIER DETECT (CD) status during current STATUS command\n- **Bit 2** = CD status during last STATUS command\n- **Bit 1** = NOT USED\n- **Bit 0** = Data Receive (RCV) current status\n\n**Checking carrier:**\n```basic\nSTATUS #1, ST\nIF ST = 1 AND (PEEK(747) AND 8) \u003c\u003e 0 THEN\n  ? \"Connection active\"\nELSE\n  ? \"No carrier\"\nENDIF\n```\n\n### Buffer Counts\n\n**Concurrent I/O Mode:**\n\n- **747 + 256 * 748** = Input buffer count\n- **749** = Output buffer count\n\n**Example:**\n```basic\nSTATUS #1, ST\nIF ST = 1 THEN\n  INPUT_BYTES = PEEK(747) + 256 * PEEK(748)\n  OUTPUT_BYTES = PEEK(749)\n  ? \"Input buffer: \"; INPUT_BYTES; \" bytes\"\n  ? \"Output buffer: \"; OUTPUT_BYTES; \" bytes\"\nENDIF\n```\n\n## Basic I/O Operations\n\n### GET, INPUT, PUT, PRINT\n\nUse as normal:\n\n```basic\nGET #1, BYTE_VAL\nINPUT #1, LINE$\nPUT #1, BYTE_VAL\nPRINT #1, \"Hello\"\n```\n\n### CLOSE\n\nCloses the Serial port or the network connection.\n\n```basic\nCLOSE #1\n```\n\n## Example: Terminal Program\n\n```basic\n' Open R: device\nOPEN #1, 12, 0, \"R1:\"\n\n' Set baud rate (1200 baud, 8 bits, 1 stop)\nXIO 36, #1, 10, 0, \"R1:\"\n\n' Set translation (append LF)\nXIO 38, #1, 64, 0, \"R1:\"\n\n' Start concurrent I/O\nXIO 40, #1, 0, 0, \"R1:\"\n\n' Terminal loop\nREPEAT\n  ' Check for incoming data\n  STATUS #1, ST\n  IF ST = 1 THEN\n    BYTES = PEEK(747) + 256 * PEEK(748)\n    IF BYTES \u003e 0 THEN\n      GET #1, C\n      PUT C  ' Echo to screen\n    ENDIF\n  ENDIF\n  \n  ' Check for keyboard input\n  IF KEY() THEN\n    GET K\n    PUT #1, K  ' Send to serial port\n  ENDIF\nUNTIL K = 27  ' ESC to exit\n\nCLOSE #1\n```\n\n## Limitations\n\nNot all features of the 850 are currently supported by all emulators/handlers:\n\n1. Cannot set RTS or XMT in XIO 34\n2. Cannot select 45.5 bps or 56.875 bps in XIO 36\n3. Cannot monitor DSR, CTS or CD in XIO 36\n4. Heavy ASCII/ATASCII translation\n5. Early force of short I/O block (XIO 32)\n6. Cannot set output parity with XIO 38\n7. Using a different input buffer as specified by XIO 40 is not supported\n8. Error bits at location 746 are not always implemented\n9. Cannot have more than one R: device open at a time in some implementations\n\n## Related Topics\n\n- [CIO Reference](../advanced-topics/cio-reference.md) - Central I/O operations\n- [XIO Reference](../advanced-topics/xio-reference.md) - Extended I/O commands\n- [IOCB Structure](iocb-structure.md) - IOCB details\n- [Functions](../language-reference/functions.md) - DVSTAT() function\n"},"currentPath":"reference/r-handler"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["forge","reference","r-handler"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">expressions | forge Documentation | Atari Foundry</title><meta name="description" content="forge documentation: expressions" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">forge<!-- --> Documentation</p><h1 class="page-title">expressions</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/forge/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/forge/index">index</a></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">cc65</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/cc65">README</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">about</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/about/attributions">attributions</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/about/why-forge">why-forge</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">advanced topics</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/cio-reference">cio-reference</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/display-list-interrupts">display-list-interrupts</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/fujinet">fujinet</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/low-level-programming">low-level-programming</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/note-point">note-point</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/sio-operations">sio-operations</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/advanced-topics/xio-reference">xio-reference</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">getting started</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/compiling">compiling</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/differences">differences</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/first-steps">first-steps</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/getting-started/introduction">introduction</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">editor</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/editor/editor-guide">editor-guide</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/editor/editor-optimization">editor-optimization</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">language reference</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link active" style="padding-left:1.2rem" href="/docs/forge/language-reference/expressions">expressions</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/functions">functions</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/statements">statements</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/language-reference/syntax">syntax</a></li></ul></div></li><li><div class="docs-nav-section" style="margin-top:0"><h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255, 255, 255, 0.5);margin-bottom:0.6rem;font-weight:700;padding-left:0rem">reference</h4><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/hardware-registers">hardware-registers</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/interrupts">interrupts</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/iocb-structure">iocb-structure</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/memory-map">memory-map</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/memory-usage">memory-usage</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/os-equates">os-equates</a></li><li><a class="doc-link " style="padding-left:1.2rem" href="/docs/forge/reference/r-handler">r-handler</a></li></ul></div></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>Expressions</h1>
+<p>Expressions are used to perform calculations in the language.</p>
+<h2>Expression Types</h2>
+<p>There are three main types of expressions:</p>
+<ul>
+<li><strong>Numeric expressions</strong> (integer and floating point)</li>
+<li><strong>Boolean expressions</strong></li>
+<li><strong>String expressions</strong></li>
+</ul>
+<h2>Numeric Expressions</h2>
+<h3>Integer Expressions</h3>
+<p>In FORGE, standard numeric expressions are evaluated as integers from -32768 to 32767, this is called 16-bit signed integer values.</p>
+<h3>Floating Point Expressions</h3>
+<p>Floating point expressions are used <em>only</em> if numbers have a decimal point. Floating point numbers are stored with standard Atari binary-coded decimal (BCD) representation, with a range from 1E-98 to 1E+98.</p>
+<h2>Boolean Expressions</h2>
+<p>Boolean expressions are &quot;true&quot; or &quot;false&quot;, represented as the numbers 1 and 0, respectively.</p>
+<p>Note that any boolean value can also be used as a numeric value, in this case, &quot;true&quot; is converted to 1 and &quot;false&quot; converted to 0.</p>
+<h2>String Expressions</h2>
+<p>String expressions contain arbitrary text. In FORGE strings can have up to 255 characters of length. (This is similar to Microsoft BASICs found on other 8-bit microcomputers, and in contrast to the 32K limit found in Atari BASIC and TurboBASIC XL.)</p>
+<h2>Numeric Values</h2>
+<h3>Integer Values</h3>
+<p>Integer values can be written as:</p>
+<ul>
+<li><strong>Decimal numbers</strong> (like <code>123</code>, <code>1000</code>, etc.)</li>
+<li><strong>Hexadecimal numbers</strong> with a <code>$</code> sign before (like <code>$1C0</code>, <code>$A00</code>, etc.)</li>
+<li><strong>Variable names</strong></li>
+</ul>
+<p>Examples:</p>
+<pre><pre class="language-basic"><code class="language-basic">A = 123
+B = $FF
+C = A + B
+</code></pre></pre>
+<h3>Floating Point Values</h3>
+<p>Floating point values are written with a decimal dot and an optional exponent (like <code>3.14159</code>, <code>-3.2</code>, or <code>1.0E+10</code>).</p>
+<p>Examples:</p>
+<pre><pre class="language-basic"><code class="language-basic">PI = 3.14159
+BIG = 1.0E+10
+SMALL = -3.2
+</code></pre></pre>
+<h2>Numeric Variables</h2>
+<h3>Variable Naming</h3>
+<p>Variable names must begin with a letter or the symbol <code>_</code>, and can contain any letter, number or the symbol <code>_</code>.</p>
+<p>Examples of valid integer variable names:</p>
+<ul>
+<li><code>COUNTER</code></li>
+<li><code>My_Var</code></li>
+<li><code>num1</code></li>
+<li><code>_temp</code></li>
+</ul>
+<h3>Floating Point Variables</h3>
+<p>Floating point variables have an <code>%</code> as last character in the name.</p>
+<p>Examples:</p>
+<ul>
+<li><code>MyNum%</code></li>
+<li><code>x1%</code></li>
+<li><code>result%</code></li>
+</ul>
+<h3>Variable Declaration</h3>
+<p>In FORGE, variables can&#x27;t be used in an expression before being assigned a value; the first assignment declares the new variable.</p>
+<pre><pre class="language-basic"><code class="language-basic">A = 10    &#x27; Declares A as integer
+B% = 3.14 &#x27; Declares B% as floating point
+C = A + B &#x27; Error! Can&#x27;t mix types directly
+</code></pre></pre>
+<h2>Numeric Operators</h2>
+<p>There are various &quot;operators&quot; that perform calculations in expressions. The operators with higher precedence are always executed first.</p>
+<h3>Integer Operator Precedence</h3>
+<p>The order of precedence for <em>integer</em> operators (from lowest to highest):</p>
+<ol>
+<li><strong>Addition, Subtraction</strong> (<code>+</code>, <code>-</code>) - from left to right</li>
+<li><strong>Multiplication, Division, Modulus</strong> (<code>*</code>, <code>/</code>, <code>MOD</code>) - from left to right</li>
+<li><strong>Binary Operations</strong> (<code>&amp;</code>, <code>!</code>, <code>EXOR</code>) - binary &#x27;and&#x27;, &#x27;or&#x27;, &#x27;exclusive or&#x27; - from left to right</li>
+<li><strong>Unary Positive/Negative</strong> (<code>+</code>, <code>-</code>) - positive / negative</li>
+</ol>
+<p><strong>Note:</strong> <code>MOD</code> and <code>EXOR</code> can be abbreviated <code>M.</code> and <code>E.</code> respectively.</p>
+<h3>Example: Operator Precedence</h3>
+<p>For example, an expression like <code>1 + 2 * 3 - 4 * -5</code> is evaluated in the following order:</p>
+<ol>
+<li>First, the unary <code>-</code> before the <code>5</code>, giving the number <code>-5</code>.</li>
+<li>The first multiplication, giving <code>2*3</code> = <code>6</code>.</li>
+<li>The second multiplication, giving <code>4*-5</code> = <code>-20</code>.</li>
+<li>The addition, giving <code>1+6</code> = <code>7</code>.</li>
+<li>The subtraction, giving <code>7 - -20</code> = <code>27</code>.</li>
+</ol>
+<p>So, in this example the result is 27.</p>
+<h3>Parentheses</h3>
+<p>If there is a need to alter the precedence, you can place expressions within parentheses (e.g., <code>(2+5)*10</code>, which results in <code>70</code>).</p>
+<h3>Floating Point Operators</h3>
+<p>When using floating point expressions, the operators are:</p>
+<ol>
+<li><strong>Addition, Subtraction</strong> (<code>+</code>, <code>-</code>) - from left to right</li>
+<li><strong>Multiplication, Division</strong> (<code>*</code>, <code>/</code>) - from left to right</li>
+<li><strong>Exponentiation</strong> (<code>^</code>) - from left to right</li>
+<li><strong>Unary Positive/Negative</strong> (<code>+</code>, <code>-</code>) - positive / negative</li>
+</ol>
+<h3>Type Conversion</h3>
+<p>Note that integer expressions are automatically converted to floating point if needed, as this allows mixing integers and floating point in some calculations, but you must take care to force floating point calculations to avoid integer overflows.</p>
+<p><strong>Example - Correct:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">a% = 1000 * 1000 + 1.2
+</code></pre></pre>
+<p>Gives correct result as 1000 is converted to floating point before calculation.</p>
+<p><strong>Example - Incorrect:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">x = 1000
+a% = x * x + 1.2
+</code></pre></pre>
+<p>Gives incorrect results as the multiplication result is bigger than 32767.</p>
+<p><strong>Note:</strong> After any floating point errors (division by 0 and overflow), <code>ERR()</code> returns 3.</p>
+<h2>Boolean Operators</h2>
+<p>Boolean operators return a &quot;true&quot; or &quot;false&quot; value instead of a numeric value, useful as conditions in loops and <code>IF</code> statements.</p>
+<h3>Boolean Operator Precedence</h3>
+<p>The supported boolean operators, in order of precedence (from lowest to highest):</p>
+<ol>
+<li><strong>OR</strong> - Logical OR, true if one or both operands are true</li>
+<li><strong>AND</strong> - Logical AND, true only if both operands are true</li>
+<li><strong>NOT</strong> - Logical NOT, true only if operand is false</li>
+<li><strong>Comparison Operators</strong> (<code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>=</code>) - For integer or floating point comparisons, compare the two numbers and return true or false. Note that <code>&lt;&gt;</code> is <em>not equal</em>.</li>
+</ol>
+<p><strong>Note:</strong> The words <code>OR</code>, <code>AND</code> and <code>NOT</code> can be abbreviated <code>O.</code>, <code>A.</code> and <code>N.</code> respectively.</p>
+<h3>Type Restrictions</h3>
+<p>You can only compare two values of the same type, so an expression like <code>x = 1.2</code> is invalid, but <code>1.2 = x</code> is valid as the second operand is converted to floating point before comparison.</p>
+<h2>Arrays</h2>
+<p>Arrays hold many ordered values (called elements). The array elements can be accessed by an index.</p>
+<h3>Array Declaration</h3>
+<p>In FORGE, arrays must be dimensioned before use (see <a node="[object Object]" href="/docs/statements.md#dim">DIM statement</a>). The index of the element is written between parentheses and goes from 0 to the number of elements.</p>
+<p><strong>Warning:</strong> FORGE does not check for out of boundary accesses, so you must be careful with your code to not overrun the size of the arrays.</p>
+<h3>Array Usage</h3>
+<p>You can use an array position (the variable name followed by the index) in any location where a standard numeric variable or value is expected.</p>
+<h3>Array Types</h3>
+<p>Arrays can be of four types:</p>
+<h4>WORD Arrays</h4>
+<p>WORD arrays (the default if no type is given) use two bytes of memory for each element, and work like normal numeric integer variables: -32768 to 32767 (signed).</p>
+<pre><pre class="language-basic"><code class="language-basic">DIM A(10)      &#x27; WORD array
+A(0) = 100
+A(5) = -500
+</code></pre></pre>
+<h4>BYTE Arrays</h4>
+<p>BYTE arrays use only one byte for each element, so the numeric range is reduced from 0 to 255 (unsigned).</p>
+<pre><pre class="language-basic"><code class="language-basic">DIM B(10) BYTE
+B(0) = 100
+B(1) = 255
+</code></pre></pre>
+<h4>Floating Point Arrays</h4>
+<p>Floating point arrays work like any floating point variable, and use six bytes of memory for each element.</p>
+<pre><pre class="language-basic"><code class="language-basic">DIM C(10)      &#x27; Floating point array (name ends with %)
+C%(0) = 3.14
+C%(1) = 2.718
+</code></pre></pre>
+<h4>String Arrays</h4>
+<p>String arrays store a string in each element. String arrays use two bytes of memory for each element that is not yet assigned (containing empty strings), and 258 bytes for each element with a string assigned.</p>
+<pre><pre class="language-basic"><code class="language-basic">DIM D$(10)     &#x27; String array
+D$(0) = &quot;Hello&quot;
+D$(1) = &quot;World&quot;
+</code></pre></pre>
+<h2>String Values</h2>
+<h3>String Literals</h3>
+<p>String values are written as text surrounded by double quotes (<code>&quot;</code>). If you need to include a double quote character in a string, you must write two double quotes together.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PRINT &quot;Hello &quot;&quot;world&quot;&quot;&quot;
+</code></pre></pre>
+<p>Will print:</p>
+<pre><code>Hello &quot;world&quot;
+</code></pre>
+<h3>Hexadecimal Characters</h3>
+<p>You can also include any character with its hexadecimal code using <code>$</code> just after the closing quote, with no spaces around. This is the only way to include an ENTER character inside a string constant.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PRINT &quot;Hello&quot;$9B&quot;world&quot;$2E$2E
+</code></pre></pre>
+<p>Will print:</p>
+<pre><code>Hello
+world..
+</code></pre>
+<h3>String Substrings</h3>
+<p>The bracket operator <code>[</code> <code>]</code> allows creating a string from a portion of another, and accepts two forms:</p>
+<h4>Form 1: <code>[start]</code></h4>
+<p>This form selects all characters from <code>start</code> up to the end of the string, counting from 1.</p>
+<ul>
+<li><code>A$[1]</code> selects the entire string</li>
+<li><code>A$[3]</code> selects from the third character to the end, effectively removing the two leftmost characters</li>
+</ul>
+<h4>Form 2: <code>[start, len]</code></h4>
+<p>This form selects at most <code>len</code> characters from <code>start</code>, or up to the end of the string if there are not enough characters.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">PRINT &quot;Hello World&quot;[7]
+A$ = STR$(3.1415)[3,3]
+? A$
+? A$[2,1]
+</code></pre></pre>
+<p>Will print:</p>
+<pre><code>World
+141
+4
+</code></pre>
+<h3>Important Note on String Substrings</h3>
+<p>Note that the bracket operator creates a new string and copies the characters from the original string to the new one. As the same buffer is always used for the new string, you can&#x27;t compare two values without first assigning one of them to a new string variable.</p>
+<p><strong>This will print <code>ERROR</code>:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">A$=&quot;Don&#x27;t Work&quot;
+IF A$[2,2] = A$[3,3] THEN ? &quot;ERROR&quot;
+</code></pre></pre>
+<p><strong>While this will print <code>GOOD</code>:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">A$=&quot;Long string&quot;
+B$=A$[2,2]
+IF B$ &lt;&gt; A$[3,3] THEN ? &quot;GOOD&quot;
+</code></pre></pre>
+<h2>String Variables</h2>
+<h3>Naming</h3>
+<p>The naming convention for string variables is the same as for numeric variables, but must end with a <code>$</code> symbol.</p>
+<p>Examples:</p>
+<ul>
+<li><code>Text$</code></li>
+<li><code>NAME1$</code></li>
+<li><code>my_string$</code></li>
+</ul>
+<h3>Memory Usage</h3>
+<p>String variables always use 256 bytes:</p>
+<ul>
+<li>The first byte stores the string length</li>
+<li>The following bytes store up to 255 ATASCII characters</li>
+</ul>
+<h3>String Assignment</h3>
+<p>There are two types of string assignments:</p>
+<h4>Standard Assignment (<code>=</code>)</h4>
+<p>The standard <code>=</code> sign copies the string expression on the right to the variable on the left.</p>
+<pre><pre class="language-basic"><code class="language-basic">A$ = &quot;Hello&quot;
+B$ = A$
+</code></pre></pre>
+<h4>Concatenation Assignment (<code>=+</code>)</h4>
+<p>The <code>=+</code> sign copies the string expression on the right to the end of the current string, concatenating the text.</p>
+<p><strong>Example:</strong></p>
+<pre><pre class="language-basic"><code class="language-basic">A$ = &quot;Hello &quot;
+A$ =+ &quot;World&quot;
+? A$
+</code></pre></pre>
+<p>Will print:</p>
+<pre><code>Hello World
+</code></pre>
+<h2>Operator Precedence Summary</h2>
+<h3>Integer Operators (lowest to highest)</h3>
+<table><thead><tr><th>Precedence</th><th>Operators</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td><code>+</code>, <code>-</code></td><td>Addition, subtraction</td></tr><tr><td>2</td><td><code>*</code>, <code>/</code>, <code>MOD</code></td><td>Multiplication, division, modulus</td></tr><tr><td>3</td><td><code>&amp;</code>, <code>!</code>, <code>EXOR</code></td><td>Binary AND, OR, XOR</td></tr><tr><td>4</td><td><code>+</code>, <code>-</code> (unary)</td><td>Positive, negative</td></tr></tbody></table>
+<h3>Floating Point Operators (lowest to highest)</h3>
+<table><thead><tr><th>Precedence</th><th>Operators</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td><code>+</code>, <code>-</code></td><td>Addition, subtraction</td></tr><tr><td>2</td><td><code>*</code>, <code>/</code></td><td>Multiplication, division</td></tr><tr><td>3</td><td><code>^</code></td><td>Exponentiation</td></tr><tr><td>4</td><td><code>+</code>, <code>-</code> (unary)</td><td>Positive, negative</td></tr></tbody></table>
+<h3>Boolean Operators (lowest to highest)</h3>
+<table><thead><tr><th>Precedence</th><th>Operators</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td><code>OR</code></td><td>Logical OR</td></tr><tr><td>2</td><td><code>AND</code></td><td>Logical AND</td></tr><tr><td>3</td><td><code>NOT</code></td><td>Logical NOT</td></tr><tr><td>4</td><td><code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>=</code></td><td>Comparison operators</td></tr></tbody></table>
+<h2>Type Conversion Notes</h2>
+<ul>
+<li>Integers are automatically converted to floating point when needed</li>
+<li>Boolean values (true/false) can be used as integers (1/0)</li>
+<li>String comparisons require both operands to be strings</li>
+<li>Mixed integer/floating point comparisons convert integer to float</li>
+</ul>
+<h2>Next Steps</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/forge/functions">Functions</a> - Available functions</li>
+<li><a node="[object Object]" href="/docs/forge/statements">Statements</a> - Complete statement reference</li>
+<li><a node="[object Object]" href="/docs/forge/syntax">Syntax</a> - Language syntax rules</li>
+</ul></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"forge","productDocs":{"product":"forge","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/cc65/README.md","relativePath":"cc65/README.md","relativeDir":"cc65","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/attributions.md","relativePath":"about/attributions.md","relativeDir":"about","filename":"attributions","slug":"attributions","name":"attributions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/cio-reference.md","relativePath":"advanced-topics/cio-reference.md","relativeDir":"advanced-topics","filename":"cio-reference","slug":"cio-reference","name":"cio-reference"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/compiling.md","relativePath":"getting-started/compiling.md","relativeDir":"getting-started","filename":"compiling","slug":"compiling","name":"compiling"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/differences.md","relativePath":"getting-started/differences.md","relativeDir":"getting-started","filename":"differences","slug":"differences","name":"differences"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/display-list-interrupts.md","relativePath":"advanced-topics/display-list-interrupts.md","relativeDir":"advanced-topics","filename":"display-list-interrupts","slug":"display-list-interrupts","name":"display-list-interrupts"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-guide.md","relativePath":"editor/editor-guide.md","relativeDir":"editor","filename":"editor-guide","slug":"editor-guide","name":"editor-guide"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-optimization.md","relativePath":"editor/editor-optimization.md","relativeDir":"editor","filename":"editor-optimization","slug":"editor-optimization","name":"editor-optimization"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/expressions.md","relativePath":"language-reference/expressions.md","relativeDir":"language-reference","filename":"expressions","slug":"expressions","name":"expressions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/first-steps.md","relativePath":"getting-started/first-steps.md","relativeDir":"getting-started","filename":"first-steps","slug":"first-steps","name":"first-steps"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/fujinet.md","relativePath":"advanced-topics/fujinet.md","relativeDir":"advanced-topics","filename":"fujinet","slug":"fujinet","name":"fujinet"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/functions.md","relativePath":"language-reference/functions.md","relativeDir":"language-reference","filename":"functions","slug":"functions","name":"functions"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/hardware-registers.md","relativePath":"reference/hardware-registers.md","relativeDir":"reference","filename":"hardware-registers","slug":"hardware-registers","name":"hardware-registers"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/index.md","relativePath":"index.md","relativeDir":"","filename":"index","slug":"index","name":"index"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/interrupts.md","relativePath":"reference/interrupts.md","relativeDir":"reference","filename":"interrupts","slug":"interrupts","name":"interrupts"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/introduction.md","relativePath":"getting-started/introduction.md","relativeDir":"getting-started","filename":"introduction","slug":"introduction","name":"introduction"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/iocb-structure.md","relativePath":"reference/iocb-structure.md","relativeDir":"reference","filename":"iocb-structure","slug":"iocb-structure","name":"iocb-structure"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/low-level-programming.md","relativePath":"advanced-topics/low-level-programming.md","relativeDir":"advanced-topics","filename":"low-level-programming","slug":"low-level-programming","name":"low-level-programming"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-map.md","relativePath":"reference/memory-map.md","relativeDir":"reference","filename":"memory-map","slug":"memory-map","name":"memory-map"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-usage.md","relativePath":"reference/memory-usage.md","relativeDir":"reference","filename":"memory-usage","slug":"memory-usage","name":"memory-usage"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/note-point.md","relativePath":"advanced-topics/note-point.md","relativeDir":"advanced-topics","filename":"note-point","slug":"note-point","name":"note-point"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/os-equates.md","relativePath":"reference/os-equates.md","relativeDir":"reference","filename":"os-equates","slug":"os-equates","name":"os-equates"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/r-handler.md","relativePath":"reference/r-handler.md","relativeDir":"reference","filename":"r-handler","slug":"r-handler","name":"r-handler"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/sio-operations.md","relativePath":"advanced-topics/sio-operations.md","relativeDir":"advanced-topics","filename":"sio-operations","slug":"sio-operations","name":"sio-operations"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/statements.md","relativePath":"language-reference/statements.md","relativeDir":"language-reference","filename":"statements","slug":"statements","name":"statements"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/syntax.md","relativePath":"language-reference/syntax.md","relativeDir":"language-reference","filename":"syntax","slug":"syntax","name":"syntax"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/why-forge.md","relativePath":"about/why-forge.md","relativeDir":"about","filename":"why-forge","slug":"why-forge","name":"why-forge"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/xio-reference.md","relativePath":"advanced-topics/xio-reference.md","relativeDir":"advanced-topics","filename":"xio-reference","slug":"xio-reference","name":"xio-reference"}],"navTree":{"cc65":{"_files":[{"name":"README","slug":"readme","path":"cc65/README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/cc65/README.md","isIndex":true}]},"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/README.md","isIndex":true},{"name":"index","slug":"index","path":"index.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/index.md","isIndex":false}],"about":{"_files":[{"name":"attributions","slug":"attributions","path":"about/attributions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/attributions.md","isIndex":false},{"name":"why-forge","slug":"why-forge","path":"about/why-forge.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/about/why-forge.md","isIndex":false}]},"advanced-topics":{"_files":[{"name":"cio-reference","slug":"cio-reference","path":"advanced-topics/cio-reference.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/cio-reference.md","isIndex":false},{"name":"display-list-interrupts","slug":"display-list-interrupts","path":"advanced-topics/display-list-interrupts.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/display-list-interrupts.md","isIndex":false},{"name":"fujinet","slug":"fujinet","path":"advanced-topics/fujinet.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/fujinet.md","isIndex":false},{"name":"low-level-programming","slug":"low-level-programming","path":"advanced-topics/low-level-programming.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/low-level-programming.md","isIndex":false},{"name":"note-point","slug":"note-point","path":"advanced-topics/note-point.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/note-point.md","isIndex":false},{"name":"sio-operations","slug":"sio-operations","path":"advanced-topics/sio-operations.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/sio-operations.md","isIndex":false},{"name":"xio-reference","slug":"xio-reference","path":"advanced-topics/xio-reference.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/advanced-topics/xio-reference.md","isIndex":false}]},"getting-started":{"_files":[{"name":"compiling","slug":"compiling","path":"getting-started/compiling.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/compiling.md","isIndex":false},{"name":"differences","slug":"differences","path":"getting-started/differences.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/differences.md","isIndex":false},{"name":"first-steps","slug":"first-steps","path":"getting-started/first-steps.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/first-steps.md","isIndex":false},{"name":"introduction","slug":"introduction","path":"getting-started/introduction.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/getting-started/introduction.md","isIndex":false}]},"editor":{"_files":[{"name":"editor-guide","slug":"editor-guide","path":"editor/editor-guide.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-guide.md","isIndex":false},{"name":"editor-optimization","slug":"editor-optimization","path":"editor/editor-optimization.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/editor/editor-optimization.md","isIndex":false}]},"language-reference":{"_files":[{"name":"expressions","slug":"expressions","path":"language-reference/expressions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/expressions.md","isIndex":false},{"name":"functions","slug":"functions","path":"language-reference/functions.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/functions.md","isIndex":false},{"name":"statements","slug":"statements","path":"language-reference/statements.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/statements.md","isIndex":false},{"name":"syntax","slug":"syntax","path":"language-reference/syntax.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/syntax.md","isIndex":false}]},"reference":{"_files":[{"name":"hardware-registers","slug":"hardware-registers","path":"reference/hardware-registers.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/hardware-registers.md","isIndex":false},{"name":"interrupts","slug":"interrupts","path":"reference/interrupts.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/interrupts.md","isIndex":false},{"name":"iocb-structure","slug":"iocb-structure","path":"reference/iocb-structure.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/iocb-structure.md","isIndex":false},{"name":"memory-map","slug":"memory-map","path":"reference/memory-map.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-map.md","isIndex":false},{"name":"memory-usage","slug":"memory-usage","path":"reference/memory-usage.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/memory-usage.md","isIndex":false},{"name":"os-equates","slug":"os-equates","path":"reference/os-equates.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/os-equates.md","isIndex":false},{"name":"r-handler","slug":"r-handler","path":"reference/r-handler.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/reference/r-handler.md","isIndex":false}]}}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/forge/language-reference/expressions.md","relativePath":"language-reference/expressions.md","relativeDir":"language-reference","filename":"expressions","slug":"expressions","name":"expressions","content":"# Expressions\n\nExpressions are used to perform calculations in the language.\n\n## Expression Types\n\nThere are three main types of expressions:\n\n- **Numeric expressions** (integer and floating point)\n- **Boolean expressions**\n- **String expressions**\n\n## Numeric Expressions\n\n### Integer Expressions\n\nIn FORGE, standard numeric expressions are evaluated as integers from -32768 to 32767, this is called 16-bit signed integer values.\n\n### Floating Point Expressions\n\nFloating point expressions are used *only* if numbers have a decimal point. Floating point numbers are stored with standard Atari binary-coded decimal (BCD) representation, with a range from 1E-98 to 1E+98.\n\n## Boolean Expressions\n\nBoolean expressions are \"true\" or \"false\", represented as the numbers 1 and 0, respectively.\n\nNote that any boolean value can also be used as a numeric value, in this case, \"true\" is converted to 1 and \"false\" converted to 0.\n\n## String Expressions\n\nString expressions contain arbitrary text. In FORGE strings can have up to 255 characters of length. (This is similar to Microsoft BASICs found on other 8-bit microcomputers, and in contrast to the 32K limit found in Atari BASIC and TurboBASIC XL.)\n\n## Numeric Values\n\n### Integer Values\n\nInteger values can be written as:\n\n- **Decimal numbers** (like `123`, `1000`, etc.)\n- **Hexadecimal numbers** with a `$` sign before (like `$1C0`, `$A00`, etc.)\n- **Variable names**\n\nExamples:\n```basic\nA = 123\nB = $FF\nC = A + B\n```\n\n### Floating Point Values\n\nFloating point values are written with a decimal dot and an optional exponent (like `3.14159`, `-3.2`, or `1.0E+10`).\n\nExamples:\n```basic\nPI = 3.14159\nBIG = 1.0E+10\nSMALL = -3.2\n```\n\n## Numeric Variables\n\n### Variable Naming\n\nVariable names must begin with a letter or the symbol `_`, and can contain any letter, number or the symbol `_`.\n\nExamples of valid integer variable names:\n- `COUNTER`\n- `My_Var`\n- `num1`\n- `_temp`\n\n### Floating Point Variables\n\nFloating point variables have an `%` as last character in the name.\n\nExamples:\n- `MyNum%`\n- `x1%`\n- `result%`\n\n### Variable Declaration\n\nIn FORGE, variables can't be used in an expression before being assigned a value; the first assignment declares the new variable.\n\n```basic\nA = 10    ' Declares A as integer\nB% = 3.14 ' Declares B% as floating point\nC = A + B ' Error! Can't mix types directly\n```\n\n## Numeric Operators\n\nThere are various \"operators\" that perform calculations in expressions. The operators with higher precedence are always executed first.\n\n### Integer Operator Precedence\n\nThe order of precedence for *integer* operators (from lowest to highest):\n\n1. **Addition, Subtraction** (`+`, `-`) - from left to right\n2. **Multiplication, Division, Modulus** (`*`, `/`, `MOD`) - from left to right\n3. **Binary Operations** (`\u0026`, `!`, `EXOR`) - binary 'and', 'or', 'exclusive or' - from left to right\n4. **Unary Positive/Negative** (`+`, `-`) - positive / negative\n\n**Note:** `MOD` and `EXOR` can be abbreviated `M.` and `E.` respectively.\n\n### Example: Operator Precedence\n\nFor example, an expression like `1 + 2 * 3 - 4 * -5` is evaluated in the following order:\n\n1. First, the unary `-` before the `5`, giving the number `-5`.\n2. The first multiplication, giving `2*3` = `6`.\n3. The second multiplication, giving `4*-5` = `-20`.\n4. The addition, giving `1+6` = `7`.\n5. The subtraction, giving `7 - -20` = `27`.\n\nSo, in this example the result is 27.\n\n### Parentheses\n\nIf there is a need to alter the precedence, you can place expressions within parentheses (e.g., `(2+5)*10`, which results in `70`).\n\n### Floating Point Operators\n\nWhen using floating point expressions, the operators are:\n\n1. **Addition, Subtraction** (`+`, `-`) - from left to right\n2. **Multiplication, Division** (`*`, `/`) - from left to right\n3. **Exponentiation** (`^`) - from left to right\n4. **Unary Positive/Negative** (`+`, `-`) - positive / negative\n\n### Type Conversion\n\nNote that integer expressions are automatically converted to floating point if needed, as this allows mixing integers and floating point in some calculations, but you must take care to force floating point calculations to avoid integer overflows.\n\n**Example - Correct:**\n```basic\na% = 1000 * 1000 + 1.2\n```\nGives correct result as 1000 is converted to floating point before calculation.\n\n**Example - Incorrect:**\n```basic\nx = 1000\na% = x * x + 1.2\n```\nGives incorrect results as the multiplication result is bigger than 32767.\n\n**Note:** After any floating point errors (division by 0 and overflow), `ERR()` returns 3.\n\n## Boolean Operators\n\nBoolean operators return a \"true\" or \"false\" value instead of a numeric value, useful as conditions in loops and `IF` statements.\n\n### Boolean Operator Precedence\n\nThe supported boolean operators, in order of precedence (from lowest to highest):\n\n1. **OR** - Logical OR, true if one or both operands are true\n2. **AND** - Logical AND, true only if both operands are true\n3. **NOT** - Logical NOT, true only if operand is false\n4. **Comparison Operators** (`\u003c=`, `\u003e=`, `\u003c\u003e`, `\u003c`, `\u003e`, `=`) - For integer or floating point comparisons, compare the two numbers and return true or false. Note that `\u003c\u003e` is *not equal*.\n\n**Note:** The words `OR`, `AND` and `NOT` can be abbreviated `O.`, `A.` and `N.` respectively.\n\n### Type Restrictions\n\nYou can only compare two values of the same type, so an expression like `x = 1.2` is invalid, but `1.2 = x` is valid as the second operand is converted to floating point before comparison.\n\n## Arrays\n\nArrays hold many ordered values (called elements). The array elements can be accessed by an index.\n\n### Array Declaration\n\nIn FORGE, arrays must be dimensioned before use (see [DIM statement](statements.md#dim)). The index of the element is written between parentheses and goes from 0 to the number of elements.\n\n**Warning:** FORGE does not check for out of boundary accesses, so you must be careful with your code to not overrun the size of the arrays.\n\n### Array Usage\n\nYou can use an array position (the variable name followed by the index) in any location where a standard numeric variable or value is expected.\n\n### Array Types\n\nArrays can be of four types:\n\n#### WORD Arrays\n\nWORD arrays (the default if no type is given) use two bytes of memory for each element, and work like normal numeric integer variables: -32768 to 32767 (signed).\n\n```basic\nDIM A(10)      ' WORD array\nA(0) = 100\nA(5) = -500\n```\n\n#### BYTE Arrays\n\nBYTE arrays use only one byte for each element, so the numeric range is reduced from 0 to 255 (unsigned).\n\n```basic\nDIM B(10) BYTE\nB(0) = 100\nB(1) = 255\n```\n\n#### Floating Point Arrays\n\nFloating point arrays work like any floating point variable, and use six bytes of memory for each element.\n\n```basic\nDIM C(10)      ' Floating point array (name ends with %)\nC%(0) = 3.14\nC%(1) = 2.718\n```\n\n#### String Arrays\n\nString arrays store a string in each element. String arrays use two bytes of memory for each element that is not yet assigned (containing empty strings), and 258 bytes for each element with a string assigned.\n\n```basic\nDIM D$(10)     ' String array\nD$(0) = \"Hello\"\nD$(1) = \"World\"\n```\n\n## String Values\n\n### String Literals\n\nString values are written as text surrounded by double quotes (`\"`). If you need to include a double quote character in a string, you must write two double quotes together.\n\n**Example:**\n```basic\nPRINT \"Hello \"\"world\"\"\"\n```\n\nWill print:\n```\nHello \"world\"\n```\n\n### Hexadecimal Characters\n\nYou can also include any character with its hexadecimal code using `$` just after the closing quote, with no spaces around. This is the only way to include an ENTER character inside a string constant.\n\n**Example:**\n```basic\nPRINT \"Hello\"$9B\"world\"$2E$2E\n```\n\nWill print:\n```\nHello\nworld..\n```\n\n### String Substrings\n\nThe bracket operator `[` `]` allows creating a string from a portion of another, and accepts two forms:\n\n#### Form 1: `[start]`\n\nThis form selects all characters from `start` up to the end of the string, counting from 1.\n\n- `A$[1]` selects the entire string\n- `A$[3]` selects from the third character to the end, effectively removing the two leftmost characters\n\n#### Form 2: `[start, len]`\n\nThis form selects at most `len` characters from `start`, or up to the end of the string if there are not enough characters.\n\n**Example:**\n```basic\nPRINT \"Hello World\"[7]\nA$ = STR$(3.1415)[3,3]\n? A$\n? A$[2,1]\n```\n\nWill print:\n```\nWorld\n141\n4\n```\n\n### Important Note on String Substrings\n\nNote that the bracket operator creates a new string and copies the characters from the original string to the new one. As the same buffer is always used for the new string, you can't compare two values without first assigning one of them to a new string variable.\n\n**This will print `ERROR`:**\n```basic\nA$=\"Don't Work\"\nIF A$[2,2] = A$[3,3] THEN ? \"ERROR\"\n```\n\n**While this will print `GOOD`:**\n```basic\nA$=\"Long string\"\nB$=A$[2,2]\nIF B$ \u003c\u003e A$[3,3] THEN ? \"GOOD\"\n```\n\n## String Variables\n\n### Naming\n\nThe naming convention for string variables is the same as for numeric variables, but must end with a `$` symbol.\n\nExamples:\n- `Text$`\n- `NAME1$`\n- `my_string$`\n\n### Memory Usage\n\nString variables always use 256 bytes:\n- The first byte stores the string length\n- The following bytes store up to 255 ATASCII characters\n\n### String Assignment\n\nThere are two types of string assignments:\n\n#### Standard Assignment (`=`)\n\nThe standard `=` sign copies the string expression on the right to the variable on the left.\n\n```basic\nA$ = \"Hello\"\nB$ = A$\n```\n\n#### Concatenation Assignment (`=+`)\n\nThe `=+` sign copies the string expression on the right to the end of the current string, concatenating the text.\n\n**Example:**\n```basic\nA$ = \"Hello \"\nA$ =+ \"World\"\n? A$\n```\n\nWill print:\n```\nHello World\n```\n\n## Operator Precedence Summary\n\n### Integer Operators (lowest to highest)\n\n| Precedence | Operators | Description |\n|------------|-----------|-------------|\n| 1 | `+`, `-` | Addition, subtraction |\n| 2 | `*`, `/`, `MOD` | Multiplication, division, modulus |\n| 3 | `\u0026`, `!`, `EXOR` | Binary AND, OR, XOR |\n| 4 | `+`, `-` (unary) | Positive, negative |\n\n### Floating Point Operators (lowest to highest)\n\n| Precedence | Operators | Description |\n|------------|-----------|-------------|\n| 1 | `+`, `-` | Addition, subtraction |\n| 2 | `*`, `/` | Multiplication, division |\n| 3 | `^` | Exponentiation |\n| 4 | `+`, `-` (unary) | Positive, negative |\n\n### Boolean Operators (lowest to highest)\n\n| Precedence | Operators | Description |\n|------------|-----------|-------------|\n| 1 | `OR` | Logical OR |\n| 2 | `AND` | Logical AND |\n| 3 | `NOT` | Logical NOT |\n| 4 | `\u003c=`, `\u003e=`, `\u003c\u003e`, `\u003c`, `\u003e`, `=` | Comparison operators |\n\n## Type Conversion Notes\n\n- Integers are automatically converted to floating point when needed\n- Boolean values (true/false) can be used as integers (1/0)\n- String comparisons require both operands to be strings\n- Mixed integer/floating point comparisons convert integer to float\n\n## Next Steps\n\n- [Functions](functions.md) - Available functions\n- [Statements](statements.md) - Complete statement reference\n- [Syntax](syntax.md) - Language syntax rules\n"},"currentPath":"language-reference/expressions"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["forge","language-reference","expressions"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

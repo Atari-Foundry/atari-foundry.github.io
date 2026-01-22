@@ -1,0 +1,194 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><title data-next-head="">BOOT FILES | atrforge Documentation | Atari Foundry</title><meta name="description" content="atrforge documentation: BOOT FILES" data-next-head=""/><link rel="preload" href="/images/foundry_logo_50H.png" as="image" data-next-head=""/><link rel="preload" href="/_next/static/chunks/c81f129e50a5fd79.css" as="style"/><link rel="stylesheet" href="/_next/static/chunks/c81f129e50a5fd79.css" data-n-g=""/><noscript data-n-css=""></noscript><script src="/_next/static/chunks/e8a4a4ae55bc5744.js" defer=""></script><script src="/_next/static/chunks/00dac80f236dcabb.js" defer=""></script><script src="/_next/static/chunks/44f6bc00d9aaf830.js" defer=""></script><script src="/_next/static/chunks/fd7cb30d70431a0f.js" defer=""></script><script src="/_next/static/chunks/turbopack-4769270d21ef6607.js" defer=""></script><script src="/_next/static/chunks/1b081b821847ed60.js" defer=""></script><script src="/_next/static/chunks/76d09b6b03e70f66.js" defer=""></script><script src="/_next/static/chunks/b56fd671c61106a7.js" defer=""></script><script src="/_next/static/chunks/turbopack-d90ce600b0329ce0.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_ssgManifest.js" defer=""></script><script src="/_next/static/CnF04P5ob_bUVxETgw2P_/_buildManifest.js" defer=""></script></head><body><div id="__next"><div class="crt"><div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div><nav class="nav"><a class="nav-brand" href="/"><img alt="Atari Foundry icon" width="72" height="50" decoding="async" data-nimg="1" style="color:transparent;height:40px;width:auto" src="/images/foundry_logo_50H.png"/><div><span class="nav-brand-title">Atari Foundry</span><span class="nav-brand-sub">Products for Atari 8-bit</span></div></a><ul class="nav-links"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/vault">Vault</a></li><li class="nav-item has-children"><button type="button" class="nav-link nav-trigger active" aria-haspopup="true" aria-expanded="false">Docs</button><div class="nav-dropdown"><a class="nav-dropdown-link" href="/docs/crucible">Crucible</a><a class="nav-dropdown-link" href="/docs/atrforge">atrforge</a><a class="nav-dropdown-link" href="/docs/forge">FORGE</a></div></li><li class="nav-item"><a class="nav-link" href="/downloads">Downloads</a></li><li class="nav-item"><a class="nav-link" href="/support">Support</a></li></ul></nav><header class="subhero"><p class="label">atrforge<!-- --> Documentation</p><h1 class="page-title">BOOT FILES</h1></header><main><div class="docs-layout"><aside class="docs-sidebar"><nav class="docs-nav"><div class="docs-nav-section"><h3>Documentation</h3><ul style="list-style:none;padding:0;margin:0"><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/readme">README</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/advanced">ADVANCED</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atr-format">ATR FORMAT</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atrcp">ATRCP</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/atrforge">ATRFORGE</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/attributions">ATTRIBUTIONS</a></li><li><a class="doc-link active" style="padding-left:0rem" href="/docs/atrforge/boot-files">BOOT FILES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/changelog">CHANGELOG</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/convertatr">CONVERTATR</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/dos-formats">DOS FORMATS</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/examples">EXAMPLES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/file-attributes">FILE ATTRIBUTES</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/installation">INSTALLATION</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/lsatr">LSATR</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/troubleshooting">TROUBLESHOOTING</a></li><li><a class="doc-link " style="padding-left:0rem" href="/docs/atrforge/utf8-conversion">UTF8 CONVERSION</a></li></ul></div></nav></aside><div class="docs-content"><div class="docs-body"><div class="doc-markdown"><h1>Boot Files</h1>
+<p>Boot files are special. When you boot an Atari from a disk, the boot file is automatically loaded and executed. It&#x27;s like having a program that runs itself when you turn on the computer. Pretty neat, right?</p>
+<h2>Overview</h2>
+<p>A boot file is a program that gets loaded automatically when the Atari boots from the disk. The Atari disk controller reads the boot sectors, which contain a bootloader that then loads your program. It&#x27;s a two-stage process: bootloader loads, then your program loads.</p>
+<p><strong>What makes a boot file:</strong></p>
+<ul>
+<li>Must be in Atari binary format (<code>.com</code>, <code>.xex</code>, etc.)</li>
+<li>Must be marked with the <code>-b</code> flag when creating the image</li>
+<li>Must fit in available memory</li>
+<li>Must be compatible with the bootloader location</li>
+</ul>
+<h2>How Boot Files Work</h2>
+<h3>The Boot Process</h3>
+<ol>
+<li><strong>Atari boots</strong> - Computer starts up</li>
+<li><strong>Disk controller reads boot sectors</strong> - First few sectors are read</li>
+<li><strong>Bootloader executes</strong> - Bootloader code runs</li>
+<li><strong>Bootloader loads your file</strong> - Your program is loaded into memory</li>
+<li><strong>Your program runs</strong> - Program executes automatically</li>
+</ol>
+<p>It&#x27;s like a chain reaction: boot → bootloader → your program.</p>
+<h3>Bootloader</h3>
+<p>The bootloader is a small program that lives in the boot sectors. It&#x27;s responsible for loading your actual program file. The bootloader has specific memory requirements:</p>
+<ul>
+<li><strong>128-byte sectors:</strong> Bootloader needs 613 bytes, from $700 to $965</li>
+<li><strong>256-byte sectors:</strong> Bootloader needs 848 bytes, from $700 to $A50</li>
+</ul>
+<p>These are the standard locations. You can relocate the bootloader if needed (see below).</p>
+<h2>Creating Bootable Disks</h2>
+<h3>Basic Boot File</h3>
+<p>Create a bootable disk with a single file:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -b game.atr mygame.com
+</code></pre></pre>
+<p>The <code>-b</code> flag marks the next file as the boot file. Simple as that.</p>
+<h3>Boot File with Other Files</h3>
+<p>You can have other files on the disk too:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -b game.atr mygame.com data.txt readme.txt
+</code></pre></pre>
+<p>The boot file is <code>mygame.com</code>, and the other files are just regular files on the disk.</p>
+<h3>Boot File in Subdirectory</h3>
+<p>Boot files are typically in the root directory, but you can put them in subdirectories:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -b game.atr games/ -b games/mygame.com
+</code></pre></pre>
+<p>Note that you need <code>-b</code> before the directory too if the boot file is in a subdirectory. Actually, wait - boot files should be in the root for maximum compatibility. Let&#x27;s stick with that.</p>
+<h2>Bootloader Relocation</h2>
+<p>Sometimes your program loads at a low address that conflicts with the bootloader. The bootloader normally lives at page 7 ($700), but you can move it.</p>
+<h3>Standard Location</h3>
+<p>By default, the bootloader is at page 7 ($700):</p>
+<ul>
+<li>Address range: $700 to $965 (128-byte sectors) or $A50 (256-byte sectors)</li>
+<li>This is the standard location</li>
+<li>Works with most programs</li>
+</ul>
+<h3>Relocating the Bootloader</h3>
+<p>Use the <code>-B</code> option to relocate the bootloader:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -B 6 -b game.atr mygame.com
+</code></pre></pre>
+<p>This moves the bootloader to page 6 ($600). The <code>-B</code> option takes the page number (high byte of address).</p>
+<h3>Safe Relocation Values</h3>
+<ul>
+<li><strong>Page 6 ($600)</strong> - Usually safe, recommended if page 7 conflicts</li>
+<li><strong>Page 5 ($500)</strong> - Possible, but riskier</li>
+<li><strong>Page 4 ($400)</strong> - Possible, but even riskier</li>
+</ul>
+<p><strong>Why relocate?</strong> Some programs (especially games) load at low addresses like $600 or $700. If the bootloader is there too, they conflict. Moving the bootloader solves this.</p>
+<h3>When to Relocate</h3>
+<p>Relocate the bootloader if:</p>
+<ul>
+<li>Your program loads at $600-$700 range</li>
+<li>You get memory conflicts</li>
+<li>The boot process fails</li>
+<li>You know your program&#x27;s load address conflicts</li>
+</ul>
+<p>If your program works fine with the standard location, don&#x27;t relocate. The standard location is the most compatible.</p>
+<h2>Boot File Requirements</h2>
+<h3>File Format</h3>
+<p>Boot files must be in <strong>Atari binary format</strong>:</p>
+<ul>
+<li><code>.com</code> files (COM format)</li>
+<li><code>.xex</code> files (XEX format)</li>
+<li>Other Atari binary formats</li>
+</ul>
+<p><strong>Text files won&#x27;t work.</strong> BASIC files won&#x27;t work (unless they&#x27;re in a special bootable format). The file must be a binary executable.</p>
+<h3>File Size</h3>
+<p>Boot files can be any size that fits in memory, but:</p>
+<ul>
+<li>Must fit in available RAM</li>
+<li>Must not conflict with bootloader location</li>
+<li>Must be loadable by the bootloader</li>
+</ul>
+<p>There&#x27;s no hard limit, but practical limits depend on available memory and your program&#x27;s requirements.</p>
+<h3>Memory Layout</h3>
+<p>The bootloader and your program share memory space. Make sure they don&#x27;t conflict:</p>
+<pre><code>Standard layout (128-byte sectors):
+$700 - $965: Bootloader (613 bytes)
+$966+: Your program
+
+Standard layout (256-byte sectors):
+$700 - $A50: Bootloader (848 bytes)
+$A51+: Your program
+</code></pre>
+<p>If you relocate the bootloader, adjust these addresses accordingly.</p>
+<h2>Examples</h2>
+<h3>Simple Bootable Game</h3>
+<p>Create a bootable game disk:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -b game.atr game.com
+</code></pre></pre>
+<p>Boot the Atari with this disk, and <code>game.com</code> runs automatically.</p>
+<h3>Bootable Disk with DOS</h3>
+<p>Create a bootable disk with DOS and a startup file:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge bwdos.atr dos/ -b +ph dos/xbw130.dos +p startup.bat
+</code></pre></pre>
+<p>This creates:</p>
+<ul>
+<li>Bootable disk (<code>-b</code> before DOS file)</li>
+<li>DOS file is hidden and protected (<code>+ph</code>)</li>
+<li>Startup file is protected (<code>+p</code>)</li>
+<li>DOS in subdirectory</li>
+</ul>
+<h3>Boot File with Relocated Bootloader</h3>
+<p>Create a bootable disk with relocated bootloader:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -B 6 -b game.atr mygame.com
+</code></pre></pre>
+<p>The bootloader is at page 6, leaving page 7 free for your program.</p>
+<h3>Boot File with Multiple Files</h3>
+<p>Create a bootable disk with a boot file and other files:</p>
+<pre><pre class="language-bash"><code class="language-bash">atrforge -b disk.atr bootme.com file1.txt file2.txt data.dat
+</code></pre></pre>
+<p>The boot file is <code>bootme.com</code>, and the other files are accessible after boot.</p>
+<h2>Troubleshooting Boot Files</h2>
+<h3>Boot File Doesn&#x27;t Load</h3>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>File isn&#x27;t in binary format (check file type)</li>
+<li>Bootloader conflict (try relocating with <code>-B</code>)</li>
+<li>File too large for available memory</li>
+<li>Corrupted file</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Verify file is in Atari binary format</li>
+<li>Try relocating bootloader: <code>atrforge -B 6 -b disk.atr file.com</code></li>
+<li>Check file size and memory requirements</li>
+<li>Verify file isn&#x27;t corrupted</li>
+</ul>
+<h3>Memory Conflicts</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Program crashes on boot</li>
+<li>Bootloader doesn&#x27;t execute</li>
+<li>System hangs</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Relocate bootloader: <code>atrforge -B 6 -b disk.atr file.com</code></li>
+<li>Check your program&#x27;s load address</li>
+<li>Ensure no memory conflicts</li>
+</ul>
+<h3>Bootloader Too Large</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Boot process fails</li>
+<li>Error messages about bootloader</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>This is rare, but if it happens, the bootloader might not fit</li>
+<li>Check sector size (128 vs 256 bytes)</li>
+<li>Verify bootloader requirements</li>
+</ul>
+<h2>Tips and Tricks</h2>
+<ol>
+<li><strong>Test boot files</strong> - Always test bootable disks in an emulator before using on real hardware</li>
+<li><strong>Keep boot files simple</strong> - Complex boot files are more likely to have issues</li>
+<li><strong>Use standard location</strong> - Only relocate if you have a conflict</li>
+<li><strong>Check file format</strong> - Make sure your file is in Atari binary format</li>
+<li><strong>Verify memory layout</strong> - Know where your program loads and avoid conflicts</li>
+</ol>
+<h2>Common Mistakes</h2>
+<ul>
+<li><strong>Forgetting <code>-b</code> flag</strong> - Without <code>-b</code>, the file won&#x27;t be bootable</li>
+<li><strong>Wrong file format</strong> - Text files or BASIC files won&#x27;t work as boot files</li>
+<li><strong>Memory conflicts</strong> - Not checking if program conflicts with bootloader</li>
+<li><strong>Wrong bootloader location</strong> - Using wrong page number with <code>-B</code></li>
+<li><strong>Boot file in subdirectory</strong> - Boot files should be in root for best compatibility</li>
+</ul>
+<h2>See Also</h2>
+<ul>
+<li><a node="[object Object]" href="/docs/atrforge/atrforge">atrforge</a> - How to create bootable images</li>
+<li><a node="[object Object]" href="/docs/atrforge/examples">Examples</a> - More boot file examples</li>
+<li><a node="[object Object]" href="/docs/atrforge/troubleshooting">Troubleshooting</a> - Common boot file problems</li>
+</ul>
+<hr/>
+<p><em>For the complete tool list, see the <a node="[object Object]" href="/docs/atrforge">main documentation index</a>.</em></p></div></div></div></div></main><footer class="footer"><p>© 2026 Atari Foundry · Rick Collette · Software for Atari 8-bit builders.</p></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"product":"atrforge","productDocs":{"product":"atrforge","files":[{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/README.md","relativePath":"README.md","relativeDir":"","filename":"README","slug":"readme","name":"README"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ADVANCED.md","relativePath":"ADVANCED.md","relativeDir":"","filename":"ADVANCED","slug":"advanced","name":"ADVANCED"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATR_FORMAT.md","relativePath":"ATR_FORMAT.md","relativeDir":"","filename":"ATR_FORMAT","slug":"atr-format","name":"ATR FORMAT"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRCP.md","relativePath":"ATRCP.md","relativeDir":"","filename":"ATRCP","slug":"atrcp","name":"ATRCP"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRFORGE.md","relativePath":"ATRFORGE.md","relativeDir":"","filename":"ATRFORGE","slug":"atrforge","name":"ATRFORGE"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATTRIBUTIONS.md","relativePath":"ATTRIBUTIONS.md","relativeDir":"","filename":"ATTRIBUTIONS","slug":"attributions","name":"ATTRIBUTIONS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","relativePath":"BOOT_FILES.md","relativeDir":"","filename":"BOOT_FILES","slug":"boot-files","name":"BOOT FILES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CHANGELOG.md","relativePath":"CHANGELOG.md","relativeDir":"","filename":"CHANGELOG","slug":"changelog","name":"CHANGELOG"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CONVERTATR.md","relativePath":"CONVERTATR.md","relativeDir":"","filename":"CONVERTATR","slug":"convertatr","name":"CONVERTATR"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/DOS_FORMATS.md","relativePath":"DOS_FORMATS.md","relativeDir":"","filename":"DOS_FORMATS","slug":"dos-formats","name":"DOS FORMATS"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","relativePath":"EXAMPLES.md","relativeDir":"","filename":"EXAMPLES","slug":"examples","name":"EXAMPLES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/FILE_ATTRIBUTES.md","relativePath":"FILE_ATTRIBUTES.md","relativeDir":"","filename":"FILE_ATTRIBUTES","slug":"file-attributes","name":"FILE ATTRIBUTES"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/INSTALLATION.md","relativePath":"INSTALLATION.md","relativeDir":"","filename":"INSTALLATION","slug":"installation","name":"INSTALLATION"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","relativePath":"LSATR.md","relativeDir":"","filename":"LSATR","slug":"lsatr","name":"LSATR"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","relativePath":"TROUBLESHOOTING.md","relativeDir":"","filename":"TROUBLESHOOTING","slug":"troubleshooting","name":"TROUBLESHOOTING"},{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/UTF8_CONVERSION.md","relativePath":"UTF8_CONVERSION.md","relativeDir":"","filename":"UTF8_CONVERSION","slug":"utf8-conversion","name":"UTF8 CONVERSION"}],"navTree":{"_files":[{"name":"README","slug":"readme","path":"README.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/README.md","isIndex":true},{"name":"ADVANCED","slug":"advanced","path":"ADVANCED.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ADVANCED.md","isIndex":false},{"name":"ATR FORMAT","slug":"atr-format","path":"ATR_FORMAT.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATR_FORMAT.md","isIndex":false},{"name":"ATRCP","slug":"atrcp","path":"ATRCP.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRCP.md","isIndex":false},{"name":"ATRFORGE","slug":"atrforge","path":"ATRFORGE.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATRFORGE.md","isIndex":false},{"name":"ATTRIBUTIONS","slug":"attributions","path":"ATTRIBUTIONS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/ATTRIBUTIONS.md","isIndex":false},{"name":"BOOT FILES","slug":"boot-files","path":"BOOT_FILES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","isIndex":false},{"name":"CHANGELOG","slug":"changelog","path":"CHANGELOG.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CHANGELOG.md","isIndex":false},{"name":"CONVERTATR","slug":"convertatr","path":"CONVERTATR.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/CONVERTATR.md","isIndex":false},{"name":"DOS FORMATS","slug":"dos-formats","path":"DOS_FORMATS.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/DOS_FORMATS.md","isIndex":false},{"name":"EXAMPLES","slug":"examples","path":"EXAMPLES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/EXAMPLES.md","isIndex":false},{"name":"FILE ATTRIBUTES","slug":"file-attributes","path":"FILE_ATTRIBUTES.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/FILE_ATTRIBUTES.md","isIndex":false},{"name":"INSTALLATION","slug":"installation","path":"INSTALLATION.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/INSTALLATION.md","isIndex":false},{"name":"LSATR","slug":"lsatr","path":"LSATR.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/LSATR.md","isIndex":false},{"name":"TROUBLESHOOTING","slug":"troubleshooting","path":"TROUBLESHOOTING.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/TROUBLESHOOTING.md","isIndex":false},{"name":"UTF8 CONVERSION","slug":"utf8-conversion","path":"UTF8_CONVERSION.md","fullPath":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/UTF8_CONVERSION.md","isIndex":false}]}},"docFile":{"path":"/home/megalith/AtariProjects/AtariFoundry/www/PROJECT_DOCS/atrforge/BOOT_FILES.md","relativePath":"BOOT_FILES.md","relativeDir":"","filename":"BOOT_FILES","slug":"boot-files","name":"BOOT FILES","content":"# Boot Files\n\nBoot files are special. When you boot an Atari from a disk, the boot file is automatically loaded and executed. It's like having a program that runs itself when you turn on the computer. Pretty neat, right?\n\n## Overview\n\nA boot file is a program that gets loaded automatically when the Atari boots from the disk. The Atari disk controller reads the boot sectors, which contain a bootloader that then loads your program. It's a two-stage process: bootloader loads, then your program loads.\n\n**What makes a boot file:**\n- Must be in Atari binary format (`.com`, `.xex`, etc.)\n- Must be marked with the `-b` flag when creating the image\n- Must fit in available memory\n- Must be compatible with the bootloader location\n\n## How Boot Files Work\n\n### The Boot Process\n\n1. **Atari boots** - Computer starts up\n2. **Disk controller reads boot sectors** - First few sectors are read\n3. **Bootloader executes** - Bootloader code runs\n4. **Bootloader loads your file** - Your program is loaded into memory\n5. **Your program runs** - Program executes automatically\n\nIt's like a chain reaction: boot → bootloader → your program.\n\n### Bootloader\n\nThe bootloader is a small program that lives in the boot sectors. It's responsible for loading your actual program file. The bootloader has specific memory requirements:\n\n- **128-byte sectors:** Bootloader needs 613 bytes, from $700 to $965\n- **256-byte sectors:** Bootloader needs 848 bytes, from $700 to $A50\n\nThese are the standard locations. You can relocate the bootloader if needed (see below).\n\n## Creating Bootable Disks\n\n### Basic Boot File\n\nCreate a bootable disk with a single file:\n\n```bash\natrforge -b game.atr mygame.com\n```\n\nThe `-b` flag marks the next file as the boot file. Simple as that.\n\n### Boot File with Other Files\n\nYou can have other files on the disk too:\n\n```bash\natrforge -b game.atr mygame.com data.txt readme.txt\n```\n\nThe boot file is `mygame.com`, and the other files are just regular files on the disk.\n\n### Boot File in Subdirectory\n\nBoot files are typically in the root directory, but you can put them in subdirectories:\n\n```bash\natrforge -b game.atr games/ -b games/mygame.com\n```\n\nNote that you need `-b` before the directory too if the boot file is in a subdirectory. Actually, wait - boot files should be in the root for maximum compatibility. Let's stick with that.\n\n## Bootloader Relocation\n\nSometimes your program loads at a low address that conflicts with the bootloader. The bootloader normally lives at page 7 ($700), but you can move it.\n\n### Standard Location\n\nBy default, the bootloader is at page 7 ($700):\n- Address range: $700 to $965 (128-byte sectors) or $A50 (256-byte sectors)\n- This is the standard location\n- Works with most programs\n\n### Relocating the Bootloader\n\nUse the `-B` option to relocate the bootloader:\n\n```bash\natrforge -B 6 -b game.atr mygame.com\n```\n\nThis moves the bootloader to page 6 ($600). The `-B` option takes the page number (high byte of address).\n\n### Safe Relocation Values\n\n- **Page 6 ($600)** - Usually safe, recommended if page 7 conflicts\n- **Page 5 ($500)** - Possible, but riskier\n- **Page 4 ($400)** - Possible, but even riskier\n\n**Why relocate?** Some programs (especially games) load at low addresses like $600 or $700. If the bootloader is there too, they conflict. Moving the bootloader solves this.\n\n### When to Relocate\n\nRelocate the bootloader if:\n- Your program loads at $600-$700 range\n- You get memory conflicts\n- The boot process fails\n- You know your program's load address conflicts\n\nIf your program works fine with the standard location, don't relocate. The standard location is the most compatible.\n\n## Boot File Requirements\n\n### File Format\n\nBoot files must be in **Atari binary format**:\n- `.com` files (COM format)\n- `.xex` files (XEX format)\n- Other Atari binary formats\n\n**Text files won't work.** BASIC files won't work (unless they're in a special bootable format). The file must be a binary executable.\n\n### File Size\n\nBoot files can be any size that fits in memory, but:\n- Must fit in available RAM\n- Must not conflict with bootloader location\n- Must be loadable by the bootloader\n\nThere's no hard limit, but practical limits depend on available memory and your program's requirements.\n\n### Memory Layout\n\nThe bootloader and your program share memory space. Make sure they don't conflict:\n\n```\nStandard layout (128-byte sectors):\n$700 - $965: Bootloader (613 bytes)\n$966+: Your program\n\nStandard layout (256-byte sectors):\n$700 - $A50: Bootloader (848 bytes)\n$A51+: Your program\n```\n\nIf you relocate the bootloader, adjust these addresses accordingly.\n\n## Examples\n\n### Simple Bootable Game\n\nCreate a bootable game disk:\n\n```bash\natrforge -b game.atr game.com\n```\n\nBoot the Atari with this disk, and `game.com` runs automatically.\n\n### Bootable Disk with DOS\n\nCreate a bootable disk with DOS and a startup file:\n\n```bash\natrforge bwdos.atr dos/ -b +ph dos/xbw130.dos +p startup.bat\n```\n\nThis creates:\n- Bootable disk (`-b` before DOS file)\n- DOS file is hidden and protected (`+ph`)\n- Startup file is protected (`+p`)\n- DOS in subdirectory\n\n### Boot File with Relocated Bootloader\n\nCreate a bootable disk with relocated bootloader:\n\n```bash\natrforge -B 6 -b game.atr mygame.com\n```\n\nThe bootloader is at page 6, leaving page 7 free for your program.\n\n### Boot File with Multiple Files\n\nCreate a bootable disk with a boot file and other files:\n\n```bash\natrforge -b disk.atr bootme.com file1.txt file2.txt data.dat\n```\n\nThe boot file is `bootme.com`, and the other files are accessible after boot.\n\n## Troubleshooting Boot Files\n\n### Boot File Doesn't Load\n\n**Possible causes:**\n- File isn't in binary format (check file type)\n- Bootloader conflict (try relocating with `-B`)\n- File too large for available memory\n- Corrupted file\n\n**Solutions:**\n- Verify file is in Atari binary format\n- Try relocating bootloader: `atrforge -B 6 -b disk.atr file.com`\n- Check file size and memory requirements\n- Verify file isn't corrupted\n\n### Memory Conflicts\n\n**Symptoms:**\n- Program crashes on boot\n- Bootloader doesn't execute\n- System hangs\n\n**Solutions:**\n- Relocate bootloader: `atrforge -B 6 -b disk.atr file.com`\n- Check your program's load address\n- Ensure no memory conflicts\n\n### Bootloader Too Large\n\n**Symptoms:**\n- Boot process fails\n- Error messages about bootloader\n\n**Solutions:**\n- This is rare, but if it happens, the bootloader might not fit\n- Check sector size (128 vs 256 bytes)\n- Verify bootloader requirements\n\n## Tips and Tricks\n\n1. **Test boot files** - Always test bootable disks in an emulator before using on real hardware\n2. **Keep boot files simple** - Complex boot files are more likely to have issues\n3. **Use standard location** - Only relocate if you have a conflict\n4. **Check file format** - Make sure your file is in Atari binary format\n5. **Verify memory layout** - Know where your program loads and avoid conflicts\n\n## Common Mistakes\n\n- **Forgetting `-b` flag** - Without `-b`, the file won't be bootable\n- **Wrong file format** - Text files or BASIC files won't work as boot files\n- **Memory conflicts** - Not checking if program conflicts with bootloader\n- **Wrong bootloader location** - Using wrong page number with `-B`\n- **Boot file in subdirectory** - Boot files should be in root for best compatibility\n\n## See Also\n\n- [atrforge](ATRFORGE.md) - How to create bootable images\n- [Examples](EXAMPLES.md) - More boot file examples\n- [Troubleshooting](TROUBLESHOOTING.md) - Common boot file problems\n\n---\n\n*For the complete tool list, see the [main documentation index](README.md).*\n"},"currentPath":"boot-files"},"__N_SSG":true},"page":"/docs/[...slug]","query":{"slug":["atrforge","boot-files"]},"buildId":"CnF04P5ob_bUVxETgw2P_","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
